@@ -1217,7 +1217,7 @@ pre .javascript .function {
   top: -333px;
 }
 .header {
-  background: transparent;
+  background: #fff;
 }
 .header-inner {
   position: relative;
@@ -1296,9 +1296,10 @@ pre .javascript .function {
   top: -10px;
 }
 .site-nav-toggle {
-  position: fixed;
+  position: absolute;
   top: 0px;
   left: 0px;
+  right: 0;
   display: none;
   opacity: 0;
 }
@@ -1307,7 +1308,7 @@ pre .javascript .function {
     display: block;
     opacity: 1;
     width: 100%;
-    background: #fff;
+    background-color: rgba(250,250,250,0.7);
     z-index: 999999999;
     font-weight: 600;
   }
@@ -1322,6 +1323,11 @@ pre .javascript .function {
   display: flex;
   text-align: center;
 }
+@media (max-width: 767px) {
+  .nav-content {
+    width: 100%;
+  }
+}
 .declara {
   font-family: "Lobster Two";
   font-size: 20px;
@@ -1332,10 +1338,11 @@ pre .javascript .function {
 @media (max-width: 767px) {
   .site-nav {
     overflow-x: hidden;
-    display: none;
+    display: block;
     margin: 0 -10px;
     padding: 0 10px;
     clear: both;
+    height: 0px;
     border-top: 1px solid #ddd;
     z-index: 9999 !important;
   }
@@ -1357,7 +1364,7 @@ pre .javascript .function {
   border-radius: initial;
   width: 100%;
   white-space: nowrap;
-  position: fixed;
+  position: relative;
   top: 0;
   left: 50%;
   -webkit-transform: translate(-50%, 0);
@@ -1366,7 +1373,6 @@ pre .javascript .function {
   -o-transform: translate(-50%, 0);
   transform: translate(-50%, 0);
   z-index: 8000;
-  height: 45px;
   margin: 0;
   box-shadow: 0 0 2px #444;
 }
@@ -2942,10 +2948,14 @@ pre .javascript .function {
   overflow: hidden;
 }
 @media (max-width: 767px) {
-  .header-inner,
   .container .main-inner,
   .footer-inner {
     width: auto;
+  }
+}
+@media (max-width: 767px) {
+  .header-inner {
+    width: 100%;
   }
 }
 embed {
@@ -2969,17 +2979,19 @@ embed {
 }
 @media (max-width: 767px) {
   .site-nav {
-    position: fixed;
     left: 0;
     top: 0px;
     margin: 0;
     width: 100%;
     padding: 0;
-    background: #fff;
-    height: 380px;
+    background: rgba(250,250,250,0.8);
+    height: 0px;
     border-bottom: 1px solid #ddd;
     z-index: 1030;
     overflow: hidden;
+    webkit-transition: all 0.4s cubic-bezier(0.22, 0.58, 0.12, 0.98);
+    -o-transition: all cubic-bezier(0.22, 0.58, 0.12, 0.98) 0.4s;
+    transition: all 0.4s cubic-bezier(0.22, 0.58, 0.12, 0.98);
   }
 }
 @media (max-width: 767px) {
@@ -3416,13 +3428,13 @@ article:first-of-type .set-top>div:after {
   border-color: #2ea9de;
 }
 .about-box h3:nth-of-type(2) {
-  border-color: #db9fb4;
+  border-color: #c88eff;
 }
 .about-box h3:nth-of-type(3) {
   border-color: #91ad70;
 }
 .about-box h3:nth-of-type(4) {
-  border-color: #f97597;
+  border-color: #ff7f9f;
 }
 .flip-container,
 .front,
@@ -3934,7 +3946,6 @@ a {
   background-origin: border-box;
   background-attachment: fixed;
   width: 100%;
-  height: 100vh;
 }
 .pace .pace-progress {
   background: #fe9600;
@@ -3983,7 +3994,6 @@ a {
   }
   .header {
     height: 260px;
-    margin-top: 48px;
     background-attachment: scroll;
   }
   .meteor {
@@ -4011,7 +4021,7 @@ a {
     line-height: 53px;
     margin-top: 0;
     margin-bottom: 0;
-    width: 300px;
+    flex: 1;
   }
 }
 .notice-content {

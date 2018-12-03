@@ -1,16 +1,18 @@
 .site-nav {
   +mobile() {
-    position: fixed;
     left: 0;
     top: 0px;
     margin: 0;
     width: 100%;
     padding: 0;
-    background: #fff;
-    height:380px;
+    background: rgba(250, 250,250, .8);
+    height:0px;
     border-bottom: 1px solid $gray-lighter;
     z-index: $zindex-3;
     overflow:hidden;
+    webkit-transition: all .4s cubic-bezier(.22,.58,.12,.98);
+    -o-transition: all cubic-bezier(.22,.58,.12,.98) .4s;
+    transition: all .4s cubic-bezier(.22,.58,.12,.98);
   }
 }
 

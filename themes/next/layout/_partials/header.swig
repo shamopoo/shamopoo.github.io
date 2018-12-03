@@ -15,28 +15,7 @@
             </a>
           </li>
         {% endfor %}
-
-        {% if hasSearch %}
-          <li class="menu-item menu-item-search">
-            {% if theme.swiftype_key %}
-              <a href="javascript:;" class="st-search-show-outputs">
-            {% elseif theme.local_search.enable || theme.algolia_search.enable %}
-              <a href="javascript:;" class="popup-trigger">
-            {% endif %}
-              {% if theme.menu_icons.enable %}
-                <i class="menu-item-icon fa fa-search fa-fw"></i>
-              {% endif %}
-              {{ __('menu.search') }}
-            </a>
-          </li>
-        {% endif %}
       </ul>
-    {% endif %}
-
-    {% if hasSearch %}
-      <div class="site-search">
-        {% include 'search.swig' %}
-      </div>
     {% endif %}
   </nav>
   <div class="site-meta {% if theme.custom_logo.enabled %}custom-logo{% endif %}">

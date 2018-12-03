@@ -1,14 +1,16 @@
 .site-nav-toggle {
-  position: fixed;
+  position: absolute;
   top: 0px;
   left: 0px;
+  right: 0;
   display: none;
   opacity:0;
+
   +mobile() {
     display: block;
     opacity:1;
-    width:100%;
-    background:#fff;
+    width: 100%;
+    background-color:  rgba(250, 250, 250, .7);
     z-index:999999999;
     font-weight: 600;
   }
@@ -23,6 +25,9 @@
 .nav-content{
  display:flex;
  text-align:center;
+ +mobile() {
+   width: 100%;
+ }
 }
 .declara {
     font-family: "Lobster Two";
@@ -34,10 +39,11 @@
 .site-nav {
   +mobile() {
     overflow-x:hidden;
-    display: none;
+    display: block;
     margin: 0 -10px;
     padding: 0 10px;
     clear: both;
+    height: 0px;
     border-top: 1px solid $gray-lighter;
     z-index:9999 !important;
   }

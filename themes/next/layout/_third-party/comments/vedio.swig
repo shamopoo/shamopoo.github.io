@@ -157,8 +157,19 @@
      $(".flipper").css("transform", "rotateY(360deg)")
    })
    // 浏览器上下滑
-
+    
    // title
    $(".banner-border-top").animate({'margin-left': '0px'},900)
    $(".banner-border-bottom").animate({'margin-left': '0px'},900)
+
+   // moblie header
+  $('.site-nav-toggle button').on('click', function () {
+      var  sideDom = $('.site-nav')[0]
+        if (!parseInt(sideDom.style.height))  {
+            sideDom.style.height = '330px'
+        } else {
+            sideDom.style.height = '0px'
+        }
+   });
+
 </script>
