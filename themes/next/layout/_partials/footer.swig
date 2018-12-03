@@ -48,10 +48,6 @@ window.onload = function() {
 </div>
 
 {% if theme.footer.theme.enable %}
-  <span>
-      © 2018 Hi, Shamopoo. 由 Hexo 强力驱动. Made with  by Shamopoo.
-  </span>
-
 <script type="text/javascript" src="https://api.lwl12.com/hitokoto/main/get?encode=js&charset=utf-8"></script>
 <div class="footer-yiyan" id="lwlhitokoto"><script>lwlhitokoto()</script></div>
 
@@ -62,4 +58,5 @@ window.onload = function() {
   #}{{ theme.footer.custom_text }}{#
 #}</div>
 {% endif %}
+
 {% include 'head/meting.swig' %}
