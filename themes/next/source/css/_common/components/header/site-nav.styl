@@ -1,0 +1,46 @@
+.site-nav-toggle {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  display: none;
+  opacity:0;
+  +mobile() {
+    display: block;
+    opacity:1;
+    width:100%;
+    background:#fff;
+    z-index:999999999;
+    font-weight: 600;
+  }
+
+  button {
+    margin-top: 2px;
+    padding: 9px 10px;
+    background: transparent;
+    border: none;
+  }
+}
+.nav-content{
+ display:flex;
+ text-align:center;
+}
+.declara {
+    font-family: "Lobster Two";
+    font-size:20px;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+.site-nav {
+  +mobile() {
+    overflow-x:hidden;
+    display: none;
+    margin: 0 -10px;
+    padding: 0 10px;
+    clear: both;
+    border-top: 1px solid $gray-lighter;
+    z-index:9999 !important;
+  }
+  +tablet() { display: block !important; }
+  +desktop() { display: block !important; }
+}

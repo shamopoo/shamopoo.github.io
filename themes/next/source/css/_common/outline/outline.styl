@@ -1,0 +1,60 @@
+//
+// Layout
+// Note: Must name this file "outline" instead of "layout"
+//       Or Hexo will use it as template layout.
+// =================================================
+
+
+html, body { height: 100%; }
+
+.container {
+  position: relative;
+  min-height: 100%;
+  width:100% !important;
+  margin:0 !important;
+  padding:0 !important;
+}
+
+
+// Header Section
+// --------------------------------------------------
+.header-inner {
+  margin: 0 auto;
+  width: 100%;
+  height:100vh;
+  +desktop-large() {
+    .container & { width: $content-desktop-large; }
+  }
+}
+
+// Main Section
+// --------------------------------------------------
+.main { padding-bottom: 380px; }
+.main-inner {
+  margin: 0 auto;
+  width: $content-desktop;
+
+  +desktop-large() {
+    .container & { width: $content-desktop-large; }
+  }
+}
+
+
+// Footer Section
+// --------------------------------------------------
+.footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  min-height: $footer-height;
+}
+.footer-inner {
+  box-sizing: border-box;
+  margin: 20px auto;
+  width: $content-desktop;
+
+  +desktop-large() {
+    .container & { width: $content-desktop-large; }
+  }
+}

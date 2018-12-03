@@ -1,0 +1,123 @@
+
+::selection {
+  background: $selection-bg;
+  color: $selection-color;
+}
+
+body {
+  position: relative; // Required by scrollspy
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  color: #555;
+  background: rgba(255,255,255,0.7);
+  font-family: 'Lobster Two', 'Roboto Slab', "PingFang SC", "Microsoft YaHei", sans-serif;
+  +mobile() { padding-right: 0 !important; }
+  +tablet() { padding-right: 0 !important; }
+  +desktop-large() { font-size: $font-size-large; }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  line-height: 1.5;
+  font-family: $font-family-headings;
+}
+
+h2, h3, h4, h5, h6 { margin: 20px 0 15px; }
+
+for headline in (1..6) {
+  h{headline} {
+    font-size: $font-size-headings-base - $font-size-headings-step * headline;
+  }
+
+  +mobile() {
+    h{headline} {
+      font-size: $font-size-headings-base - $font-size-headings-step * headline - 4px;
+    }
+  }
+}
+
+p { margin: 0 0 20px 0; }
+
+a {
+  color: $link-color;
+  text-decoration: none;
+  outline: none;
+  border-bottom: 1px solid $grey-dark;
+  word-wrap: break-word;
+
+  &:hover {
+    color: $link-hover-color;
+    border-bottom-color: $link-decoration-hover-color;
+  }
+}
+
+blockquote {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  margin: auto;
+  max-width: 100%;
+  height: auto;
+}
+
+
+hr {
+  margin: 40px 0;
+  height: 3px;
+  border: none;
+  background-color: $gray-lighter;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    white,
+    white 4px,
+    transparent 4px,
+    transparent 8px
+  );
+}
+
+blockquote {
+  padding: 15px 15px 5px;
+  color: $grey-dim;
+  background:#f0f0f0;
+  margin-bottom:20px;
+  cite::before {
+    content: "-";
+    padding: 0 5px;
+  }
+}
+.tip{
+  background-color: #f3f5f7;
+  border-left: 8px solid #42b983;
+}
+.warning {
+    background-color: rgba(255,229,100,.3);
+    border-left: 8px solid#e7c000;
+    color: #6b5900;
+}
+.danger{
+  background-color: #ffe6e6;
+  border-left: 8px solid #c00;
+    color: #4d0000;
+}
+dt { font-weight: $font-weight-bolder; }
+
+dd {
+  margin: 0;
+  padding: 0;
+}
+
+kbd {
+  border: 1px solid $grey-light;
+  border-radius: 0.2em;
+  box-shadow: 0.1em 0.1em 0.2em rgba(0,0,0,0.1);
+  background-color: #f9f9f9;
+  font-family: inherit;
+  background-image: -webkit-linear-gradient(top, #eee, white, #eee);
+  padding: 0.1em 0.3em;
+  white-space: nowrap;
+}

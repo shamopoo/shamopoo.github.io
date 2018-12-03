@@ -1,0 +1,97 @@
+// TODO: Refactor.
+
+@media (max-width: 767px) {
+  .posts-collapse {
+    .post-title, .post-meta {
+      display: block;
+      width: auto;
+      text-align: left;
+    }
+  }
+}
+
+.posts-collapse {
+  position: relative;
+  z-index: $zindex-1;
+  padding-top: 100px;
+  +mobile() { margin: 0 20px; }
+
+  .collection-title {
+    position: relative;
+    margin: 60px 0;
+
+    h1, h2 { margin-left: 20px; }
+
+    small { color: $grey; margin-left: 5px;display:none; }
+
+
+  }
+
+  .post { margin: 30px 0; }
+
+  .post-header {
+    position: relative;
+    the-transition();
+    transition-property: border;
+  }
+  .post-archives-div {
+    position:relative;
+  }
+  .post-archives-time{
+    position:absolute;
+    top:-40px;
+    left:-61px;
+    color:#fff;
+    border-color: #47456d;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+    background-color: #97dffd;
+    margin: 5px 0 15px 2px;
+    font-size: 14px;
+    border-radius: 0 4px 4px 0;
+    display: inline-block;
+    padding: 7px 11px 7px 32px;
+    line-height: 1;
+    white-space:nowrap;
+    }
+  .post-archives-time::after {
+    position: absolute;
+    content: "";
+    top: 100%;
+    left: 0;
+    border-top: 0 solid transparent;
+    border-right-width: 1em;
+    border-right-color: inherit;
+    border-right-style: solid;
+    border-bottom: 1em solid transparent;
+    border-left: 0 solid transparent;
+    width: 0;
+    height: 0;
+  }
+  .post-header:hover .post-title-link span{
+      color:#FE9600;
+   }
+
+  .post-meta {
+    position: absolute;
+    font-size: 12px;
+    left: 20px;
+    top: 5px;
+  }
+
+  .post-title {
+    margin-left: 60px;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: inherit;
+
+    &::after {
+      margin-left: 3px;
+      opacity: 0.6;
+    }
+
+    a {
+      color: $grey-dim;
+      border-bottom: none;
+    }
+  }
+}

@@ -1,0 +1,37 @@
+.btn {
+  display: inline-block;
+  padding: 1px 15px;
+  font-size: 13px;
+  color:  #97dffd;
+  border-radius: 3px;
+  border: $btn-default-border-width solid  #97dffd;
+  text-decoration: none;
+  transition-property: background-color;
+  the-transition();
+  line-height: 2;
+
+  &:hover {
+    border-color: #97dffd;
+    color: #fff;
+    background: #97dffd;
+  }
+
+  +.btn {
+    margin: 0 0 8px 8px;
+  }
+
+  .fa-fw {
+    width: (18em / 14);
+    text-align: left;
+  }
+}
+
+.btn-bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: #e67474;
+  border-radius: 1px;
+
+  &+.btn-bar { margin-top: 4px; }
+}

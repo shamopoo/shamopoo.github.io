@@ -1,0 +1,28 @@
+.sidebar-toggle {
+  position: fixed;
+  transition: all .3s;
+  -webkit-transition: all .3s;
+  right: -80px;
+  bottom: 35px;
+  z-index: 9999999;
+  img{
+    width: 110px;
+    height: auto;
+  }
+  +tablet() {
+    fixbutton() if hexo-config('sidebar.onmobile');
+    hide() if not hexo-config('sidebar.onmobile');
+  }
+  +mobile() {
+    fixbutton() if hexo-config('sidebar.onmobile');
+    hide() if not hexo-config('sidebar.onmobile');
+  }
+}
+.cd-is-toggle{
+  right: -30px;
+  transform: rotate(7deg);
+}
+.sidebar-toggle:hover{
+  right: -5px;
+  transform: rotate(-10deg);
+}

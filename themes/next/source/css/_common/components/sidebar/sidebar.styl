@@ -1,0 +1,56 @@
+.sidebar {
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 0;
+  z-index: 1;
+  box-shadow: 0 2px 6px rgba(138,131,123,.6);
+  background: rgba(235,235,230,.05);
+  background-image:url(https://moetu.fastmirror.org/images/2018/05/15/sidebar-bg23d982344ce2df68.gif);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-transform: translateZ(0); // http://stackoverflow.com/questions/17079857/position-fixed-broken-in-chrome-with-flash-behind
+  color: #fff;
+  z-index:8001;
+  a {
+    color: #fff;
+    border-bottom-color: $black-light;
+    &:hover { color: #fc6423; }
+  }
+
+  +tablet() {
+    hide() if not hexo-config('sidebar.onmobile');
+  }
+  +mobile() {
+    hide() if not hexo-config('sidebar.onmobile');
+  }
+
+}
+
+.sidebar-inner {
+  position: relative;
+  padding: 20px 10px;
+  color: #fff;
+  text-align: center;
+}
+
+.site-overview-wrap {
+  overflow: hidden;
+}
+
+.site-overview {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+@import "sidebar-toggle";
+@import "sidebar-author";
+@import "site-state";
+@import "sidebar-feed-link";
+@import "sidebar-author-links";
+@import "sidebar-blogroll";
+@import "sidebar-nav";
+@import "sidebar-toc";
+@import "sidebar-dimmer" if hexo-config('sidebar.onmobile');
