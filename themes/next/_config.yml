@@ -94,15 +94,14 @@ index_with_subtitle: false
 menu:
  home: /  || home
  archives: /archives/ || archive
- # categories: categories || categories
  # tags: tags || tags
  lab: /lab/ || flask
+booklist: booklist || book
  message: /message/ || pencil
  friends:  /friends/ || link
  # music: /music/ || music
- # photo: /photo/ || photo
  about: /about/ || heart
- #search: search || search
+#  search: search || search
  # commonweal: ¹«Òæ404 || commonweal
  # something: ÓÐÁÏ || something
 

@@ -432,6 +432,154 @@ article:first-of-type .set-top>div:after {
 .about-box h3:nth-of-type(4) {
   border-color:#ff7f9f;
 }
+
+/*书单*/
+.booklist-box {
+    background-color: rgba(250,250,250, .8);
+    padding: 30px 24px;
+}
+.booklist-box .book-link{
+    text-align: right ;
+    margin: 20px 0 0 0 ;
+    letter-spacing: 3px;
+    font-size: 16px;
+}
+.booklist-box ul {
+    display: flex;    
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+}
+.booklist-box ul  li{
+    list-style: none !important;
+    position: relative;
+    background: linear-gradient(90deg, #A6FFCB,#12D8FA,#1FA2FF);
+    height: 120px;
+    width: 40%;
+    margin-left: 3%;
+    margin-top: 24px;
+    border-radius:  5px;
+    display: table;
+    vertical-align: middle;
+}
+.booklist-box ul  li:nth-child(2n),
+.booklist-box  ul  li:nth-child(2n) span,{
+      background: linear-gradient(90deg, #4CB8C4,#3CD3AD);
+}
+.booklist-box  ul  li:nth-child(2n) span::before{
+    border-right: 2.5px solid  #4CB8C4;
+    border-top: 2.5px solid  #4CB8C4;
+}
+.booklist-box ul  li:nth-child(2n + 1),
+.booklist-box  ul  li:nth-child(2n + 1) span,{
+      background: linear-gradient(90deg, #DD5E89,#F7BB97);
+}
+.booklist-box  ul  li:nth-child(2n + 1) span::before{
+    border-right: 2.5px solid  #DD5E89;
+    border-top: 2.5px solid  #DD5E89;
+}
+.booklist-box ul  li:nth-child(3n + 0),
+.booklist-box  ul  li:nth-child(3n + 0) span,{
+      background: linear-gradient(90deg, #ec008c,#fc6767);
+}
+.booklist-box  ul  li:nth-child(3n + 0) span::before{
+    border-right: 2.5px solid  #ec008c;
+    border-top: 2.5px solid  #ec008c;
+}
+.booklist-box ul  li:nth-child(3n + 1),
+.booklist-box  ul  li:nth-child(3n + 1)  span,{
+      background: linear-gradient(90deg, #348F50,#56B4D3);
+}
+.booklist-box  ul  li:nth-child(3n + 1) span::before{
+    border-right: 2.5px solid  #348F50;
+    border-top: 2.5px solid  #348F50;
+}
+.booklist-box ul  li:nth-child(7n),
+.booklist-box  ul  li:nth-child(7n) span,{
+      background: linear-gradient(90deg, #e65c00,#F9D423);
+}
+.booklist-box  ul  li:nth-child(7n) span::before{
+    border-right: 2.5px solid  #e65c00;
+    border-top: 2.5px solid  #e65c00; 
+}
+.booklist-box ul  li:nth-child(7n  + 1),
+.booklist-box  ul  li:nth-child(7n + 1) span,{
+      background: linear-gradient(90deg, #1488CC,#2B32B2);
+}
+.booklist-box  ul  li:nth-child(7n + 1) span::before{
+    border-right: 2.5px solid  #1488CC;
+    border-top: 2.5px solid  #1488CC;
+}
+.booklist-box  .is-read{
+    position: absolute;
+    left: -5px;
+    top: 10px;
+    display: block;
+    width: 75px;
+    //background: -webkit-linear-gradient(left, rgba(48,182,209,0.99), rgba(43,70,191,0.99) 100%);
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    height: 26px;
+    text-align: center;
+    -webkit-box-shadow: 0 1px 3px rgba(26,26,26,.1);
+    box-shadow: 0 1px 3px rgba(26,26,26,.1);    
+}
+.booklist-box  .is-read::before {
+    position: absolute;
+    content: '';
+    width: 0;
+    height: 0;
+    top: 26px;
+    left: 0;
+    border-bottom: 2.5px solid transparent;
+    border-left: 2.5px solid transparent;
+}
+.booklist-box  .name{
+    text-align: center;
+    display: table-cell;
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+    color: #fff;
+    mix-blend-mode:lighten; 
+    font-size: 16px;
+    margin: 30px 0;
+    line-height 1.5;
+}
+.booklist-box ul  li:before{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right 0;
+    left 0;
+    background: rgba(0,0,0,.25);
+     border-radius:  5px;
+}
+.booklist-box h3 {
+  margin:40px 0 20px 0;
+  border-left:5px solid transparent;
+  padding:0 !important;
+  padding-left:10px !important;
+}
+.booklist-box h3:nth-of-type(1) {
+  border-color:#9029f4;
+}
+.booklist-box h3:nth-of-type(2) {
+  border-color:#f1e05a;
+}
+.booklist-box h3:nth-of-type(3) {
+  border-color:#91ad70;
+}
+.booklist-box h3:nth-of-type(4) {
+  border-color:#ff7f9f;
+}
+.booklist-box h3:nth-of-type(5) {
+  border-color:#2ea9de;
+}
+
 /*友人帐*/
 .flip-container, .front, .back {
     width: 100%;
