@@ -96,7 +96,7 @@ menu:
  archives: /archives/ || archive
  # tags: tags || tags
  lab: /lab/ || flask
-booklist: booklist || book
+ booklist: /booklist/ || book
  message: /message/ || pencil
  friends:  /friends/ || link
  # music: /music/ || music
