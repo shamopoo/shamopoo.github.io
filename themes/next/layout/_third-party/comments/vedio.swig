@@ -167,7 +167,7 @@
   $('.site-nav-toggle button').on('click', function () {
       var  sideDom = $('.site-nav')[0]
         if (!parseInt(sideDom.style.height))  {
-            sideDom.style.height = '330px'
+            sideDom.style.height = '380px'
         } else {
             sideDom.style.height = '0px'
         }
