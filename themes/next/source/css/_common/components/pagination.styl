@@ -36,11 +36,12 @@
 }
 .pagination {
   .prev, .next, .page-number {
+    cursor: pointer;
     border-radius: 5px;
     @extend .page-number-basic;
     the-transition();
-    &:hover {background: #97dffd;color:#fff; }
   }
+   .page-number:hover {background: #97dffd;color:#fff; }
 
   .space {
     @extend .page-number-basic;

@@ -93,11 +93,11 @@ aplayer:
   meting: true
 
 # search
-search:
-  path: search.xml
-  field: post
-  format: html
-  limit: 10000
+# search:
+#   path: search.xml
+#   field: post
+#   format: html
+#   limit: 10000
 
 # Extensions
 ## Plugins: http://hexo.io/plugins/

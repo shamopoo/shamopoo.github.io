@@ -30,7 +30,7 @@
 <div class="copyright time_div">
 博客已萌萌哒运行<span id="show"></span><span class="my-face_x">(●'◡'●)ﾉ<i class="fa fa-heart"></i></span>
 <script>
-window.onload = function() {
+(function() {
     var show = document.getElementById("show");
     setInterval(function() {
     var BirthDay = new Date('2018-03-05');
@@ -44,10 +44,10 @@ window.onload = function() {
     var e_minsold = (e_hrsold - hrsold) * 60;
     var minsold = Math.floor((e_hrsold - hrsold) * 60);
     var seconds = Math.floor((e_minsold - minsold) * 60);
-    var t = daysold + "天" + hrsold + "小时" + minsold + "分" + seconds + "秒"
+    var t = daysold + "天" + hrsold + "小时" + minsold + "分" + (seconds + '').padStart(2, '0') + "秒"
     show.innerHTML = t;
     }, 1000);
-};
+}());
 </script>
 </div>
 

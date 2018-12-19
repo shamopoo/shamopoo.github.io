@@ -6,7 +6,7 @@ tags:
 categories:
     - 技能薄
 ---
-![](https://moetu.fastmirror.org/images/2018/06/09/7905675-1576522-18da5d6b032c5b620.jpg)
+
 进入新公司，要求使用git多人协同开发，记录一下git常用命令。
 <!-- more -->
 

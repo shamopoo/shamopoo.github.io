@@ -351,6 +351,31 @@
     <header class="post-header">
       <h2 class="post-title">
         
+            <a class="post-title-link" href="/summary-of-2018/" itemprop="url">
+              
+                <span itemprop="name">我的2018总结</span>
+              
+            </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time  post-archives-time" itemprop="dateCreated" datetime="2018-12-19T10:18:34+08:00" content="2018-12-19">
+          18-12-19
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+      
+        
+
+  <article class="post post-type-normal post-archives-div" itemscope="" itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <h2 class="post-title">
+        
             <a class="post-title-link" href="/daily/" itemprop="url">
               
                 <span itemprop="name">「 付费后可查看 」</span>
@@ -417,7 +442,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -439,7 +464,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -539,7 +564,7 @@
 <div class="copyright time_div">
 博客已萌萌哒运行<span id="show"></span><span class="my-face_x">(●'◡'●)ﾉ<i class="fa fa-heart"></i></span>
 <script>
-window.onload = function() {
+(function() {
     var show = document.getElementById("show");
     setInterval(function() {
     var BirthDay = new Date('2018-03-05');
@@ -553,10 +578,10 @@ window.onload = function() {
     var e_minsold = (e_hrsold - hrsold) * 60;
     var minsold = Math.floor((e_hrsold - hrsold) * 60);
     var seconds = Math.floor((e_minsold - minsold) * 60);
-    var t = daysold + "天" + hrsold + "小时" + minsold + "分" + seconds + "秒"
+    var t = daysold + "天" + hrsold + "小时" + minsold + "分" + (seconds + '').padStart(2, '0') + "秒"
     show.innerHTML = t;
     }, 1000);
-};
+}());
 </script>
 </div>
 
@@ -667,7 +692,7 @@ window.onload = function() {
     var isfetched = false;
     var isXml = true;
     // Search DB path;
-    var search_path = "search.xml";
+    var search_path = "";
     if (search_path.length === 0) {
       search_path = "search.xml";
     } else if (/json$/i.test(search_path)) {
@@ -1118,6 +1143,14 @@ window.onload = function() {
 
   
 
+    
+      <script id="dsq-count-scr" src="https://https-blog-shamopoo-top-1.disqus.com/count.js" async></script>
+    
+
+    
+
+  
+
 
 
 
@@ -1130,10 +1163,6 @@ window.onload = function() {
   
 
 
-
-
-
-  
 
 
 

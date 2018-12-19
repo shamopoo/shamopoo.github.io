@@ -7,8 +7,6 @@ categories:
    - 技能簿
 ---
 
-![](https://moetu.fastmirror.org/images/2018/05/15/top86a9c5aac94c075e.jpg)
-
 ## 问题描述
 
 文章置顶功能实现, top值越高越在前。由于官方并未给出置顶功能, 所以要手动修改。

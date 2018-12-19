@@ -7,7 +7,6 @@ categories:
     - 技能簿
 ---
 
-![](https://moetu.fastmirror.org/images/2018/05/15/vue1c3ea8164dff3419b.jpg)
 
 借助[VuePress](https://vuepress.docschina.org/)文档用VuePress + github搭建博客, 初试VuePress。
 

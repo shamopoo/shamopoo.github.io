@@ -1126,13 +1126,12 @@ pre .javascript .function {
 .pagination .prev,
 .pagination .next,
 .pagination .page-number {
+  cursor: pointer;
   border-radius: 5px;
   transition-duration: 0.2s;
   transition-timing-function: ease-in-out;
   transition-delay: 0s;
 }
-.pagination .prev:hover,
-.pagination .next:hover,
 .pagination .page-number:hover {
   background: #97dffd;
   color: #fff;
@@ -4124,6 +4123,17 @@ a {
   overflow: hidden;
   display: flex;
   align-items: center;
+}
+.graduate-time {
+  text-align: start;
+  margin: 30px auto;
+  text-transform: uppercase;
+  text-shadow: 0 0 1px rgba(0,0,0,0.2);
+  letter-spacing: 0.25px;
+  writing-mode: vertical-rl;
+  color: #425066;
+  font-size: 16px;
+  user-select: none;
 }
 @media (max-width: 767px) {
   .post .post-body .links ul li {
