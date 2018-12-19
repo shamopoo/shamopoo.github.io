@@ -1159,14 +1159,7 @@ pre .javascript .function {
   .pagination .next,
   .pagination .page-number {
     margin-bottom: 10px;
-    border-top: 0;
-    border-bottom: 1px solid #eee;
     padding: 0 10px;
-  }
-  .pagination .prev:hover,
-  .pagination .next:hover,
-  .pagination .page-number:hover {
-    border-bottom-color: #222;
   }
 }
 .comments {
@@ -4126,7 +4119,7 @@ a {
 }
 .graduate-time {
   text-align: start;
-  margin: 30px auto;
+  margin: 0 auto;
   text-transform: uppercase;
   text-shadow: 0 0 1px rgba(0,0,0,0.2);
   letter-spacing: 0.25px;

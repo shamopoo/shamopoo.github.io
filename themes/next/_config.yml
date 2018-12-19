@@ -364,7 +364,7 @@ han: false
 
 # Disqus
 disqus:
-  enable: true
+  enable: false
   shortname: https-blog-shamopoo-top-1
   count: true
 
