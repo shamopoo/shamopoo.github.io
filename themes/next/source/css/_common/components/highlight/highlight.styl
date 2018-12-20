@@ -13,7 +13,17 @@ $code-block {
   line-height: $line-height-code-block;
 }
 
-pre, code { font-family: $code-font-family; }
+$code-block-pre {
+  overflow: auto;
+  padding: 20px;
+  border-radius: 5px;
+  font-size $code-font-size;
+  color:#24292e;
+  background: #f6f8fa;
+  line-height: $line-height-code-block;
+}
+
+pre, code {   font-family:  Consolas, Menlo; /*设置代码字体*/ }
 
 code {
   padding: .2em .4em;
@@ -26,12 +36,10 @@ code {
 }
 
 pre {
-  @extend $code-block;
-  padding: 10px;
-
+  @extend $code-block-pre;
   code {
     padding: 0;
-    color: $highlight-foreground;
+    color: #24292e;
     background: none;
     text-shadow: none;
   }
@@ -105,6 +113,7 @@ pre {
     border: none;
     margin: 0;
     padding: 10px 0;
+    border-radius: 0;
   }
 
   table {
@@ -182,7 +191,7 @@ pre .meta     { color: $highlight-purple; }
 
 pre {
 
-  .comment { color: #9c9; }
+  .comment { color: #6a737d; }
 
   .variable
   .attribute
@@ -206,7 +215,7 @@ pre {
   .params
   .constant
   .command {
-    color: #d25462;
+    color: #d73a49;
   }
 
   .ruby .class .title
@@ -220,12 +229,12 @@ pre {
   .special
   .number
   .formula {
-    color:  #f2777a;
+    color:  #ffa7c4;
   }
 
   .title
   .css .hexcolor {
-    color: $highlight-aqua;
+    color: #6f42c1;
   }
 
   .function
@@ -236,12 +245,12 @@ pre {
   .perl .sub
   .javascript .title
   .coffeescript .title {
-    color: $highlight-blue;
+    color: #005cc5;
   }
 
   .keyword
   .javascript .function {
-    color: $highlight-purple;
+    color: #e36209;
   }
 
 }

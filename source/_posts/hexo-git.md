@@ -6,11 +6,7 @@ tags:
   - git
 categories:
   - 技能簿
-top: 100
 ---
-
-
-![](https://moetu.fastmirror.org/images/2018/05/15/git11503c8e57a6d6e22.jpg)
 
 ## 问题描述
 
