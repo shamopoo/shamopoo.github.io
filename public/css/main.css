@@ -3412,22 +3412,24 @@ article:first-of-type .set-top>div:after {
   padding: 0 15px;
   color: #464646;
 }
-.about-box h3 {
+.about-box .title {
   margin: 20px 0;
+  line-height: 1.5;
+  font-size: 18px;
   border-left: 5px solid transparent;
-  padding: 0 !important;
-  padding-left: 10px !important;
+  padding-left: 10px;
+  font-weight: bold;
 }
-.about-box h3:nth-of-type(1) {
+.about-box .title1 {
   border-color: #2ea9de;
 }
-.about-box h3:nth-of-type(2) {
+.about-box .title2 {
   border-color: #c88eff;
 }
-.about-box h3:nth-of-type(3) {
+.about-box .title3 {
   border-color: #91ad70;
 }
-.about-box h3:nth-of-type(4) {
+.about-box .title4 {
   border-color: #ff7f9f;
 }
 .booklist-box {
@@ -3435,10 +3437,10 @@ article:first-of-type .set-top>div:after {
   padding: 30px 24px;
 }
 .booklist-box .book-link {
-  text-align: right;
-  margin: 20px 0 0 0;
-  letter-spacing: 3px;
+  color: #fff;
+  letter-spacing: 1px;
   font-size: 16px;
+  cursor: pointer;
 }
 .booklist-box ul {
   display: flex;
@@ -3451,7 +3453,8 @@ article:first-of-type .set-top>div:after {
   list-style: none !important;
   position: relative;
   background: linear-gradient(90deg, #a6ffcb, #12d8fa, #1fa2ff);
-  height: 120px;
+  height: 300px;
+  writing-mode: vertical-rl;
   width: 40%;
   margin-left: 3%;
   margin-top: 24px;
@@ -3533,14 +3536,17 @@ article:first-of-type .set-top>div:after {
 .booklist-box .name {
   text-align: center;
   display: table-cell;
-  width: 100%;
-  height: 100%;
+  width: 80%;
   vertical-align: middle;
   color: #fff;
   mix-blend-mode: lighten;
   font-size: 16px;
   margin: 30px 0;
   line-height: 1.5;
+  text-transform: uppercase;
+  text-shadow: 0 0 1px rgba(0,0,0,0.2);
+  letter-spacing: 1.25px;
+  padding: 50px 0;
 }
 .booklist-box ul li:before {
   content: '';
@@ -3553,25 +3559,27 @@ article:first-of-type .set-top>div:after {
   background: rgba(0,0,0,0.25);
   border-radius: 5px;
 }
-.booklist-box h3 {
+.booklist-box .title {
   margin: 40px 0 20px 0;
   border-left: 5px solid transparent;
-  padding: 0 !important;
-  padding-left: 10px !important;
+  padding-left: 10px;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 1.5;
 }
-.booklist-box h3:nth-of-type(1) {
+.booklist-box .title1 {
   border-color: #9029f4;
 }
-.booklist-box h3:nth-of-type(2) {
+.booklist-box .title2 {
   border-color: #f1e05a;
 }
-.booklist-box h3:nth-of-type(3) {
+.booklist-box .title3 {
   border-color: #91ad70;
 }
-.booklist-box h3:nth-of-type(4) {
+.booklist-box .title4 {
   border-color: #ff7f9f;
 }
-.booklist-box h3:nth-of-type(5) {
+.booklist-box .title5 {
   border-color: #2ea9de;
 }
 .flip-container,
@@ -4152,6 +4160,9 @@ a {
     height: 260px;
     overflow: hidden;
     background: url("../uploads/grid.png");
+  }
+  .booklist-box ul li {
+    height: 180px;
   }
   .filter-dot::after {
     content: '';
