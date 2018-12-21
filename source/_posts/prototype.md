@@ -1,6 +1,6 @@
 ---
 title: '原型链:prototype和__proto__区别'
-date: 2018-12-20 15:24:31
+date: 2018-12-17 15:24:31
 tags:
   - 原型链
 categories:
@@ -78,7 +78,8 @@ Function.prototype.__proto__ == Object.prototype // true
 
 Object.create()创建的对象没有继承Object.prototype。
 
-原型链是靠——proto——来链接的。
+原型链是靠——proto——来链接的，——proto——属性（原型）等于其构造函数的prototype
+属性。
 
 ——proto——和prototype都是用来实现基于原型的继承。
 
