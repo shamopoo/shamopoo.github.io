@@ -1310,6 +1310,7 @@ a{
     height: 2px;
     width: 100%;
     background-color: #fff;
+    opacity: 0;
 }
 .banner-border-top {
     margin-left: 120%;
@@ -1407,6 +1408,20 @@ a{
     margin-top: 0;
     margin-bottom: 0;
     flex: 1;
+    position:relative;
+    &::after{
+        content: "";
+        position: absolute;
+        left: 35%;
+        bottom: 30%;
+        width: 60%;
+        height: 60%;
+        background-position: 50%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url(https://b-gold-cdn.xitu.io/v3/static/img/cap.12a740a.svg);
+        transform: rotate(15deg);
+    }
   }
 }
 .notice-content {

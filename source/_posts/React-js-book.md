@@ -7,7 +7,7 @@ categories:
   - 技能簿
 ---
 
-  最近，在入门react，从[React.js 小书](http://huziketang.mangojuice.top/books/react/)开始入坑。
+  最近，在入坑react，从[React.js 小书](http://huziketang.mangojuice.top/books/react/)开始入门。
 
 <!-- more -->
 

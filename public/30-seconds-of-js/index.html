@@ -117,18 +117,18 @@
 
 
 
-<meta name="description" content="在Gitgub上看见一个好玩的30 seconds of code，js真好玩。">
+<meta name="description" content="在Gitgub上看见一个好玩的项目 30 seconds of code，js真好玩。">
 <meta name="keywords" content="js,30secondsofcode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="30 seconds of code">
+<meta property="og:title" content="⏱️ 30 seconds of code">
 <meta property="og:url" content="http://shamopoo.top/30-seconds-of-js/index.html">
 <meta property="og:site_name" content="九十 | shamopoo&#39;s Blog">
-<meta property="og:description" content="在Gitgub上看见一个好玩的30 seconds of code，js真好玩。">
+<meta property="og:description" content="在Gitgub上看见一个好玩的项目 30 seconds of code，js真好玩。">
 <meta property="og:locale" content="shamopoo">
-<meta property="og:updated_time" content="2018-12-21T03:55:27.000Z">
+<meta property="og:updated_time" content="2018-12-21T10:12:19.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="30 seconds of code">
-<meta name="twitter:description" content="在Gitgub上看见一个好玩的30 seconds of code，js真好玩。">
+<meta name="twitter:title" content="⏱️ 30 seconds of code">
+<meta name="twitter:description" content="在Gitgub上看见一个好玩的项目 30 seconds of code，js真好玩。">
 
 
 <script type="text/javascript" id="hexo.configurations">
@@ -165,7 +165,7 @@
 <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
 <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
 
-  <title>30 seconds of code | 九十 | shamopoo's Blog</title>
+  <title>⏱️ 30 seconds of code | 九十 | shamopoo's Blog</title>
   
 
 
@@ -366,7 +366,7 @@
         
         
           <h1 class="post-title" itemprop="name headline">
-          30 seconds of code</h1>
+          ⏱️ 30 seconds of code</h1>
         
 
         <div class="post-meta">
@@ -417,7 +417,7 @@
 
           
           
-             <span id="/30-seconds-of-js/" class="leancloud_visitors" data-flag-title="30 seconds of code" style="color:#ff3f1a">
+             <span id="/30-seconds-of-js/" class="leancloud_visitors" data-flag-title="⏱️ 30 seconds of code" style="color:#ff3f1a">
                <span class="post-meta-divider">•</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -451,7 +451,123 @@
       
 
       
-        <p>在Gitgub上看见一个好玩的<a href="https://github.com/30-seconds/30-seconds-of-code#-adapter-1" target="_blank" rel="noopener">30 seconds of code</a>，js真好玩。<br><a id="more"></a></p>
+        <p>在Gitgub上看见一个好玩的项目 <a href="https://github.com/30-seconds/30-seconds-of-code#-adapter-1" target="_blank" rel="noopener">30 seconds of code</a>，js真好玩。<br><a id="more"></a></p>
+<h2 id="🔌-适配"><a href="#🔌-适配" class="headerlink" title="🔌 适配"></a>🔌 适配</h2><h3 id="ary"><a href="#ary" class="headerlink" title="ary"></a>ary</h3><p>创建一个最多可以接受<code>n</code>个参数的函数，无视任何其他参数。<br>调用提供的函数，<code>fn</code>，最多n个参数。<br>运用<code>Array.prototype.slice(0,n)</code>和展开运算符<code>…</code></p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT"><span class="keyword">const</span> ary = <span class="function">(<span class="params">fn, n</span>) =&gt;</span> (...args) =&gt; fn(...args.slice(<span class="number">0</span>, n));
+</code></pre>
+<p></p>
+<p>栗子：</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT"><span class="keyword">const</span> firstTwoMax = ary(<span class="built_in">Math</span>.max, <span class="number">2</span>);
+[[<span class="number">2</span>, <span class="number">6</span>, <span class="string">'a'</span>], [<span class="number">8</span>, <span class="number">4</span>, <span class="number">6</span>], [<span class="number">10</span>]].map(<span class="function"><span class="params">x</span> =&gt;</span> firstTwoMax(...x));  <span class="comment">// [6, 8, 10]</span>
+</code></pre>
+<p></p>
+<h3 id="over"><a href="#over" class="headerlink" title="over"></a>over</h3><p>创建一个函数，该函数使用它接收的参数调用每个提供的函数并返回结果。<br>使用<code>Array.prototype.map()</code>和<code>Function.prototype.apply()</code>将每个函数应用于给定的参数。</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT"><span class="keyword">const</span> ary = <span class="function">(<span class="params">fn, n</span>) =&gt;</span> (...args) =&gt; fn(...args.slice(<span class="number">0</span>, n));
+</code></pre>
+<p></p>
+<p>栗子：</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT"><span class="keyword">const</span> firstTwoMax = ary(<span class="built_in">Math</span>.max, <span class="number">2</span>);
+[[<span class="number">2</span>, <span class="number">6</span>, <span class="string">'a'</span>], [<span class="number">8</span>, <span class="number">4</span>, <span class="number">6</span>], [<span class="number">10</span>]].map(<span class="function"><span class="params">x</span> =&gt;</span> firstTwoMax(...x));  <span class="comment">// [6, 8, 10]</span>
+</code></pre>
+<p></p>
+<h3 id="unary"><a href="#unary" class="headerlink" title="unary"></a>unary</h3><p>创建只接受一个参数的函数。<br>调用提供的函数<code>fn</code>, 只返回第一个参数。</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT"><span class="keyword">const</span> unary = <span class="function"><span class="params">fn</span> =&gt;</span> val =&gt; fn(val);
+</code></pre>
+<p></p>
+<p>栗子：</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT">[<span class="string">'6'</span>, <span class="string">'8'</span>, <span class="string">'10'</span>].map(unary(<span class="built_in">parseInt</span>)); <span class="comment">// [6, 8, 10]</span>
+</code></pre>
+<p></p>
+<h2 id="📚-Array"><a href="#📚-Array" class="headerlink" title="📚 Array"></a>📚 Array</h2><h3 id="all"><a href="#all" class="headerlink" title="all"></a>all</h3><p>如果为集合中的所有元素提供的函数返回<code>true</code>，则返回<code>true</code>，否则返回<code>false</code>。<br>使用<code>Array.prototype.every()</code>来测试集合中的所有元素是否基于<code>fn</code>返回<code>true</code>。 省略第二个参数<code>fn</code>，使用<code>Boolean</code>作为默认值。</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT"><span class="keyword">const</span> all = <span class="function">(<span class="params">arr, fn = <span class="built_in">Boolean</span></span>) =&gt;</span> arr.every(fn);
+</code></pre>
+<p></p>
+<p>栗子：</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT">all([<span class="number">4</span>, <span class="number">2</span>, <span class="number">3</span>], x =&gt; x &gt; <span class="number">1</span>); <span class="comment">// true</span>
+all([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]); <span class="comment">// true</span>
+</code></pre>
+<p></p>
+<h3 id="allEqual"><a href="#allEqual" class="headerlink" title="allEqual"></a>allEqual</h3><p>判断数组的所有元素是否相等。<br>使用<code>Array.prototype.every()</code>判断数组的所有元素是否与第一个元素相等。</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT"><span class="keyword">const</span> allEqual = <span class="function"><span class="params">arr</span> =&gt;</span> arr.every(<span class="function"><span class="params">val</span> =&gt;</span> val === arr[<span class="number">0</span>]);
+</code></pre>
+<p></p>
+<p>栗子：</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT">allEqual([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]); <span class="comment">// false</span>
+allEqual([<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>]); <span class="comment">// true</span>
+</code></pre>
+<p></p>
+<h3 id="some"><a href="#some" class="headerlink" title="some"></a>some</h3><p>如果为集合中的至少一个元素提供的函数返回<code>true</code>，则返回<code>true</code>，否则返回<code>false</code>。<br>使用<code>Array.prototype.some()</code>来测试集合中的所有元素是否基于<code>fn</code>返回<code>true</code>。 省略第二个参数<code>fn</code>，使用<code>Boolean</code>作为默认值。</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT"><span class="keyword">const</span> any = <span class="function">(<span class="params">arr, fn = <span class="built_in">Boolean</span></span>) =&gt;</span> arr.some(fn);
+</code></pre>
+<p></p>
+<p>栗子：</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT">any([<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">0</span>], x =&gt; x &gt;= <span class="number">2</span>); <span class="comment">// true</span>
+any([<span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>]); <span class="comment">// true</span>
+</code></pre>
+<p></p>
+<h3 id="bifurcate"><a href="#bifurcate" class="headerlink" title="bifurcate"></a>bifurcate</h3><p>将值拆分为两组。 如果过滤器中的元素是真的，则集合中的对应元素属于第一组; 否则，它属于第二组。<br>使用<code>Array.prototype.reduce()</code>和<code>Array.prototype.push()</code>根据过滤器向数组添加元素。</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT"><span class="keyword">const</span> bifurcate = <span class="function">(<span class="params">arr, filter</span>) =&gt;</span>
+  arr.reduce(<span class="function">(<span class="params">acc, val, i</span>) =&gt;</span> (acc[filter[i] ? <span class="number">0</span> : <span class="number">1</span>].push(val), acc), [[], []]);
+</code></pre>
+<p></p>
+<p>栗子：</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT">bifurcate([<span class="string">'beep'</span>, <span class="string">'boop'</span>, <span class="string">'foo'</span>, <span class="string">'bar'</span>], [<span class="literal">true</span>, <span class="literal">true</span>, <span class="literal">false</span>, <span class="literal">true</span>]); 
+<span class="comment">// [ ['beep', 'boop', 'bar'], ['foo'] ]</span>
+</code></pre>
+<p></p>
+<h3 id="chunk"><a href="#chunk" class="headerlink" title="chunk"></a>chunk</h3><p>将数组分割为指定大小的数组。<br>使用<code>Array.from()</code>创建一个新数组，该数组符合指定大小。 使用<code>Array.prototype.slice()</code>将新数组的每个元素映射到一个大小的数组中。 如果原始数组无法均匀分割，则最终的数组包含其余元素。</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT"><span class="keyword">const</span> chunk = <span class="function">(<span class="params">arr, size</span>) =&gt;</span>
+  <span class="built_in">Array</span>.from({ <span class="attr">length</span>: <span class="built_in">Math</span>.ceil(arr.length / size) }, (v, i) =&gt;
+    arr.slice(i * size, i * size + size)
+  );
+</code></pre>
+<p></p>
+<p>栗子：</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT">chunk([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>], <span class="number">2</span>); <span class="comment">// [[1,2],[3,4],[5]]</span>
+</code></pre>
+<p></p>
+<h3 id="compact"><a href="#compact" class="headerlink" title="compact"></a>compact</h3><p>使用<code>Array.prototype.filter()</code> 从数组中删除<code> (false, null, 0, “”, undefined, and NaN)</code> 。</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT"><span class="keyword">const</span> compact = <span class="function"><span class="params">arr</span> =&gt;</span> arr.filter(<span class="built_in">Boolean</span>);
+</code></pre>
+<p></p>
+<p>栗子：</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT">compact([<span class="number">0</span>, <span class="number">1</span>, <span class="literal">false</span>, <span class="number">2</span>, <span class="string">''</span>, <span class="number">3</span>, <span class="string">'a'</span>, <span class="string">'e'</span> * <span class="number">23</span>, <span class="literal">NaN</span>, <span class="string">'s'</span>, <span class="number">34</span>]); 
+<span class="comment">// [ 1, 2, 3, 'a', 's', 34 ]</span>
+</code></pre>
+<p></p>
+<h3 id="countBy"><a href="#countBy" class="headerlink" title="countBy"></a>countBy</h3><p>基于给定函数对数组的元素进行分组，并返回每个组中元素的数量。<br>使用<code>Array.prototype.map()</code>将数组的值映射到函数或属性名称。 使用<code>Array.prototype.reduce()</code>创建一个对象，其中的键是从映射结果生成的。</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT"><span class="keyword">const</span> countBy = <span class="function">(<span class="params">arr, fn</span>) =&gt;</span>
+  arr.map(<span class="keyword">typeof</span> fn === <span class="string">'function'</span> ? fn : <span class="function"><span class="params">val</span> =&gt;</span> val[fn]).reduce(<span class="function">(<span class="params">acc, val</span>) =&gt;</span> {
+    acc[val] = (acc[val] || <span class="number">0</span>) + <span class="number">1</span>;
+    <span class="keyword">return</span> acc;
+  }, {});
+</code></pre>
+<p></p>
+<p>栗子：</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT">countBy([<span class="number">6.1</span>, <span class="number">4.2</span>, <span class="number">6.3</span>], <span class="built_in">Math</span>.floor); <span class="comment">// {4: 1, 6: 2}</span>
+countBy([<span class="string">'one'</span>, <span class="string">'two'</span>, <span class="string">'three'</span>], <span class="string">'length'</span>); <span class="comment">// {3: 2, 5: 1}</span>
+</code></pre>
+<p></p>
 
       
     </div>
@@ -499,7 +615,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://shamopoo.top/30-seconds-of-js/" title="30 seconds of code">http://shamopoo.top/30-seconds-of-js/</a>
+    <a href="http://shamopoo.top/30-seconds-of-js/" title="⏱️ 30 seconds of code">http://shamopoo.top/30-seconds-of-js/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -596,8 +712,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -701,6 +826,22 @@
         </script>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#🔌-适配"><span class="nav-number">1.</span> <span class="nav-text">🔌 适配</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ary"><span class="nav-number">1.1.</span> <span class="nav-text">ary</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#over"><span class="nav-number">1.2.</span> <span class="nav-text">over</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#unary"><span class="nav-number">1.3.</span> <span class="nav-text">unary</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#📚-Array"><span class="nav-number">2.</span> <span class="nav-text">📚 Array</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#all"><span class="nav-number">2.1.</span> <span class="nav-text">all</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#allEqual"><span class="nav-number">2.2.</span> <span class="nav-text">allEqual</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#some"><span class="nav-number">2.3.</span> <span class="nav-text">some</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bifurcate"><span class="nav-number">2.4.</span> <span class="nav-text">bifurcate</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#chunk"><span class="nav-number">2.5.</span> <span class="nav-text">chunk</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#compact"><span class="nav-number">2.6.</span> <span class="nav-text">compact</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#countBy"><span class="nav-number">2.7.</span> <span class="nav-text">countBy</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1722,7 +1863,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
   // console.log
 
-  // console.log("\n %c shamopoo  %c https://shamopoo.top/ \n\n","color: #ffc0cb; background: #c0cbff; padding:5px 0;","background: #ffc0cb; padding:5px 0;color:#fff;")
+  // console.log("\n %c shamopoo  %c http://shamopoo.top/ \n\n","color: #ffc0cb; background: #c0cbff; padding:5px 0;","background: #ffc0cb; padding:5px 0;color:#fff;")
   // "use strict";
   // window.onload = function() {var now = new Date().getTime();var page_load_time = now - performance.timing.navigationStart;console.log('%c页面加载完毕消耗了'+Math.round(performance.now()*100)/100+'ms','color: #333;');};
   // 赞赏
@@ -1835,8 +1976,8 @@ return /******/ (function(modules) { // webpackBootstrap
    // 浏览器上下滑
     
    // title
-   $(".banner-border-top").animate({'margin-left': '0px'},900)
-   $(".banner-border-bottom").animate({'margin-left': '0px'},900)
+   $(".banner-border-top").animate({'margin-left': '0px', 'opacity': 1},900)
+   $(".banner-border-bottom").animate({'margin-left': '0px', 'opacity': 1},900)
 
    // moblie header
   $('.site-nav-toggle button').on('click', function () {
