@@ -120,14 +120,14 @@
 <meta name="description" content="在Gitgub上看见一个好玩的项目 30 seconds of code，js真好玩。">
 <meta name="keywords" content="js,30secondsofcode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="⏱️ 30 seconds of code">
+<meta property="og:title" content="30 seconds of Javascript">
 <meta property="og:url" content="http://shamopoo.top/30-seconds-of-js/index.html">
 <meta property="og:site_name" content="九十 | shamopoo&#39;s Blog">
 <meta property="og:description" content="在Gitgub上看见一个好玩的项目 30 seconds of code，js真好玩。">
 <meta property="og:locale" content="shamopoo">
-<meta property="og:updated_time" content="2018-12-21T10:12:19.000Z">
+<meta property="og:updated_time" content="2018-12-24T07:48:49.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="⏱️ 30 seconds of code">
+<meta name="twitter:title" content="30 seconds of Javascript">
 <meta name="twitter:description" content="在Gitgub上看见一个好玩的项目 30 seconds of code，js真好玩。">
 
 
@@ -165,7 +165,7 @@
 <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
 <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
 
-  <title>⏱️ 30 seconds of code | 九十 | shamopoo's Blog</title>
+  <title>30 seconds of Javascript | 九十 | shamopoo's Blog</title>
   
 
 
@@ -370,7 +370,7 @@
         
         
           <h1 class="post-title" itemprop="name headline">
-          ⏱️ 30 seconds of code</h1>
+          30 seconds of Javascript</h1>
         
 
         <div class="post-meta">
@@ -421,7 +421,7 @@
 
           
           
-             <span id="/30-seconds-of-js/" class="leancloud_visitors" data-flag-title="⏱️ 30 seconds of code" style="color:#ff3f1a">
+             <span id="/30-seconds-of-js/" class="leancloud_visitors" data-flag-title="30 seconds of Javascript" style="color:#ff3f1a">
                <span class="post-meta-divider">•</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -461,7 +461,7 @@
 <pre><code class="JAVASCRIPT"><span class="keyword">const</span> ary = <span class="function">(<span class="params">fn, n</span>) =&gt;</span> (...args) =&gt; fn(...args.slice(<span class="number">0</span>, n));
 </code></pre>
 <p></p>
-<p>栗子：</p>
+<p>🌰栗子：</p>
 <p><samp></samp></p>
 <pre><code class="JAVASCRIPT"><span class="keyword">const</span> firstTwoMax = ary(<span class="built_in">Math</span>.max, <span class="number">2</span>);
 [[<span class="number">2</span>, <span class="number">6</span>, <span class="string">'a'</span>], [<span class="number">8</span>, <span class="number">4</span>, <span class="number">6</span>], [<span class="number">10</span>]].map(<span class="function"><span class="params">x</span> =&gt;</span> firstTwoMax(...x));  <span class="comment">// [6, 8, 10]</span>
@@ -472,7 +472,7 @@
 <pre><code class="JAVASCRIPT"><span class="keyword">const</span> ary = <span class="function">(<span class="params">fn, n</span>) =&gt;</span> (...args) =&gt; fn(...args.slice(<span class="number">0</span>, n));
 </code></pre>
 <p></p>
-<p>栗子：</p>
+<p>🌰栗子：</p>
 <p><samp></samp></p>
 <pre><code class="JAVASCRIPT"><span class="keyword">const</span> firstTwoMax = ary(<span class="built_in">Math</span>.max, <span class="number">2</span>);
 [[<span class="number">2</span>, <span class="number">6</span>, <span class="string">'a'</span>], [<span class="number">8</span>, <span class="number">4</span>, <span class="number">6</span>], [<span class="number">10</span>]].map(<span class="function"><span class="params">x</span> =&gt;</span> firstTwoMax(...x));  <span class="comment">// [6, 8, 10]</span>
@@ -483,7 +483,7 @@
 <pre><code class="JAVASCRIPT"><span class="keyword">const</span> unary = <span class="function"><span class="params">fn</span> =&gt;</span> val =&gt; fn(val);
 </code></pre>
 <p></p>
-<p>栗子：</p>
+<p>🌰栗子：</p>
 <p><samp></samp></p>
 <pre><code class="JAVASCRIPT">[<span class="string">'6'</span>, <span class="string">'8'</span>, <span class="string">'10'</span>].map(unary(<span class="built_in">parseInt</span>)); <span class="comment">// [6, 8, 10]</span>
 </code></pre>
@@ -493,7 +493,7 @@
 <pre><code class="JAVASCRIPT"><span class="keyword">const</span> all = <span class="function">(<span class="params">arr, fn = <span class="built_in">Boolean</span></span>) =&gt;</span> arr.every(fn);
 </code></pre>
 <p></p>
-<p>栗子：</p>
+<p>🌰栗子：</p>
 <p><samp></samp></p>
 <pre><code class="JAVASCRIPT">all([<span class="number">4</span>, <span class="number">2</span>, <span class="number">3</span>], x =&gt; x &gt; <span class="number">1</span>); <span class="comment">// true</span>
 all([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]); <span class="comment">// true</span>
@@ -504,7 +504,7 @@ all([<span class="number">1</span>, <span class="number">2</span>, <span class="
 <pre><code class="JAVASCRIPT"><span class="keyword">const</span> allEqual = <span class="function"><span class="params">arr</span> =&gt;</span> arr.every(<span class="function"><span class="params">val</span> =&gt;</span> val === arr[<span class="number">0</span>]);
 </code></pre>
 <p></p>
-<p>栗子：</p>
+<p>🌰栗子：</p>
 <p><samp></samp></p>
 <pre><code class="JAVASCRIPT">allEqual([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]); <span class="comment">// false</span>
 allEqual([<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>]); <span class="comment">// true</span>
@@ -515,7 +515,7 @@ allEqual([<span class="number">1</span>, <span class="number">1</span>, <span cl
 <pre><code class="JAVASCRIPT"><span class="keyword">const</span> any = <span class="function">(<span class="params">arr, fn = <span class="built_in">Boolean</span></span>) =&gt;</span> arr.some(fn);
 </code></pre>
 <p></p>
-<p>栗子：</p>
+<p>🌰栗子：</p>
 <p><samp></samp></p>
 <pre><code class="JAVASCRIPT">any([<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">0</span>], x =&gt; x &gt;= <span class="number">2</span>); <span class="comment">// true</span>
 any([<span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>]); <span class="comment">// true</span>
@@ -527,7 +527,7 @@ any([<span class="number">0</span>, <span class="number">0</span>, <span class="
   arr.reduce(<span class="function">(<span class="params">acc, val, i</span>) =&gt;</span> (acc[filter[i] ? <span class="number">0</span> : <span class="number">1</span>].push(val), acc), [[], []]);
 </code></pre>
 <p></p>
-<p>栗子：</p>
+<p>🌰栗子：</p>
 <p><samp></samp></p>
 <pre><code class="JAVASCRIPT">bifurcate([<span class="string">'beep'</span>, <span class="string">'boop'</span>, <span class="string">'foo'</span>, <span class="string">'bar'</span>], [<span class="literal">true</span>, <span class="literal">true</span>, <span class="literal">false</span>, <span class="literal">true</span>]); 
 <span class="comment">// [ ['beep', 'boop', 'bar'], ['foo'] ]</span>
@@ -541,7 +541,7 @@ any([<span class="number">0</span>, <span class="number">0</span>, <span class="
   );
 </code></pre>
 <p></p>
-<p>栗子：</p>
+<p>🌰栗子：</p>
 <p><samp></samp></p>
 <pre><code class="JAVASCRIPT">chunk([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>], <span class="number">2</span>); <span class="comment">// [[1,2],[3,4],[5]]</span>
 </code></pre>
@@ -551,7 +551,7 @@ any([<span class="number">0</span>, <span class="number">0</span>, <span class="
 <pre><code class="JAVASCRIPT"><span class="keyword">const</span> compact = <span class="function"><span class="params">arr</span> =&gt;</span> arr.filter(<span class="built_in">Boolean</span>);
 </code></pre>
 <p></p>
-<p>栗子：</p>
+<p>🌰栗子：</p>
 <p><samp></samp></p>
 <pre><code class="JAVASCRIPT">compact([<span class="number">0</span>, <span class="number">1</span>, <span class="literal">false</span>, <span class="number">2</span>, <span class="string">''</span>, <span class="number">3</span>, <span class="string">'a'</span>, <span class="string">'e'</span> * <span class="number">23</span>, <span class="literal">NaN</span>, <span class="string">'s'</span>, <span class="number">34</span>]); 
 <span class="comment">// [ 1, 2, 3, 'a', 's', 34 ]</span>
@@ -566,13 +566,218 @@ any([<span class="number">0</span>, <span class="number">0</span>, <span class="
   }, {});
 </code></pre>
 <p></p>
-<p>栗子：</p>
+<p>🌰栗子：</p>
 <p><samp></samp></p>
 <pre><code class="JAVASCRIPT">countBy([<span class="number">6.1</span>, <span class="number">4.2</span>, <span class="number">6.3</span>], <span class="built_in">Math</span>.floor); <span class="comment">// {4: 1, 6: 2}</span>
 countBy([<span class="string">'one'</span>, <span class="string">'two'</span>, <span class="string">'three'</span>], <span class="string">'length'</span>); <span class="comment">// {3: 2, 5: 1}</span>
 </code></pre>
 <p></p>
-
+<h3 id="countOccurrences"><a href="#countOccurrences" class="headerlink" title="countOccurrences"></a>countOccurrences</h3><p>计算数组的元素出现的次数。<br>使用<code>Array.prototype.reduce()</code>递增器计算数组每个元素出现的次数。</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT"><span class="keyword">const</span> countOccurrences = <span class="function">(<span class="params">arr, val</span>) =&gt;</span> 
+arr.reduce(<span class="function">(<span class="params">a, v</span>) =&gt;</span> (v === val ? a + <span class="number">1</span> : a), <span class="number">0</span>);
+</code></pre>
+<p></p>
+<p>🌰栗子：</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT">countOccurrences([<span class="number">1</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], <span class="number">1</span>); <span class="comment">// 3</span>
+</code></pre>
+<p></p>
+<h3 id="deepFlatten"><a href="#deepFlatten" class="headerlink" title="deepFlatten"></a>deepFlatten</h3><p>深度展平一维数组。<br>运用递归。使用<code>Array.prototype.concat()</code>、空数组<code>[]</code>和展开运算符<br><code>…</code>去展平数组。递归地展平数组的每个元素。</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT"><span class="keyword">const</span> deepFlatten = <span class="function"><span class="params">arr</span> =&gt;</span> 
+[].concat(...arr.map(<span class="function"><span class="params">v</span> =&gt;</span> (<span class="built_in">Array</span>.isArray(v) ? deepFlatten(v) : v)));
+</code></pre>
+<p></p>
+<p>🌰栗子：</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT">deepFlatten([<span class="number">1</span>, [<span class="number">2</span>], [[<span class="number">3</span>], <span class="number">4</span>], <span class="number">5</span>]); <span class="comment">// [1,2,3,4,5]</span>
+[<span class="number">1</span>, [<span class="number">2</span>], [[<span class="number">3</span>], <span class="number">4</span>], <span class="number">5</span>].toString().split(<span class="string">','</span>) <span class="comment">//  ✅ [1,2,3,4,5]</span>
+</code></pre>
+<p></p>
+<h3 id="filterNonUnique"><a href="#filterNonUnique" class="headerlink" title="filterNonUnique"></a>filterNonUnique</h3><p>过滤掉数组中的非唯一值。<br>使用<code>Array.prototype.filter()</code>用于仅包含唯一值的数组。</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT"><span class="keyword">const</span> filterNonUnique = <span class="function"><span class="params">arr</span> =&gt;</span> 
+arr.filter(<span class="function"><span class="params">i</span> =&gt;</span> arr.indexOf(i) === arr.lastIndexOf(i));
+</code></pre>
+<p></p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT">filterNonUnique([<span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">4</span>, <span class="number">5</span>]); <span class="comment">// [1, 3, 5]</span>
+</code></pre>
+<p></p>
+<h3 id="forEachRight"><a href="#forEachRight" class="headerlink" title="forEachRight"></a>forEachRight</h3><p>从数组的最后一个元素开始，为每个数组元素执行一次提供的函数。<br>使用<code>Array.prototype.slice(0)</code>克隆给定的数组，<br>使用<code>Array.prototype.reverse()</code>来反转它，<br>使用<code>Array.prototype.forEach()/<code>迭代反向数组。</code></code></p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT"><span class="keyword">const</span> forEachRight = <span class="function">(<span class="params">arr, callback</span>) =&gt;</span>
+  arr
+    .slice(<span class="number">0</span>)
+    .reverse()
+    .forEach(callback);
+</code></pre>
+<p></p>
+<p>🌰栗子：</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT">forEachRight([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>], val =&gt; <span class="built_in">console</span>.log(val)); <span class="comment">// '4', '3', '2', '1'</span>
+</code></pre>
+<p></p>
+<h3 id="indexOfAll"><a href="#indexOfAll" class="headerlink" title="indexOfAll"></a>indexOfAll</h3><p>返回数组中val的所有索引。 如果val不存在，则返回[]。<br>使用<code>Array.prototype.reduce()</code>循环元素并存储匹配元素的索引，返回索引数组。</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT"><span class="keyword">const</span> indexOfAll = <span class="function">(<span class="params">arr, val</span>) =&gt;</span>
+arr.reduce(<span class="function">(<span class="params">acc, el, i</span>) =&gt;</span> (el === val ? [...acc, i] : acc), []);
+</code></pre>
+<p></p>
+<p>🌰栗子：</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT">indexOfAll([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], <span class="number">1</span>); <span class="comment">// [0,3]</span>
+indexOfAll([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], <span class="number">4</span>); <span class="comment">// []</span>
+</code></pre>
+<p></p>
+<h3 id="initialize2DArray"><a href="#initialize2DArray" class="headerlink" title="initialize2DArray"></a>initialize2DArray</h3><p>初始化给定宽度和高度的2D数组。<br>使用<code>Array.prototype.map()</code>生成<code>h</code>行，其中每个行都是一个大小为<code>w</code>的初始化的新数组。 如果<code>val</code>未传值，则默认为null。</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT"><span class="keyword">const</span> initialize2DArray = <span class="function">(<span class="params">w, h, val = <span class="literal">null</span></span>) =&gt;</span>
+  <span class="built_in">Array</span>.from({ <span class="attr">length</span>: h }).map(<span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">Array</span>.from({ <span class="attr">length</span>: w }).fill(val));
+</code></pre>
+<p></p>
+<p>🌰栗子：</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT">initialize2DArray(<span class="number">2</span>, <span class="number">2</span>, <span class="number">0</span>); <span class="comment">// [[0,0], [0,0]]</span>
+initialize2DArray(<span class="number">1</span>, <span class="number">2</span>); <span class="comment">// [[null], [null]]</span>
+</code></pre>
+<p></p>
+<h3 id="initializeArrayWithValues"><a href="#initializeArrayWithValues" class="headerlink" title="initializeArrayWithValues"></a>initializeArrayWithValues</h3><p>使用指定的值初始化并填充数组。<br>使用<code>Array(n)</code>创建所需长度的数组，<code>fill(v)</code>填充。 如果<code>val</code>未传，默认值为0。</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT"><span class="keyword">const</span> initializeArrayWithValues = <span class="function">(<span class="params">n, val = <span class="number">0</span></span>) =&gt;</span> <span class="built_in">Array</span>(n).fill(val);
+</code></pre>
+<p></p>
+<p>🌰栗子：</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT">initializeArrayWithValues(<span class="number">5</span>, <span class="number">2</span>); <span class="comment">// [2, 2, 2, 2, 2]</span>
+</code></pre>
+<p></p>
+<h3 id="mapObject"><a href="#mapObject" class="headerlink" title="mapObject"></a>mapObject</h3><p>使用函数将数组的值映射到对象，其中键 - 值对由原始值作为键和映射值组成。<br>使用匿名内部函数作用域来声明未定义的内存空间，使用闭包来存储返回值。<br>使用新数组来存储数组，其中包含函数的数据集，并使用逗号运算符返回第二步，<br>而无需从一个上下文移动到另一个上下文（由于闭包和操作顺序）。</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT"><span class="keyword">const</span> mapObject = <span class="function">(<span class="params">arr, fn</span>) =&gt;</span>
+  (<span class="function"><span class="params">a</span> =&gt;</span> (
+    (a = [arr, arr.map(fn)]), 
+    a[<span class="number">0</span>].reduce(<span class="function">(<span class="params">acc, val, ind</span>) =&gt;</span> ((acc[val] = a[<span class="number">1</span>][ind]), acc), {})
+  ))();
+</code></pre>
+<p></p>
+<p>🌰栗子：</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT"><span class="keyword">const</span> squareIt = <span class="function"><span class="params">arr</span> =&gt;</span> mapObject(arr, a =&gt; a * a);
+squareIt([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]); <span class="comment">// { 1: 1, 2: 4, 3: 9 }</span>
+</code></pre>
+<p></p>
+<h3 id="similarity"><a href="#similarity" class="headerlink" title="similarity"></a>similarity</h3><p>返回两个数组中都出现的元素数组。<br>使用<code>Array.prototype.filter()</code>过滤不属于数组的值，使用<code>Array.prototype.includes</code>判断。</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT"><span class="keyword">const</span> similarity = <span class="function">(<span class="params">arr, values</span>) =&gt;</span> arr.filter(<span class="function"><span class="params">v</span> =&gt;</span> values.includes(v));
+</code></pre>
+<p></p>
+<p>🌰栗子：</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT">similarity([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], [<span class="number">1</span>, <span class="number">2</span>, <span class="number">4</span>]); <span class="comment">// [1, 2]</span>
+</code></pre>
+<p></p>
+<h3 id="union"><a href="#union" class="headerlink" title="union"></a>union</h3><p>返回两个数组中任何一个中只存在一次元素的数组。</p>
+<p>使用<code>…</code>a和b的所有值创建一个Set并用<code>Array.from()</code>转换为数组。</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT"><span class="keyword">const</span> union = <span class="function">(<span class="params">a, b</span>) =&gt;</span> <span class="built_in">Array</span>.from(<span class="keyword">new</span> <span class="built_in">Set</span>([...a, ...b]));
+</code></pre>
+<p></p>
+<p>🌰栗子：</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT">union([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], [<span class="number">4</span>, <span class="number">3</span>, <span class="number">2</span>]); <span class="comment">// [1,2,3,4]</span>
+</code></pre>
+<p></p>
+<h2 id="🌐-Browser"><a href="#🌐-Browser" class="headerlink" title="🌐 Browser"></a>🌐 Browser</h2><h3 id="detectDeviceType"><a href="#detectDeviceType" class="headerlink" title="detectDeviceType"></a>detectDeviceType</h3><p>检测网站是否在移动设备或台式机/笔记本电脑中打开。<br>使用正则表达式测试<code>navigator.userAgent</code>属性，以确定设备是移动设备还是台式机/笔记本电脑。</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT"><span class="keyword">const</span> detectDeviceType = <span class="function"><span class="params">()</span> =&gt;</span>
+  /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test
+  (navigator.userAgent)
+  ? <span class="string">'Mobile'</span>
+  : <span class="string">'Desktop'</span>;
+</code></pre>
+<p></p>
+<p>🌰栗子：</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT">detectDeviceType();  <span class="comment">// Desktop</span>
+</code></pre>
+<p></p>
+<h3 id="elementContains"><a href="#elementContains" class="headerlink" title="elementContains"></a>elementContains</h3><p>如果父元素包含子元素，则返回<code>true</code>，否则返回<code>false</code>。<br>先检查父元素与子元素不是同一元素，再使用<code>parent.contains(child)</code>检查父元素是否包含子元素。</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT"><span class="keyword">const</span> elementContains = <span class="function">(<span class="params">parent, child</span>) =&gt;</span> 
+parent !== child &amp;&amp; parent.contains(child);
+</code></pre>
+<p></p>
+<p>🌰栗子：</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT">_query (tag){
+  <span class="keyword">return</span> <span class="built_in">document</span>.querySelector(tag)
+}
+elementContains(_query(<span class="string">'head'</span>),  _query(<span class="string">'title'</span>));  <span class="comment">// true</span>
+elementContains(_query(<span class="string">'body'</span>),  _query(<span class="string">'body'</span>)); <span class="comment">// false</span>
+</code></pre>
+<p></p>
+<h3 id="getScrollPosition"><a href="#getScrollPosition" class="headerlink" title="getScrollPosition"></a>getScrollPosition</h3><p>返回当前页面的滚动位置。<br>如果已定义，则使用<code>pageXOffset</code>和<code>pageYOffset</code>，否则使用<code>scrollLeft</code>和<code>scrollTop</code>。 您可以省略<code>el</code>以使用窗口的默认值。</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT"><span class="keyword">const</span> getScrollPosition = <span class="function">(<span class="params">el = <span class="built_in">window</span></span>) =&gt;</span> ({
+  x: el.pageXOffset !== <span class="literal">undefined</span> ? el.pageXOffset : el.scrollLeft,
+  y: el.pageYOffset !== <span class="literal">undefined</span> ? el.pageYOffset : el.scrollTop
+});
+</code></pre>
+<p></p>
+<p>🌰栗子：</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT">getScrollPosition(); <span class="comment">// {x: 0, y: 200}</span>
+</code></pre>
+<p></p>
+<h3 id="getStyle"><a href="#getStyle" class="headerlink" title="getStyle"></a>getStyle</h3><p>返回指定元素的CSS规则的值。<br>使用<code>Window.getComputedStyle()</code>获取指定元素的CSS规则的值。</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT"><span class="keyword">const</span> getStyle = <span class="function">(<span class="params">el, ruleName</span>) =&gt;</span> getComputedStyle(el)[ruleName];
+</code></pre>
+<p></p>
+<p>🌰栗子：</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT">getStyle(<span class="built_in">document</span>.querySelector(<span class="string">'p'</span>), <span class="string">'font-size'</span>); <span class="comment">// '16px'</span>
+</code></pre>
+<p></p>
+<h3 id="hasClass"><a href="#hasClass" class="headerlink" title="hasClass"></a>hasClass</h3><p>如果元素具有指定的类，则返回<code>true</code>，否则返回<code>false</code>。<br>使用<code>element.classList.contains()</code>检查元素是否具有指定的类。</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT"><span class="keyword">const</span> hasClass = <span class="function">(<span class="params">el, className</span>) =&gt;</span> el.classList.contains(className);
+</code></pre>
+<p></p>
+<p>🌰栗子：</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT">hasClass(<span class="built_in">document</span>.querySelector(<span class="string">'p.special'</span>), <span class="string">'special'</span>); <span class="comment">// true</span>
+</code></pre>
+<p></p>
+<h2 id="⏱️-Date"><a href="#⏱️-Date" class="headerlink" title="⏱️ Date"></a>⏱️ Date</h2><h3 id="formatDuration"><a href="#formatDuration" class="headerlink" title="formatDuration"></a>formatDuration</h3><p>返回给定毫秒数的可读格式。</p>
+<p>将<code>ms</code>除以适当的值，以获得白天，小时，分钟，秒和毫秒的可读值。<br>使用 <code>Object.entries()<code>和<code>Array.prototype.filter()<code>仅保留非零值。<br>使用<code>Array.prototype.map()<code>为每个值创建字符串。<br>使用<code>String.prototype.join(‘,’)<code>将值组合成一个字符串。</code></code></code></code></code></code></code></code></p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT"><span class="keyword">const</span> formatDuration = <span class="function"><span class="params">ms</span> =&gt;</span> {
+  <span class="keyword">if</span> (ms &lt; <span class="number">0</span>) ms = -ms;
+  <span class="keyword">const</span> time = {
+    day: <span class="built_in">Math</span>.floor(ms / <span class="number">86400000</span>),
+    hour: <span class="built_in">Math</span>.floor(ms / <span class="number">3600000</span>) % <span class="number">24</span>,
+    minute: <span class="built_in">Math</span>.floor(ms / <span class="number">60000</span>) % <span class="number">60</span>,
+    second: <span class="built_in">Math</span>.floor(ms / <span class="number">1000</span>) % <span class="number">60</span>,
+    millisecond: <span class="built_in">Math</span>.floor(ms) % <span class="number">1000</span>
+  };
+  <span class="keyword">return</span> <span class="built_in">Object</span>.entries(time)
+    .filter(<span class="function"><span class="params">val</span> =&gt;</span> val[<span class="number">1</span>] !== <span class="number">0</span>)
+    .map(<span class="function">(<span class="params">[key, val]</span>) =&gt;</span> <span class="string">`<span class="subst">${val}</span> <span class="subst">${key}</span><span class="subst">${val !== <span class="number">1</span> ? <span class="string">'s'</span> : <span class="string">''</span>}</span>`</span>)
+    .join(<span class="string">', '</span>);
+};
+</code></pre>
+<p></p>
+<p>🌰栗子：</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT">formatDuration(<span class="number">1001</span>); <span class="comment">// '1 second, 1 millisecond'</span>
+formatDuration(<span class="number">34325055574</span>); 
+<span class="comment">// '397 days, 6 hours, 44 minutes, 15 seconds, 574 milliseconds'</span>
+</code></pre>
+<p></p>
+<h2 id="🎛️-Function"><a href="#🎛️-Function" class="headerlink" title="🎛️ Function"></a>🎛️ Function</h2><h2 id="➗-Math"><a href="#➗-Math" class="headerlink" title="➗ Math"></a>➗ Math</h2><h2 id="🗃️-Object"><a href="#🗃️-Object" class="headerlink" title="🗃️ Object"></a>🗃️ Object</h2><h2 id="📜-String"><a href="#📜-String" class="headerlink" title="📜 String"></a>📜 String</h2><h2 id="📃-Type"><a href="#📃-Type" class="headerlink" title="📃 Type"></a>📃 Type</h2><h2 id="🔧-Utility"><a href="#🔧-Utility" class="headerlink" title="🔧 Utility"></a>🔧 Utility</h2>
       
     </div>
     
@@ -619,7 +824,7 @@ countBy([<span class="string">'one'</span>, <span class="string">'two'</span>, <
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://shamopoo.top/30-seconds-of-js/" title="⏱️ 30 seconds of code">http://shamopoo.top/30-seconds-of-js/</a>
+    <a href="http://shamopoo.top/30-seconds-of-js/" title="30 seconds of Javascript">http://shamopoo.top/30-seconds-of-js/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -840,7 +1045,7 @@ countBy([<span class="string">'one'</span>, <span class="string">'two'</span>, <
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#🔌-适配"><span class="nav-number">1.</span> <span class="nav-text">🔌 适配</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ary"><span class="nav-number">1.1.</span> <span class="nav-text">ary</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#over"><span class="nav-number">1.2.</span> <span class="nav-text">over</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#unary"><span class="nav-number">1.3.</span> <span class="nav-text">unary</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#📚-Array"><span class="nav-number">2.</span> <span class="nav-text">📚 Array</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#all"><span class="nav-number">2.1.</span> <span class="nav-text">all</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#allEqual"><span class="nav-number">2.2.</span> <span class="nav-text">allEqual</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#some"><span class="nav-number">2.3.</span> <span class="nav-text">some</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bifurcate"><span class="nav-number">2.4.</span> <span class="nav-text">bifurcate</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#chunk"><span class="nav-number">2.5.</span> <span class="nav-text">chunk</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#compact"><span class="nav-number">2.6.</span> <span class="nav-text">compact</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#countBy"><span class="nav-number">2.7.</span> <span class="nav-text">countBy</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#🔌-适配"><span class="nav-number">1.</span> <span class="nav-text">🔌 适配</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ary"><span class="nav-number">1.1.</span> <span class="nav-text">ary</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#over"><span class="nav-number">1.2.</span> <span class="nav-text">over</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#unary"><span class="nav-number">1.3.</span> <span class="nav-text">unary</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#📚-Array"><span class="nav-number">2.</span> <span class="nav-text">📚 Array</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#all"><span class="nav-number">2.1.</span> <span class="nav-text">all</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#allEqual"><span class="nav-number">2.2.</span> <span class="nav-text">allEqual</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#some"><span class="nav-number">2.3.</span> <span class="nav-text">some</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bifurcate"><span class="nav-number">2.4.</span> <span class="nav-text">bifurcate</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#chunk"><span class="nav-number">2.5.</span> <span class="nav-text">chunk</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#compact"><span class="nav-number">2.6.</span> <span class="nav-text">compact</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#countBy"><span class="nav-number">2.7.</span> <span class="nav-text">countBy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#countOccurrences"><span class="nav-number">2.8.</span> <span class="nav-text">countOccurrences</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#deepFlatten"><span class="nav-number">2.9.</span> <span class="nav-text">deepFlatten</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#filterNonUnique"><span class="nav-number">2.10.</span> <span class="nav-text">filterNonUnique</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#forEachRight"><span class="nav-number">2.11.</span> <span class="nav-text">forEachRight</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#indexOfAll"><span class="nav-number">2.12.</span> <span class="nav-text">indexOfAll</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#initialize2DArray"><span class="nav-number">2.13.</span> <span class="nav-text">initialize2DArray</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#initializeArrayWithValues"><span class="nav-number">2.14.</span> <span class="nav-text">initializeArrayWithValues</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mapObject"><span class="nav-number">2.15.</span> <span class="nav-text">mapObject</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#similarity"><span class="nav-number">2.16.</span> <span class="nav-text">similarity</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#union"><span class="nav-number">2.17.</span> <span class="nav-text">union</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#🌐-Browser"><span class="nav-number">3.</span> <span class="nav-text">🌐 Browser</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#detectDeviceType"><span class="nav-number">3.1.</span> <span class="nav-text">detectDeviceType</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#elementContains"><span class="nav-number">3.2.</span> <span class="nav-text">elementContains</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#getScrollPosition"><span class="nav-number">3.3.</span> <span class="nav-text">getScrollPosition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#getStyle"><span class="nav-number">3.4.</span> <span class="nav-text">getStyle</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hasClass"><span class="nav-number">3.5.</span> <span class="nav-text">hasClass</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#⏱️-Date"><span class="nav-number">4.</span> <span class="nav-text">⏱️ Date</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#formatDuration"><span class="nav-number">4.1.</span> <span class="nav-text">formatDuration</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#🎛️-Function"><span class="nav-number">5.</span> <span class="nav-text">🎛️ Function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#➗-Math"><span class="nav-number">6.</span> <span class="nav-text">➗ Math</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#🗃️-Object"><span class="nav-number">7.</span> <span class="nav-text">🗃️ Object</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#📜-String"><span class="nav-number">8.</span> <span class="nav-text">📜 String</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#📃-Type"><span class="nav-number">9.</span> <span class="nav-text">📃 Type</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#🔧-Utility"><span class="nav-number">10.</span> <span class="nav-text">🔧 Utility</span></a></li></ol></div>
             
 
           </div>
@@ -1460,365 +1665,6 @@ countBy([<span class="string">'one'</span>, <span class="string">'two'</span>, <
 
   
   
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-<script>
-(function webpackUniversalModuleDefinition(root, factory) {
-	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory();
-	else if(typeof define === 'function' && define.amd)
-		define([], factory);
-	else if(typeof exports === 'object')
-		exports["POWERMODE"] = factory();
-	else
-		root["POWERMODE"] = factory();
-})(this, function() {
-return /******/ (function(modules) { // webpackBootstrap
-/******/ 	// The module cache
-/******/ 	var installedModules = {};
-
-/******/ 	// The require function
-/******/ 	function __webpack_require__(moduleId) {
-
-/******/ 		// Check if module is in cache
-/******/ 		if(installedModules[moduleId])
-/******/ 			return installedModules[moduleId].exports;
-
-/******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = installedModules[moduleId] = {
-/******/ 			exports: {},
-/******/ 			id: moduleId,
-/******/ 			loaded: false
-/******/ 		};
-
-/******/ 		// Execute the module function
-/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-
-/******/ 		// Flag the module as loaded
-/******/ 		module.loaded = true;
-
-/******/ 		// Return the exports of the module
-/******/ 		return module.exports;
-/******/ 	}
-
-
-/******/ 	// expose the modules object (__webpack_modules__)
-/******/ 	__webpack_require__.m = modules;
-
-/******/ 	// expose the module cache
-/******/ 	__webpack_require__.c = installedModules;
-
-/******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
-
-/******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(0);
-/******/ })
-/************************************************************************/
-/******/ ([
-/* 0 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var canvas = document.createElement('canvas');
-	canvas.width = window.innerWidth;
-	canvas.height = window.innerHeight;
-	canvas.style.cssText = 'position:fixed;top:0;left:0;pointer-events:none;z-index:999999';
-	window.addEventListener('resize', function () {
-	    canvas.width = window.innerWidth;
-	    canvas.height = window.innerHeight;
-	});
-	document.body.appendChild(canvas);
-	var context = canvas.getContext('2d');
-	var particles = [];
-	var particlePointer = 0;
-	var rendering = false;
-
-	POWERMODE.shake = true;
-
-	function getRandom(min, max) {
-	    return Math.random() * (max - min) + min;
-	}
-
-	function getColor(el) {
-	    if (POWERMODE.colorful) {
-	        var u = getRandom(0, 360);
-	        return 'hsla(' + getRandom(u - 10, u + 10) + ', 100%, ' + getRandom(50, 80) + '%, ' + 1 + ')';
-	    } else {
-	        return window.getComputedStyle(el).color;
-	    }
-	}
-
-	function getCaret() {
-	    var el = document.activeElement;
-	    var bcr;
-	    if (el.tagName === 'TEXTAREA' ||
-	        (el.tagName === 'INPUT' && el.getAttribute('type') === 'text')) {
-	        var offset = __webpack_require__(1)(el, el.selectionEnd);
-	        bcr = el.getBoundingClientRect();
-	        return {
-	            x: offset.left + bcr.left,
-	            y: offset.top + bcr.top,
-	            color: getColor(el)
-	        };
-	    }
-	    var selection = window.getSelection();
-	    if (selection.rangeCount) {
-	        var range = selection.getRangeAt(0);
-	        var startNode = range.startContainer;
-	        if (startNode.nodeType === document.TEXT_NODE) {
-	            startNode = startNode.parentNode;
-	        }
-	        bcr = range.getBoundingClientRect();
-	        return {
-	            x: bcr.left,
-	            y: bcr.top,
-	            color: getColor(startNode)
-	        };
-	    }
-	    return { x: 0, y: 0, color: 'transparent' };
-	}
-
-	function createParticle(x, y, color) {
-	    return {
-	        x: x,
-	        y: y,
-	        alpha: 1,
-	        color: color,
-	        velocity: {
-	            x: -1 + Math.random() * 2,
-	            y: -3.5 + Math.random() * 2
-	        }
-	    };
-	}
-
-	function POWERMODE() {
-	    { // spawn particles
-	        var caret = getCaret();
-	        var numParticles = 5 + Math.round(Math.random() * 10);
-	        while (numParticles--) {
-	            particles[particlePointer] = createParticle(caret.x, caret.y, caret.color);
-	            particlePointer = (particlePointer + 1) % 500;
-	        }
-	    }
-	    { // shake screen
-	        if (POWERMODE.shake) {
-	            var intensity = 1 + 2 * Math.random();
-	            var x = intensity * (Math.random() > 0.5 ? -1 : 1);
-	            var y = intensity * (Math.random() > 0.5 ? -1 : 1);
-	            document.body.style.marginLeft = x + 'px';
-	            document.body.style.marginTop = y + 'px';
-	            setTimeout(function() {
-	                document.body.style.marginLeft = '';
-	                document.body.style.marginTop = '';
-	            }, 75);
-	        }
-	    }
-	    if(!rendering){
-	        requestAnimationFrame(loop);
-	    }
-	};
-	POWERMODE.colorful = false;
-
-	function loop() {
-	    rendering = true;
-	    context.clearRect(0, 0, canvas.width, canvas.height);
-	    var rendered = false;
-	    var rect = canvas.getBoundingClientRect();
-	    for (var i = 0; i < particles.length; ++i) {
-	        var particle = particles[i];
-	        if (particle.alpha <= 0.1) continue;
-	        particle.velocity.y += 0.075;
-	        particle.x += particle.velocity.x;
-	        particle.y += particle.velocity.y;
-	        particle.alpha *= 0.96;
-	        context.globalAlpha = particle.alpha;
-	        context.fillStyle = particle.color;
-	        context.fillRect(
-	            Math.round(particle.x - 1.5) - rect.left,
-	            Math.round(particle.y - 1.5) - rect.top,
-	            3, 3
-	        );
-	        rendered = true;
-	    }
-	    if(rendered){
-	        requestAnimationFrame(loop);
-	    }else{
-	        rendering = false;
-	    }
-	}
-
-	module.exports = POWERMODE;
-
-
-/***/ }),
-/* 1 */
-/***/ (function(module, exports) {
-
-	/* jshint browser: true */
-
-	(function () {
-
-	// The properties that we copy into a mirrored div.
-	// Note that some browsers, such as Firefox,
-	// do not concatenate properties, i.e. padding-top, bottom etc. -> padding,
-	// so we have to do every single property specifically.
-	var properties = [
-	  'direction',  // RTL support
-	  'boxSizing',
-	  'width',  // on Chrome and IE, exclude the scrollbar, so the mirror div wraps exactly as the textarea does
-	  'height',
-	  'overflowX',
-	  'overflowY',  // copy the scrollbar for IE
-
-	  'borderTopWidth',
-	  'borderRightWidth',
-	  'borderBottomWidth',
-	  'borderLeftWidth',
-	  'borderStyle',
-
-	  'paddingTop',
-	  'paddingRight',
-	  'paddingBottom',
-	  'paddingLeft',
-
-	  // https://developer.mozilla.org/en-US/docs/Web/CSS/font
-	  'fontStyle',
-	  'fontVariant',
-	  'fontWeight',
-	  'fontStretch',
-	  'fontSize',
-	  'fontSizeAdjust',
-	  'lineHeight',
-	  'fontFamily',
-
-	  'textAlign',
-	  'textTransform',
-	  'textIndent',
-	  'textDecoration',  // might not make a difference, but better be safe
-
-	  'letterSpacing',
-	  'wordSpacing',
-
-	  'tabSize',
-	  'MozTabSize'
-
-	];
-
-	var isFirefox = window.mozInnerScreenX != null;
-
-	function getCaretCoordinates(element, position, options) {
-
-	  var debug = options && options.debug || false;
-	  if (debug) {
-	    var el = document.querySelector('#input-textarea-caret-position-mirror-div');
-	    if ( el ) { el.parentNode.removeChild(el); }
-	  }
-
-	  // mirrored div
-	  var div = document.createElement('div');
-	  div.id = 'input-textarea-caret-position-mirror-div';
-	  document.body.appendChild(div);
-
-	  var style = div.style;
-	  var computed = window.getComputedStyle? getComputedStyle(element) : element.currentStyle;  // currentStyle for IE < 9
-
-	  // default textarea styles
-	  style.whiteSpace = 'pre-wrap';
-	  if (element.nodeName !== 'INPUT')
-	    style.wordWrap = 'break-word';  // only for textarea-s
-
-	  // position off-screen
-	  style.position = 'absolute';  // required to return coordinates properly
-	  if (!debug)
-	    style.visibility = 'hidden';  // not 'display: none' because we want rendering
-
-	  // transfer the element's properties to the div
-	  properties.forEach(function (prop) {
-	    style[prop] = computed[prop];
-	  });
-
-	  if (isFirefox) {
-	    // Firefox lies about the overflow property for textareas: https://bugzilla.mozilla.org/show_bug.cgi?id=984275
-	    if (element.scrollHeight > parseInt(computed.height))
-	      style.overflowY = 'scroll';
-	  } else {
-	    style.overflow = 'hidden';  // for Chrome to not render a scrollbar; IE keeps overflowY = 'scroll'
-	  }
-
-	  div.textContent = element.value.substring(0, position);
-	  // the second special handling for input type="text" vs textarea: spaces need to be replaced with non-breaking spaces - http://stackoverflow.com/a/13402035/1269037
-	  if (element.nodeName === 'INPUT')
-	    div.textContent = div.textContent.replace(/\s/g, "\u00a0");
-
-	  var span = document.createElement('span');
-	  // Wrapping must be replicated *exactly*, including when a long word gets
-	  // onto the next line, with whitespace at the end of the line before (#7).
-	  // The  *only* reliable way to do that is to copy the *entire* rest of the
-	  // textarea's content into the <span> created at the caret position.
-	  // for inputs, just '.' would be enough, but why bother?
-	  span.textContent = element.value.substring(position) || '.';  // || because a completely empty faux span doesn't render at all
-	  div.appendChild(span);
-
-	  var coordinates = {
-	    top: span.offsetTop + parseInt(computed['borderTopWidth']),
-	    left: span.offsetLeft + parseInt(computed['borderLeftWidth'])
-	  };
-
-	  if (debug) {
-	    span.style.backgroundColor = '#aaa';
-	  } else {
-	    document.body.removeChild(div);
-	  }
-
-	  return coordinates;
-	}
-
-	if (typeof module != "undefined" && typeof module.exports != "undefined") {
-	  module.exports = getCaretCoordinates;
-	} else {
-	  window.getCaretCoordinates = getCaretCoordinates;
-	}
-
-	}());
-
-/***/ })
-/******/ ])
-});
-;
-</script>
-
-
 <script>
  // document.addEventListener('touchmove', function(e) {
  //    e.preventDefault()
@@ -1869,7 +1715,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
   // console.log("\n %c shamopoo  %c http://shamopoo.top/ \n\n","color: #ffc0cb; background: #c0cbff; padding:5px 0;","background: #ffc0cb; padding:5px 0;color:#fff;")
   // "use strict";
-  // window.onload = function() {var now = new Date().getTime();var page_load_time = now - performance.timing.navigationStart;console.log('%c页面加载完毕消耗了'+Math.round(performance.now()*100)/100+'ms','color: #333;');};
+  //window.onload = function() {var now = new Date().getTime();var page_load_time = now - performance.timing.navigationStart;console.log('%c页面加载完毕消耗了'+Math.round(performance.now()*100)/100+'ms','color: #333;');};
   // 赞赏
 
   $('#post_end_1').click(function () {
@@ -1883,13 +1729,11 @@ return /******/ (function(modules) { // webpackBootstrap
       $('#QR').slideToggle(300)
   })
 
-  // input
-
-  POWERMODE.colorful = true; // make power mode colorful
-  POWERMODE.shake = false; // turn off shake
-  document.body.addEventListener('input', POWERMODE);
-
    // title
+
+
+   let isPageOne = window.location.pathname.indexOf('page') > -1
+   isPageOne &&  $('.set-top').css('display', 'none')
 
    // console.img
 
@@ -1980,8 +1824,8 @@ return /******/ (function(modules) { // webpackBootstrap
    // 浏览器上下滑
     
    // title
-   $(".banner-border-top").animate({'margin-left': '0px', 'opacity': 1},900)
-   $(".banner-border-bottom").animate({'margin-left': '0px', 'opacity': 1},900)
+   $(".banner-border-top").animate({'margin-left': '0px'},900)
+   $(".banner-border-bottom").animate({'margin-left': '0px'},900)
 
    // moblie header
   $('.site-nav-toggle button').on('click', function () {

@@ -3,7 +3,6 @@
   text-align: $site-meta-text-align;
   position:absolute;
   overflow: hidden;
-  padding: 0 30px;
   top:50%;
   left:50%;
   transform:translate(-50%, -50%);
@@ -34,19 +33,6 @@
   color: #fff;
   font-weight: normal;
   transition: all .2s;
-  &::after{
-        content: "";
-        position: absolute;
-        left: 60%;
-        bottom: 40%;
-        width: 80%;
-        height: 80%;
-        background-position: 50%;
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-image: url(https://b-gold-cdn.xitu.io/v3/static/img/cap.12a740a.svg);
-        transform-origin: bottom right;
-    }
   +mobile() { display:none; }
 }
 
@@ -58,10 +44,4 @@
 
 .use-motion {
   .brand { opacity: 0; }
-
-  .logo, .site-title, .site-subtitle {
-    opacity: 0;
-    position: relative;
-    top: -10px;
-  }
 }

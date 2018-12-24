@@ -153,7 +153,81 @@ Tip:
 {% endpullquote  %}
 
 
-## 未完待续
+## 生命周期
+
+ React.js 内部对待每个组件都有一个过程，也就是初始化组件 -> 挂载到页面上的过程。
+
+<samp>
+```  JAVASCRIPT
+-> constructor()
+-> componentWillMount()
+-> render()
+// 然后构造 DOM 元素插入页面
+-> componentDidMount()
+``` 
+</samp>
+
+那么挂载的时候，执行顺序是怎样的呢？请看下面这个栗子：
+
+
+<samp>
+```  JAVASCRIPT
+class Header extends Component {
+  constructor () {
+    super()
+    console.log('construct')
+  }
+
+  componentWillMount () {
+    console.log('component will mount')
+  }
+
+  componentDidMount () {
+    console.log('component did mount')
+  }
+
+  render () {
+    console.log('render')
+    return (
+      <div>
+        <h1 className='title'>React 小书</h1>
+      </div>
+    )
+  }
+}
+``` 
+</samp>
+
+在控制台可以看到依次输出：
+<samp>
+```  JAVASCRIPT
+construct
+component will mount
+render
+component did mount
+``` 
+</samp>
+
+{% pullquote tip %}
+
+### 生命周期
+componentWillMount：组件挂载开始之前，也就是在组件调用 render 方法之前调用。
+componentDidMount：组件挂载完成以后，也就是 DOM 元素已经插入页面后调用。
+componentWillUnmount：组件对应的 DOM 元素从页面中删除之前调用。
+componentWillUnmount：组件对应的 DOM 元素从页面中删除之前调用。
+componentWillUnmount: 组件销毁调用。
+
+### 更新阶段
+shouldComponentUpdate(nextProps, nextState)：你可以通过这个方法控制组件是否重新渲染。如果返回 false 组件就不会重新渲染。这个生命周期在 React.js 性能优化上非常有用。
+componentWillReceiveProps(nextProps)：组件从父组件接收到新的 props 之前调用。
+componentWillUpdate()：组件开始重新渲染之前调用。
+componentDidUpdate()：组件重新渲染并且把更改变更到真实的 DOM 以后调用。
+{% endpullquote  %}
+
+
+##  Redux
+
+To be continued...
 
 
 

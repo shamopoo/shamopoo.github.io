@@ -49,7 +49,7 @@
 
   // console.log("\n %c shamopoo  %c http://shamopoo.top/ \n\n","color: #ffc0cb; background: #c0cbff; padding:5px 0;","background: #ffc0cb; padding:5px 0;color:#fff;")
   // "use strict";
-  // window.onload = function() {var now = new Date().getTime();var page_load_time = now - performance.timing.navigationStart;console.log('%c页面加载完毕消耗了'+Math.round(performance.now()*100)/100+'ms','color: #333;');};
+  //window.onload = function() {var now = new Date().getTime();var page_load_time = now - performance.timing.navigationStart;console.log('%c页面加载完毕消耗了'+Math.round(performance.now()*100)/100+'ms','color: #333;');};
   // 赞赏
 
   $('#post_end_1').click(function () {
@@ -63,13 +63,11 @@
       $('#QR').slideToggle(300)
   })
 
-  // input
-
-  POWERMODE.colorful = true; // make power mode colorful
-  POWERMODE.shake = false; // turn off shake
-  document.body.addEventListener('input', POWERMODE);
-
    // title
+
+
+   let isPageOne = window.location.pathname.indexOf('page') > -1
+   isPageOne &&  $('.set-top').css('display', 'none')
 
    // console.img
 
@@ -160,8 +158,8 @@
    // 浏览器上下滑
     
    // title
-   $(".banner-border-top").animate({'margin-left': '0px', 'opacity': 1},900)
-   $(".banner-border-bottom").animate({'margin-left': '0px', 'opacity': 1},900)
+   $(".banner-border-top").animate({'margin-left': '0px'},900)
+   $(".banner-border-bottom").animate({'margin-left': '0px'},900)
 
    // moblie header
   $('.site-nav-toggle button').on('click', function () {

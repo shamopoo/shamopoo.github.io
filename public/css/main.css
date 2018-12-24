@@ -1229,7 +1229,6 @@ pre .javascript .function {
   text-align: center;
   position: absolute;
   overflow: hidden;
-  padding: 0 30px;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
@@ -1267,19 +1266,6 @@ pre .javascript .function {
   font-weight: normal;
   transition: all 0.2s;
 }
-.site-title::after {
-  content: "";
-  position: absolute;
-  left: 60%;
-  bottom: 40%;
-  width: 80%;
-  height: 80%;
-  background-position: 50%;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-image: url("https://b-gold-cdn.xitu.io/v3/static/img/cap.12a740a.svg");
-  transform-origin: bottom right;
-}
 @media (max-width: 767px) {
   .site-title {
     display: none;
@@ -1292,13 +1278,6 @@ pre .javascript .function {
 }
 .use-motion .brand {
   opacity: 0;
-}
-.use-motion .logo,
-.use-motion .site-title,
-.use-motion .site-subtitle {
-  opacity: 0;
-  position: relative;
-  top: -10px;
 }
 .site-nav-toggle {
   position: absolute;
@@ -3029,21 +3008,6 @@ body {
   margin: 0;
   padding: 0;
 }
-body::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
-  background-color: #eee;
-}
-body::-webkit-scrollbar-thumb {
-  background: #fe9600;
-}
-body::-webkit-scrollbar-track {
-  background-color: #eee;
-}
-body::selection {
-  background: #444;
-  color: #fff;
-}
 article:not(:first-of-type) .post-block .set-top div {
   display: none;
 }
@@ -4070,7 +4034,7 @@ a {
   height: 2px;
   width: 100%;
   background-color: #fff;
-  opacity: 0;
+  opacity: 1;
 }
 .banner-border-top {
   margin-left: 120%;

@@ -125,7 +125,7 @@
 <meta property="og:site_name" content="九十 | shamopoo&#39;s Blog">
 <meta property="og:description" content="最近，在入坑react，从React.js 小书开始入门。">
 <meta property="og:locale" content="shamopoo">
-<meta property="og:updated_time" content="2018-12-21T04:00:53.000Z">
+<meta property="og:updated_time" content="2018-12-24T06:00:20.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="React.js 小书">
 <meta name="twitter:description" content="最近，在入坑react，从React.js 小书开始入门。">
@@ -558,7 +558,54 @@ DOM元素 =&gt;
 <p></p>
 <blockquote class="pullquote tip"><p>Tip:<br>在使用 React.js 的时候，并不需要担心多次进行 setState 会带来性能问题。//  ✅ </p>
 </blockquote>
-<h2 id="未完待续"><a href="#未完待续" class="headerlink" title="未完待续"></a>未完待续</h2>
+<h2 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h2><p> React.js 内部对待每个组件都有一个过程，也就是初始化组件 -&gt; 挂载到页面上的过程。</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT">-&gt; <span class="keyword">constructor</span>()
+-&gt; componentWillMount()
+-&gt; render()
+// 然后构造 DOM 元素插入页面
+-&gt; componentDidMount()
+</code></pre>
+<p></p>
+<p>那么挂载的时候，执行顺序是怎样的呢？请看下面这个栗子：</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT"><span class="class"><span class="keyword">class</span> <span class="title">Header</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>{
+  <span class="keyword">constructor</span> () {
+    <span class="keyword">super</span>()
+    <span class="built_in">console</span>.log(<span class="string">'construct'</span>)
+  }
+
+  componentWillMount () {
+    <span class="built_in">console</span>.log(<span class="string">'component will mount'</span>)
+  }
+
+  componentDidMount () {
+    <span class="built_in">console</span>.log(<span class="string">'component did mount'</span>)
+  }
+
+  render () {
+    <span class="built_in">console</span>.log(<span class="string">'render'</span>)
+    <span class="keyword">return</span> (
+      &lt;div&gt;
+        &lt;h1 className=<span class="string">'title'</span>&gt;React 小书&lt;<span class="regexp">/h1&gt;</span>
+<span class="regexp">      &lt;/</span>div&gt;
+    )
+  }
+}
+</code></pre>
+<p></p>
+<p>在控制台可以看到依次输出：<br><samp></samp></p>
+<pre><code class="JAVASCRIPT">construct
+component will mount
+render
+component did mount
+</code></pre>
+<p></p>
+<blockquote class="pullquote tip"><h3 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h3><p>componentWillMount：组件挂载开始之前，也就是在组件调用 render 方法之前调用。<br>componentDidMount：组件挂载完成以后，也就是 DOM 元素已经插入页面后调用。<br>componentWillUnmount：组件对应的 DOM 元素从页面中删除之前调用。<br>componentWillUnmount：组件对应的 DOM 元素从页面中删除之前调用。<br>componentWillUnmount: 组件销毁调用。</p>
+<h3 id="更新阶段"><a href="#更新阶段" class="headerlink" title="更新阶段"></a>更新阶段</h3><p>shouldComponentUpdate(nextProps, nextState)：你可以通过这个方法控制组件是否重新渲染。如果返回 false 组件就不会重新渲染。这个生命周期在 React.js 性能优化上非常有用。<br>componentWillReceiveProps(nextProps)：组件从父组件接收到新的 props 之前调用。<br>componentWillUpdate()：组件开始重新渲染之前调用。<br>componentDidUpdate()：组件重新渲染并且把更改变更到真实的 DOM 以后调用。</p>
+</blockquote>
+<h2 id="Redux"><a href="#Redux" class="headerlink" title="Redux"></a>Redux</h2><p>To be continued…</p>
+
       
     </div>
     
@@ -643,8 +690,8 @@ DOM元素 =&gt;
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/30-seconds-of-js/" rel="prev" title="⏱️ 30 seconds of code">
-                ⏱️ 30 seconds of code <i class="fa fa-chevron-right"></i>
+              <a href="/30-seconds-of-js/" rel="prev" title="30 seconds of Javascript">
+                30 seconds of Javascript <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -828,7 +875,7 @@ DOM元素 =&gt;
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#预览"><span class="nav-number">1.</span> <span class="nav-text">预览</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JSX"><span class="nav-number">2.</span> <span class="nav-text">JSX</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#setState"><span class="nav-number">3.</span> <span class="nav-text">setState</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#未完待续"><span class="nav-number">4.</span> <span class="nav-text">未完待续</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#预览"><span class="nav-number">1.</span> <span class="nav-text">预览</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JSX"><span class="nav-number">2.</span> <span class="nav-text">JSX</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#setState"><span class="nav-number">3.</span> <span class="nav-text">setState</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生命周期"><span class="nav-number">4.</span> <span class="nav-text">生命周期</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#生命周期"><span class="nav-number">4.1.</span> <span class="nav-text">生命周期</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更新阶段"><span class="nav-number">4.2.</span> <span class="nav-text">更新阶段</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Redux"><span class="nav-number">5.</span> <span class="nav-text">Redux</span></a></li></ol></div>
             
 
           </div>
@@ -1448,365 +1495,6 @@ DOM元素 =&gt;
 
   
   
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-<script>
-(function webpackUniversalModuleDefinition(root, factory) {
-	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory();
-	else if(typeof define === 'function' && define.amd)
-		define([], factory);
-	else if(typeof exports === 'object')
-		exports["POWERMODE"] = factory();
-	else
-		root["POWERMODE"] = factory();
-})(this, function() {
-return /******/ (function(modules) { // webpackBootstrap
-/******/ 	// The module cache
-/******/ 	var installedModules = {};
-
-/******/ 	// The require function
-/******/ 	function __webpack_require__(moduleId) {
-
-/******/ 		// Check if module is in cache
-/******/ 		if(installedModules[moduleId])
-/******/ 			return installedModules[moduleId].exports;
-
-/******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = installedModules[moduleId] = {
-/******/ 			exports: {},
-/******/ 			id: moduleId,
-/******/ 			loaded: false
-/******/ 		};
-
-/******/ 		// Execute the module function
-/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-
-/******/ 		// Flag the module as loaded
-/******/ 		module.loaded = true;
-
-/******/ 		// Return the exports of the module
-/******/ 		return module.exports;
-/******/ 	}
-
-
-/******/ 	// expose the modules object (__webpack_modules__)
-/******/ 	__webpack_require__.m = modules;
-
-/******/ 	// expose the module cache
-/******/ 	__webpack_require__.c = installedModules;
-
-/******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
-
-/******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(0);
-/******/ })
-/************************************************************************/
-/******/ ([
-/* 0 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var canvas = document.createElement('canvas');
-	canvas.width = window.innerWidth;
-	canvas.height = window.innerHeight;
-	canvas.style.cssText = 'position:fixed;top:0;left:0;pointer-events:none;z-index:999999';
-	window.addEventListener('resize', function () {
-	    canvas.width = window.innerWidth;
-	    canvas.height = window.innerHeight;
-	});
-	document.body.appendChild(canvas);
-	var context = canvas.getContext('2d');
-	var particles = [];
-	var particlePointer = 0;
-	var rendering = false;
-
-	POWERMODE.shake = true;
-
-	function getRandom(min, max) {
-	    return Math.random() * (max - min) + min;
-	}
-
-	function getColor(el) {
-	    if (POWERMODE.colorful) {
-	        var u = getRandom(0, 360);
-	        return 'hsla(' + getRandom(u - 10, u + 10) + ', 100%, ' + getRandom(50, 80) + '%, ' + 1 + ')';
-	    } else {
-	        return window.getComputedStyle(el).color;
-	    }
-	}
-
-	function getCaret() {
-	    var el = document.activeElement;
-	    var bcr;
-	    if (el.tagName === 'TEXTAREA' ||
-	        (el.tagName === 'INPUT' && el.getAttribute('type') === 'text')) {
-	        var offset = __webpack_require__(1)(el, el.selectionEnd);
-	        bcr = el.getBoundingClientRect();
-	        return {
-	            x: offset.left + bcr.left,
-	            y: offset.top + bcr.top,
-	            color: getColor(el)
-	        };
-	    }
-	    var selection = window.getSelection();
-	    if (selection.rangeCount) {
-	        var range = selection.getRangeAt(0);
-	        var startNode = range.startContainer;
-	        if (startNode.nodeType === document.TEXT_NODE) {
-	            startNode = startNode.parentNode;
-	        }
-	        bcr = range.getBoundingClientRect();
-	        return {
-	            x: bcr.left,
-	            y: bcr.top,
-	            color: getColor(startNode)
-	        };
-	    }
-	    return { x: 0, y: 0, color: 'transparent' };
-	}
-
-	function createParticle(x, y, color) {
-	    return {
-	        x: x,
-	        y: y,
-	        alpha: 1,
-	        color: color,
-	        velocity: {
-	            x: -1 + Math.random() * 2,
-	            y: -3.5 + Math.random() * 2
-	        }
-	    };
-	}
-
-	function POWERMODE() {
-	    { // spawn particles
-	        var caret = getCaret();
-	        var numParticles = 5 + Math.round(Math.random() * 10);
-	        while (numParticles--) {
-	            particles[particlePointer] = createParticle(caret.x, caret.y, caret.color);
-	            particlePointer = (particlePointer + 1) % 500;
-	        }
-	    }
-	    { // shake screen
-	        if (POWERMODE.shake) {
-	            var intensity = 1 + 2 * Math.random();
-	            var x = intensity * (Math.random() > 0.5 ? -1 : 1);
-	            var y = intensity * (Math.random() > 0.5 ? -1 : 1);
-	            document.body.style.marginLeft = x + 'px';
-	            document.body.style.marginTop = y + 'px';
-	            setTimeout(function() {
-	                document.body.style.marginLeft = '';
-	                document.body.style.marginTop = '';
-	            }, 75);
-	        }
-	    }
-	    if(!rendering){
-	        requestAnimationFrame(loop);
-	    }
-	};
-	POWERMODE.colorful = false;
-
-	function loop() {
-	    rendering = true;
-	    context.clearRect(0, 0, canvas.width, canvas.height);
-	    var rendered = false;
-	    var rect = canvas.getBoundingClientRect();
-	    for (var i = 0; i < particles.length; ++i) {
-	        var particle = particles[i];
-	        if (particle.alpha <= 0.1) continue;
-	        particle.velocity.y += 0.075;
-	        particle.x += particle.velocity.x;
-	        particle.y += particle.velocity.y;
-	        particle.alpha *= 0.96;
-	        context.globalAlpha = particle.alpha;
-	        context.fillStyle = particle.color;
-	        context.fillRect(
-	            Math.round(particle.x - 1.5) - rect.left,
-	            Math.round(particle.y - 1.5) - rect.top,
-	            3, 3
-	        );
-	        rendered = true;
-	    }
-	    if(rendered){
-	        requestAnimationFrame(loop);
-	    }else{
-	        rendering = false;
-	    }
-	}
-
-	module.exports = POWERMODE;
-
-
-/***/ }),
-/* 1 */
-/***/ (function(module, exports) {
-
-	/* jshint browser: true */
-
-	(function () {
-
-	// The properties that we copy into a mirrored div.
-	// Note that some browsers, such as Firefox,
-	// do not concatenate properties, i.e. padding-top, bottom etc. -> padding,
-	// so we have to do every single property specifically.
-	var properties = [
-	  'direction',  // RTL support
-	  'boxSizing',
-	  'width',  // on Chrome and IE, exclude the scrollbar, so the mirror div wraps exactly as the textarea does
-	  'height',
-	  'overflowX',
-	  'overflowY',  // copy the scrollbar for IE
-
-	  'borderTopWidth',
-	  'borderRightWidth',
-	  'borderBottomWidth',
-	  'borderLeftWidth',
-	  'borderStyle',
-
-	  'paddingTop',
-	  'paddingRight',
-	  'paddingBottom',
-	  'paddingLeft',
-
-	  // https://developer.mozilla.org/en-US/docs/Web/CSS/font
-	  'fontStyle',
-	  'fontVariant',
-	  'fontWeight',
-	  'fontStretch',
-	  'fontSize',
-	  'fontSizeAdjust',
-	  'lineHeight',
-	  'fontFamily',
-
-	  'textAlign',
-	  'textTransform',
-	  'textIndent',
-	  'textDecoration',  // might not make a difference, but better be safe
-
-	  'letterSpacing',
-	  'wordSpacing',
-
-	  'tabSize',
-	  'MozTabSize'
-
-	];
-
-	var isFirefox = window.mozInnerScreenX != null;
-
-	function getCaretCoordinates(element, position, options) {
-
-	  var debug = options && options.debug || false;
-	  if (debug) {
-	    var el = document.querySelector('#input-textarea-caret-position-mirror-div');
-	    if ( el ) { el.parentNode.removeChild(el); }
-	  }
-
-	  // mirrored div
-	  var div = document.createElement('div');
-	  div.id = 'input-textarea-caret-position-mirror-div';
-	  document.body.appendChild(div);
-
-	  var style = div.style;
-	  var computed = window.getComputedStyle? getComputedStyle(element) : element.currentStyle;  // currentStyle for IE < 9
-
-	  // default textarea styles
-	  style.whiteSpace = 'pre-wrap';
-	  if (element.nodeName !== 'INPUT')
-	    style.wordWrap = 'break-word';  // only for textarea-s
-
-	  // position off-screen
-	  style.position = 'absolute';  // required to return coordinates properly
-	  if (!debug)
-	    style.visibility = 'hidden';  // not 'display: none' because we want rendering
-
-	  // transfer the element's properties to the div
-	  properties.forEach(function (prop) {
-	    style[prop] = computed[prop];
-	  });
-
-	  if (isFirefox) {
-	    // Firefox lies about the overflow property for textareas: https://bugzilla.mozilla.org/show_bug.cgi?id=984275
-	    if (element.scrollHeight > parseInt(computed.height))
-	      style.overflowY = 'scroll';
-	  } else {
-	    style.overflow = 'hidden';  // for Chrome to not render a scrollbar; IE keeps overflowY = 'scroll'
-	  }
-
-	  div.textContent = element.value.substring(0, position);
-	  // the second special handling for input type="text" vs textarea: spaces need to be replaced with non-breaking spaces - http://stackoverflow.com/a/13402035/1269037
-	  if (element.nodeName === 'INPUT')
-	    div.textContent = div.textContent.replace(/\s/g, "\u00a0");
-
-	  var span = document.createElement('span');
-	  // Wrapping must be replicated *exactly*, including when a long word gets
-	  // onto the next line, with whitespace at the end of the line before (#7).
-	  // The  *only* reliable way to do that is to copy the *entire* rest of the
-	  // textarea's content into the <span> created at the caret position.
-	  // for inputs, just '.' would be enough, but why bother?
-	  span.textContent = element.value.substring(position) || '.';  // || because a completely empty faux span doesn't render at all
-	  div.appendChild(span);
-
-	  var coordinates = {
-	    top: span.offsetTop + parseInt(computed['borderTopWidth']),
-	    left: span.offsetLeft + parseInt(computed['borderLeftWidth'])
-	  };
-
-	  if (debug) {
-	    span.style.backgroundColor = '#aaa';
-	  } else {
-	    document.body.removeChild(div);
-	  }
-
-	  return coordinates;
-	}
-
-	if (typeof module != "undefined" && typeof module.exports != "undefined") {
-	  module.exports = getCaretCoordinates;
-	} else {
-	  window.getCaretCoordinates = getCaretCoordinates;
-	}
-
-	}());
-
-/***/ })
-/******/ ])
-});
-;
-</script>
-
-
 <script>
  // document.addEventListener('touchmove', function(e) {
  //    e.preventDefault()
@@ -1857,7 +1545,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
   // console.log("\n %c shamopoo  %c http://shamopoo.top/ \n\n","color: #ffc0cb; background: #c0cbff; padding:5px 0;","background: #ffc0cb; padding:5px 0;color:#fff;")
   // "use strict";
-  // window.onload = function() {var now = new Date().getTime();var page_load_time = now - performance.timing.navigationStart;console.log('%c页面加载完毕消耗了'+Math.round(performance.now()*100)/100+'ms','color: #333;');};
+  //window.onload = function() {var now = new Date().getTime();var page_load_time = now - performance.timing.navigationStart;console.log('%c页面加载完毕消耗了'+Math.round(performance.now()*100)/100+'ms','color: #333;');};
   // 赞赏
 
   $('#post_end_1').click(function () {
@@ -1871,13 +1559,11 @@ return /******/ (function(modules) { // webpackBootstrap
       $('#QR').slideToggle(300)
   })
 
-  // input
-
-  POWERMODE.colorful = true; // make power mode colorful
-  POWERMODE.shake = false; // turn off shake
-  document.body.addEventListener('input', POWERMODE);
-
    // title
+
+
+   let isPageOne = window.location.pathname.indexOf('page') > -1
+   isPageOne &&  $('.set-top').css('display', 'none')
 
    // console.img
 
@@ -1968,8 +1654,8 @@ return /******/ (function(modules) { // webpackBootstrap
    // 浏览器上下滑
     
    // title
-   $(".banner-border-top").animate({'margin-left': '0px', 'opacity': 1},900)
-   $(".banner-border-bottom").animate({'margin-left': '0px', 'opacity': 1},900)
+   $(".banner-border-top").animate({'margin-left': '0px'},900)
+   $(".banner-border-bottom").animate({'margin-left': '0px'},900)
 
    // moblie header
   $('.site-nav-toggle button').on('click', function () {
