@@ -14,6 +14,10 @@
   {##################}
   {### POST BLOCK ###}
   {##################}
+  <div class="post-date">
+      <div class="post-month"> {{ date(post.date, 'MM')  }}月</div>
+      <div class="post-day">{{ date(post.date, 'DD') }}</div>
+  </div>
   <div class="post-block">
     <div class="set-top"><div>置顶</div></div>
     <link itemprop="mainEntityOfPage" href="{{ config.url }}{{ url_for(post.path) }}">

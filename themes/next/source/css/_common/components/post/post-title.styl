@@ -1,7 +1,9 @@
 .posts-expand .post-title {
   text-align: center;
   word-break: break-word;
-  font-weight: $posts-expand-title-font-weight
+  color: #444;
+  font-size: 24px;
+  font-weight: 700;
 }
 .post-title-link span:hover{
   color:#FE9600;
@@ -16,23 +18,6 @@
   transition: all 0.3s;
   &:hover {
     color: #FE9600;
-  }
-  &::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    visibility: hidden;
-    transform: scaleX(0);
-    the-transition();
-  }
-
-  &:hover::before {
-    visibility: visible;
-    color: #3eb4fc;
-    transform: scaleX(1);
   }
 
   .fa { font-size: 16px; }
