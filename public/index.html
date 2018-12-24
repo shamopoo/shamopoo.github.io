@@ -2110,15 +2110,24 @@ peter.a  <span class="comment">// 😳 a or b</span>
               var BirthDay = new Date('2017-01-14');
               var today = new Date();
               var timeold = (today.getTime() - BirthDay.getTime());
-              var msPerDay = 24 * 60 * 60 * 1000;
-              var e_daysold = timeold / msPerDay;
+              var msPerDay = 24 * 60 * 60 * 1000 * 365;
+              var e_yearsold = timeold / msPerDay;
+              var yearsold = Math.floor(e_yearsold);
+              var e_monthsold = (e_yearsold - yearsold) * 365 / 30;
+              var monthsold = Math.floor(e_monthsold);
+              var e_daysold = (e_monthsold - monthsold) * 30;
               var daysold = Math.floor(e_daysold);
               var e_hrsold = (e_daysold - daysold) * 24;
               var hrsold = Math.floor(e_hrsold);
               var e_minsold = (e_hrsold - hrsold) * 60;
               var minsold = Math.floor((e_hrsold - hrsold) * 60);
               var seconds = Math.floor((e_minsold - minsold) * 60);
-              var t = daysold + "天" + hrsold + "时" + minsold + "分" + seconds + "秒"
+              var t =  yearsold + "年"
+              + (monthsold + '').padStart(2, '0')  +  "月"
+              + (daysold + '').padStart(2, '0')  + "天" 
+              + (hrsold + '').padStart(2, '0') + "时" 
+              + (minsold + '').padStart(2, '0')  + "分" 
+              + (seconds + '').padStart(2, '0')  + "秒"
               show.innerHTML = t;
             }, 1000)
         }
@@ -2175,7 +2184,10 @@ peter.a  <span class="comment">// 😳 a or b</span>
     var e_minsold = (e_hrsold - hrsold) * 60;
     var minsold = Math.floor((e_hrsold - hrsold) * 60);
     var seconds = Math.floor((e_minsold - minsold) * 60);
-    var t = daysold + "天" + hrsold + "小时" + minsold + "分" + (seconds + '').padStart(2, '0') + "秒"
+    var t = daysold + "天" 
+    + (hrsold + '').padStart(2, '0') + "小时" 
+    + (minsold + '').padStart(2, '0') + "分" 
+    + (seconds + '').padStart(2, '0') + "秒"
     show.innerHTML = t;
     }, 1000);
 }());

@@ -4140,24 +4140,6 @@ a {
     margin-top: 0;
     margin-bottom: 0;
     flex: 1;
-    position: relative;
-  }
-  .mov-title::after {
-    content: "";
-    position: absolute;
-    left: 35%;
-    bottom: 30%;
-    width: 60%;
-    height: 60%;
-    background-position: 50%;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-image: url("https://b-gold-cdn.xitu.io/v3/static/img/cap.12a740a.svg");
-    -webkit-transform: rotate(15deg);
-    -moz-transform: rotate(15deg);
-    -ms-transform: rotate(15deg);
-    -o-transform: rotate(15deg);
-    transform: rotate(15deg);
   }
 }
 .notice-content {

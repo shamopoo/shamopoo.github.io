@@ -44,7 +44,10 @@
     var e_minsold = (e_hrsold - hrsold) * 60;
     var minsold = Math.floor((e_hrsold - hrsold) * 60);
     var seconds = Math.floor((e_minsold - minsold) * 60);
-    var t = daysold + "天" + hrsold + "小时" + minsold + "分" + (seconds + '').padStart(2, '0') + "秒"
+    var t = daysold + "天" 
+    + (hrsold + '').padStart(2, '0') + "小时" 
+    + (minsold + '').padStart(2, '0') + "分" 
+    + (seconds + '').padStart(2, '0') + "秒"
     show.innerHTML = t;
     }, 1000);
 }());

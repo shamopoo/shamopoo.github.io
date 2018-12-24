@@ -125,7 +125,7 @@
 <meta property="og:site_name" content="九十 | shamopoo&#39;s Blog">
 <meta property="og:description" content="在Gitgub上看见一个好玩的项目 30 seconds of code，js真好玩。">
 <meta property="og:locale" content="shamopoo">
-<meta property="og:updated_time" content="2018-12-24T07:48:49.000Z">
+<meta property="og:updated_time" content="2018-12-24T10:31:29.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="30 seconds of Javascript">
 <meta name="twitter:description" content="在Gitgub上看见一个好玩的项目 30 seconds of code，js真好玩。">
@@ -777,7 +777,214 @@ formatDuration(<span class="number">34325055574</span>);
 <span class="comment">// '397 days, 6 hours, 44 minutes, 15 seconds, 574 milliseconds'</span>
 </code></pre>
 <p></p>
-<h2 id="🎛️-Function"><a href="#🎛️-Function" class="headerlink" title="🎛️ Function"></a>🎛️ Function</h2><h2 id="➗-Math"><a href="#➗-Math" class="headerlink" title="➗ Math"></a>➗ Math</h2><h2 id="🗃️-Object"><a href="#🗃️-Object" class="headerlink" title="🗃️ Object"></a>🗃️ Object</h2><h2 id="📜-String"><a href="#📜-String" class="headerlink" title="📜 String"></a>📜 String</h2><h2 id="📃-Type"><a href="#📃-Type" class="headerlink" title="📃 Type"></a>📃 Type</h2><h2 id="🔧-Utility"><a href="#🔧-Utility" class="headerlink" title="🔧 Utility"></a>🔧 Utility</h2>
+<h2 id="🎛️-Function"><a href="#🎛️-Function" class="headerlink" title="🎛️ Function"></a>🎛️ Function</h2><h3 id="debounce"><a href="#debounce" class="headerlink" title="debounce"></a>debounce</h3><p><samp></samp></p>
+<pre><code class="JAVASCRIPT"><span class="keyword">const</span> debounce = <span class="function">(<span class="params">fn, ms = <span class="number">0</span></span>) =&gt;</span> {
+  <span class="keyword">let</span> timeoutId;
+  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">...args</span>) </span>{
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> fn.apply(<span class="keyword">this</span>, args), ms);
+  };
+};
+</code></pre>
+<p></p>
+<p>🌰栗子：</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT"><span class="built_in">window</span>.addEventListener(
+  <span class="string">'resize'</span>,
+  debounce(<span class="function"><span class="params">()</span> =&gt;</span> {
+    <span class="built_in">console</span>.log(<span class="built_in">window</span>.innerWidth);
+    <span class="built_in">console</span>.log(<span class="built_in">window</span>.innerHeight);
+  }, <span class="number">250</span>)
+); <span class="comment">// Will log the window dimensions at most every 250ms</span>
+</code></pre>
+<p></p>
+<h3 id="throttle"><a href="#throttle" class="headerlink" title="throttle"></a>throttle</h3><p><samp></samp></p>
+<pre><code class="JAVASCRIPT"><span class="keyword">const</span> throttle = <span class="function">(<span class="params">fn, wait</span>) =&gt;</span> {
+  <span class="keyword">let</span> inThrottle, lastFn, lastTime;
+  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+    <span class="keyword">const</span> context = <span class="keyword">this</span>,
+      args = <span class="built_in">arguments</span>;
+    <span class="keyword">if</span> (!inThrottle) {
+      fn.apply(context, args);
+      lastTime = <span class="built_in">Date</span>.now();
+      inThrottle = <span class="literal">true</span>;
+    } <span class="keyword">else</span> {
+      clearTimeout(lastFn);
+      lastFn = setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+        <span class="keyword">if</span> (<span class="built_in">Date</span>.now() - lastTime &gt;= wait) {
+          fn.apply(context, args);
+          lastTime = <span class="built_in">Date</span>.now();
+        }
+      }, <span class="built_in">Math</span>.max(wait - (<span class="built_in">Date</span>.now() - lastTime), <span class="number">0</span>));
+    }
+  };
+};
+</code></pre>
+<p></p>
+<p>🌰栗子：</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT"><span class="built_in">window</span>.addEventListener(
+  <span class="string">'resize'</span>,
+  throttle(<span class="function"><span class="keyword">function</span>(<span class="params">evt</span>) </span>{
+    <span class="built_in">console</span>.log(<span class="built_in">window</span>.innerWidth);
+    <span class="built_in">console</span>.log(<span class="built_in">window</span>.innerHeight);
+  }, <span class="number">250</span>)
+); <span class="comment">// Will log the window dimensions at most every 250ms</span>
+</code></pre>
+<p></p>
+<h2 id="➗-Math"><a href="#➗-Math" class="headerlink" title="➗ Math"></a>➗ Math</h2><h3 id="distance"><a href="#distance" class="headerlink" title="distance"></a>distance</h3><p>返回两点之间的距离。<br>使用<code>Math.hypot()</code>计算两点之间的欧几里德距离。</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT"><span class="keyword">const</span> distance = <span class="function">(<span class="params">x0, y0, x1, y1</span>) =&gt;</span> <span class="built_in">Math</span>.hypot(x1 - x0, y1 - y0);
+</code></pre>
+<p></p>
+<p>🌰栗子：</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT">distance(<span class="number">1</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>); <span class="comment">// 2.23606797749979</span>
+</code></pre>
+<p></p>
+<h3 id="factorial"><a href="#factorial" class="headerlink" title="factorial"></a>factorial</h3><p>使用递归计算数字的阶乘。<br>如果<code>n</code>小于或等于1，则返回1。否则，返回<code>n</code>的乘积和<code>n  -  1</code>的阶乘。如果<code>n</code>是负数，则抛出异常。</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT"><span class="keyword">const</span> factorial = <span class="function"><span class="params">n</span> =&gt;</span>
+  n &lt; <span class="number">0</span>
+    ? <span class="function">(<span class="params">(</span>) =&gt;</span> {
+      <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">TypeError</span>(<span class="string">'Negative numbers are not allowed!'</span>);
+    })()
+    : n &lt;= <span class="number">1</span>
+      ? <span class="number">1</span>
+      : n * factorial(n - <span class="number">1</span>);
+</code></pre>
+<p></p>
+<p>🌰栗子：</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT">factorial(<span class="number">6</span>); <span class="comment">// 720</span>
+</code></pre>
+<p></p>
+<h3 id="gcd"><a href="#gcd" class="headerlink" title="gcd"></a>gcd</h3><p>计算两个或多个数字/数组之间的最大公约数。<br>内部<code>_gcd</code>函数使用递归计算返回<code>y</code>的<code>GCD</code>和除法<code>x / y</code>的余数。</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT"><span class="keyword">const</span> gcd = <span class="function">(<span class="params">...arr</span>) =&gt;</span> {
+  <span class="keyword">const</span> _gcd = <span class="function">(<span class="params">x, y</span>) =&gt;</span> (!y ? x : gcd(y, x % y));
+  <span class="keyword">return</span> [...arr].reduce(<span class="function">(<span class="params">a, b</span>) =&gt;</span> _gcd(a, b));
+};
+</code></pre>
+<p></p>
+<p>🌰栗子：</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT">gcd(<span class="number">8</span>, <span class="number">36</span>); <span class="comment">// 4</span>
+gcd(...[<span class="number">12</span>, <span class="number">8</span>, <span class="number">32</span>]); <span class="comment">// 4</span>
+</code></pre>
+<p></p>
+<h3 id="randomIntArrayInRange"><a href="#randomIntArrayInRange" class="headerlink" title="randomIntArrayInRange"></a>randomIntArrayInRange</h3><p>返回指定范围内的n个随机整数的数组。<br>使用<code>Array.from()</code>创建一个特定长度的数组，<code>Math.random()</code>生成一个范围内的随机数，使用<code>Math.floor</code>向下取整。</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT"><span class="keyword">const</span> randomIntArrayInRange = <span class="function">(<span class="params">min, max, n = <span class="number">1</span></span>) =&gt;</span>
+  <span class="built_in">Array</span>.from({ <span class="attr">length</span>: n }, () =&gt; 
+  <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * (max - min + <span class="number">1</span>)) + min);
+</code></pre>
+<p></p>
+<p>🌰栗子：</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT">randomIntArrayInRange(<span class="number">12</span>, <span class="number">35</span>, <span class="number">10</span>); <span class="comment">// [ 34, 14, 27, 17, 30, 27, 20, 26, 21, 14 ]</span>
+</code></pre>
+<p></p>
+<h3 id="sum"><a href="#sum" class="headerlink" title="sum"></a>sum</h3><p>返回数组的总和。<br>使用<code>Array.prototype.reduce()</code>将每个值累加，使用值0初始化。</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT"><span class="keyword">const</span> sum = <span class="function">(<span class="params">...arr</span>) =&gt;</span> [...arr].reduce(<span class="function">(<span class="params">acc, val</span>) =&gt;</span> acc + val, <span class="number">0</span>);
+</code></pre>
+<p></p>
+<p>🌰栗子：</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT">sum(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>); <span class="comment">// 10</span>
+sum(...[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]); <span class="comment">// 10</span>
+</code></pre>
+<p></p>
+<h2 id="🗃️-Object"><a href="#🗃️-Object" class="headerlink" title="🗃️ Object"></a>🗃️ Object</h2><h3 id="deepClone"><a href="#deepClone" class="headerlink" title="deepClone"></a>deepClone</h3><p><samp></samp></p>
+<pre><code class="JAVASCRIPT"><span class="keyword">const</span> deepClone = <span class="function"><span class="params">obj</span> =&gt;</span> {
+  <span class="keyword">let</span> clone = <span class="built_in">Object</span>.assign({}, obj);
+  <span class="built_in">Object</span>.keys(clone).forEach(
+    key =&gt; (clone[key] = <span class="keyword">typeof</span> obj[key] === <span class="string">'object'</span>
+     ? deepClone(obj[key]) 
+     : obj[key])
+  );
+  <span class="keyword">return</span> <span class="built_in">Array</span>.isArray(obj) 
+  ? (clone.length = obj.length) &amp;&amp; <span class="built_in">Array</span>.from(clone) 
+  : clone;
+};
+</code></pre>
+<p></p>
+<p>🌰栗子：</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT"><span class="keyword">const</span> a = { <span class="attr">foo</span>: <span class="string">'bar'</span>, <span class="attr">obj</span>: { <span class="attr">a</span>: <span class="number">1</span>, <span class="attr">b</span>: <span class="number">2</span> } };
+<span class="keyword">const</span> b = deepClone(a); <span class="comment">// a !== b, a.obj !== b.obj</span>
+</code></pre>
+<p></p>
+<h3 id="flattenObject"><a href="#flattenObject" class="headerlink" title="flattenObject"></a>flattenObject</h3><p><samp></samp></p>
+<pre><code class="JAVASCRIPT"><span class="keyword">const</span> flattenObject = <span class="function">(<span class="params">obj, prefix = <span class="string">''</span></span>) =&gt;</span>
+  <span class="built_in">Object</span>.keys(obj).reduce(<span class="function">(<span class="params">acc, k</span>) =&gt;</span> {
+    <span class="keyword">const</span> pre = prefix.length ? prefix + <span class="string">'.'</span> : <span class="string">''</span>;
+    <span class="keyword">if</span> (<span class="keyword">typeof</span> obj[k] === <span class="string">'object'</span>) {
+    <span class="built_in">Object</span>.assign(acc, flattenObject(obj[k], pre + k))
+    };
+    <span class="keyword">else</span> acc[pre + k] = obj[k];
+    <span class="keyword">return</span> acc;
+  }, {});
+</code></pre>
+<p></p>
+<p>🌰栗子：</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT">flattenObject({ <span class="attr">a</span>: { <span class="attr">b</span>: { <span class="attr">c</span>: <span class="number">1</span> } }, <span class="attr">d</span>: <span class="number">1</span> }); <span class="comment">// { 'a.b.c': 1, d: 1 }</span>
+</code></pre>
+<p></p>
+<h3 id="mapKeys"><a href="#mapKeys" class="headerlink" title="mapKeys"></a>mapKeys</h3><p><samp></samp></p>
+<pre><code class="JAVASCRIPT"><span class="keyword">const</span> mapKeys = <span class="function">(<span class="params">obj, fn</span>) =&gt;</span>
+  <span class="built_in">Object</span>.keys(obj).reduce(<span class="function">(<span class="params">acc, k</span>) =&gt;</span> {
+    acc[fn(obj[k], k, obj)] = obj[k];
+    <span class="keyword">return</span> acc;
+  }, {});
+</code></pre>
+<p></p>
+<p>🌰栗子：</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT">mapKeys({ <span class="attr">a</span>: <span class="number">1</span>, <span class="attr">b</span>: <span class="number">2</span> }, (val, key) =&gt; key + val); <span class="comment">// { a1: 1, b2: 2 }</span>
+</code></pre>
+<p></p>
+<h3 id="mapValues"><a href="#mapValues" class="headerlink" title="mapValues"></a>mapValues</h3><p><samp></samp></p>
+<pre><code class="JAVASCRIPT"><span class="keyword">const</span> mapValues = <span class="function">(<span class="params">obj, fn</span>) =&gt;</span>
+  <span class="built_in">Object</span>.keys(obj).reduce(<span class="function">(<span class="params">acc, k</span>) =&gt;</span> {
+    acc[k] = fn(obj[k], k, obj);
+    <span class="keyword">return</span> acc;
+  }, {});
+</code></pre>
+<p></p>
+<p>🌰栗子：</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT"><span class="keyword">const</span> users = {
+  fred: { <span class="attr">user</span>: <span class="string">'fred'</span>, <span class="attr">age</span>: <span class="number">40</span> },
+  pebbles: { <span class="attr">user</span>: <span class="string">'pebbles'</span>, <span class="attr">age</span>: <span class="number">1</span> }
+};
+mapValues(users, u =&gt; u.age); <span class="comment">// { fred: 40, pebbles: 1 }</span>
+</code></pre>
+<p></p>
+<h3 id="objectFromPairs"><a href="#objectFromPairs" class="headerlink" title="objectFromPairs"></a>objectFromPairs</h3><p>根据给定的键值对创建对象。<br>使用<code>Array.prototype.reduce()</code>创建对象。</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT"><span class="keyword">const</span> objectFromPairs = <span class="function"><span class="params">arr</span> =&gt;</span> 
+arr.reduce(<span class="function">(<span class="params">a, [key, val]</span>) =&gt;</span> ((a[key] = val), a), {});
+</code></pre>
+<p></p>
+<p>🌰栗子：</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT">objectFromPairs([[<span class="string">'a'</span>, <span class="number">1</span>], [<span class="string">'b'</span>, <span class="number">2</span>]]); <span class="comment">// {a: 1, b: 2}</span>
+</code></pre>
+<p></p>
+<h3 id="objectToPairs"><a href="#objectToPairs" class="headerlink" title="objectToPairs"></a>objectToPairs</h3><p>从对象创建键值对数组的数组。<br>使用<code>Object.keys()</code>和<code>Array.prototype.map()</code>迭代对象的键并生成数组。</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT"><span class="keyword">const</span> objectToPairs = <span class="function"><span class="params">obj</span> =&gt;</span> <span class="built_in">Object</span>.keys(obj).map(<span class="function"><span class="params">k</span> =&gt;</span> [k, obj[k]]);
+</code></pre>
+<p></p>
+<p>🌰栗子：</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT">objectToPairs({ <span class="attr">a</span>: <span class="number">1</span>, <span class="attr">b</span>: <span class="number">2</span> }); <span class="comment">// [ ['a', 1], ['b', 2] ]</span>
+</code></pre>
+<p></p>
+<h2 id="📜-String"><a href="#📜-String" class="headerlink" title="📜 String"></a>📜 String</h2><h2 id="📃-Type"><a href="#📃-Type" class="headerlink" title="📃 Type"></a>📃 Type</h2><h2 id="🔧-Utility"><a href="#🔧-Utility" class="headerlink" title="🔧 Utility"></a>🔧 Utility</h2>
       
     </div>
     
@@ -1019,15 +1226,24 @@ formatDuration(<span class="number">34325055574</span>);
               var BirthDay = new Date('2017-01-14');
               var today = new Date();
               var timeold = (today.getTime() - BirthDay.getTime());
-              var msPerDay = 24 * 60 * 60 * 1000;
-              var e_daysold = timeold / msPerDay;
+              var msPerDay = 24 * 60 * 60 * 1000 * 365;
+              var e_yearsold = timeold / msPerDay;
+              var yearsold = Math.floor(e_yearsold);
+              var e_monthsold = (e_yearsold - yearsold) * 365 / 30;
+              var monthsold = Math.floor(e_monthsold);
+              var e_daysold = (e_monthsold - monthsold) * 30;
               var daysold = Math.floor(e_daysold);
               var e_hrsold = (e_daysold - daysold) * 24;
               var hrsold = Math.floor(e_hrsold);
               var e_minsold = (e_hrsold - hrsold) * 60;
               var minsold = Math.floor((e_hrsold - hrsold) * 60);
               var seconds = Math.floor((e_minsold - minsold) * 60);
-              var t = daysold + "天" + hrsold + "时" + minsold + "分" + seconds + "秒"
+              var t =  yearsold + "年"
+              + (monthsold + '').padStart(2, '0')  +  "月"
+              + (daysold + '').padStart(2, '0')  + "天" 
+              + (hrsold + '').padStart(2, '0') + "时" 
+              + (minsold + '').padStart(2, '0')  + "分" 
+              + (seconds + '').padStart(2, '0')  + "秒"
               show.innerHTML = t;
             }, 1000)
         }
@@ -1045,7 +1261,7 @@ formatDuration(<span class="number">34325055574</span>);
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#🔌-适配"><span class="nav-number">1.</span> <span class="nav-text">🔌 适配</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ary"><span class="nav-number">1.1.</span> <span class="nav-text">ary</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#over"><span class="nav-number">1.2.</span> <span class="nav-text">over</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#unary"><span class="nav-number">1.3.</span> <span class="nav-text">unary</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#📚-Array"><span class="nav-number">2.</span> <span class="nav-text">📚 Array</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#all"><span class="nav-number">2.1.</span> <span class="nav-text">all</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#allEqual"><span class="nav-number">2.2.</span> <span class="nav-text">allEqual</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#some"><span class="nav-number">2.3.</span> <span class="nav-text">some</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bifurcate"><span class="nav-number">2.4.</span> <span class="nav-text">bifurcate</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#chunk"><span class="nav-number">2.5.</span> <span class="nav-text">chunk</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#compact"><span class="nav-number">2.6.</span> <span class="nav-text">compact</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#countBy"><span class="nav-number">2.7.</span> <span class="nav-text">countBy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#countOccurrences"><span class="nav-number">2.8.</span> <span class="nav-text">countOccurrences</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#deepFlatten"><span class="nav-number">2.9.</span> <span class="nav-text">deepFlatten</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#filterNonUnique"><span class="nav-number">2.10.</span> <span class="nav-text">filterNonUnique</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#forEachRight"><span class="nav-number">2.11.</span> <span class="nav-text">forEachRight</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#indexOfAll"><span class="nav-number">2.12.</span> <span class="nav-text">indexOfAll</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#initialize2DArray"><span class="nav-number">2.13.</span> <span class="nav-text">initialize2DArray</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#initializeArrayWithValues"><span class="nav-number">2.14.</span> <span class="nav-text">initializeArrayWithValues</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mapObject"><span class="nav-number">2.15.</span> <span class="nav-text">mapObject</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#similarity"><span class="nav-number">2.16.</span> <span class="nav-text">similarity</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#union"><span class="nav-number">2.17.</span> <span class="nav-text">union</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#🌐-Browser"><span class="nav-number">3.</span> <span class="nav-text">🌐 Browser</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#detectDeviceType"><span class="nav-number">3.1.</span> <span class="nav-text">detectDeviceType</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#elementContains"><span class="nav-number">3.2.</span> <span class="nav-text">elementContains</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#getScrollPosition"><span class="nav-number">3.3.</span> <span class="nav-text">getScrollPosition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#getStyle"><span class="nav-number">3.4.</span> <span class="nav-text">getStyle</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hasClass"><span class="nav-number">3.5.</span> <span class="nav-text">hasClass</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#⏱️-Date"><span class="nav-number">4.</span> <span class="nav-text">⏱️ Date</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#formatDuration"><span class="nav-number">4.1.</span> <span class="nav-text">formatDuration</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#🎛️-Function"><span class="nav-number">5.</span> <span class="nav-text">🎛️ Function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#➗-Math"><span class="nav-number">6.</span> <span class="nav-text">➗ Math</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#🗃️-Object"><span class="nav-number">7.</span> <span class="nav-text">🗃️ Object</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#📜-String"><span class="nav-number">8.</span> <span class="nav-text">📜 String</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#📃-Type"><span class="nav-number">9.</span> <span class="nav-text">📃 Type</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#🔧-Utility"><span class="nav-number">10.</span> <span class="nav-text">🔧 Utility</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#🔌-适配"><span class="nav-number">1.</span> <span class="nav-text">🔌 适配</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ary"><span class="nav-number">1.1.</span> <span class="nav-text">ary</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#over"><span class="nav-number">1.2.</span> <span class="nav-text">over</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#unary"><span class="nav-number">1.3.</span> <span class="nav-text">unary</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#📚-Array"><span class="nav-number">2.</span> <span class="nav-text">📚 Array</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#all"><span class="nav-number">2.1.</span> <span class="nav-text">all</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#allEqual"><span class="nav-number">2.2.</span> <span class="nav-text">allEqual</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#some"><span class="nav-number">2.3.</span> <span class="nav-text">some</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bifurcate"><span class="nav-number">2.4.</span> <span class="nav-text">bifurcate</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#chunk"><span class="nav-number">2.5.</span> <span class="nav-text">chunk</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#compact"><span class="nav-number">2.6.</span> <span class="nav-text">compact</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#countBy"><span class="nav-number">2.7.</span> <span class="nav-text">countBy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#countOccurrences"><span class="nav-number">2.8.</span> <span class="nav-text">countOccurrences</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#deepFlatten"><span class="nav-number">2.9.</span> <span class="nav-text">deepFlatten</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#filterNonUnique"><span class="nav-number">2.10.</span> <span class="nav-text">filterNonUnique</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#forEachRight"><span class="nav-number">2.11.</span> <span class="nav-text">forEachRight</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#indexOfAll"><span class="nav-number">2.12.</span> <span class="nav-text">indexOfAll</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#initialize2DArray"><span class="nav-number">2.13.</span> <span class="nav-text">initialize2DArray</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#initializeArrayWithValues"><span class="nav-number">2.14.</span> <span class="nav-text">initializeArrayWithValues</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mapObject"><span class="nav-number">2.15.</span> <span class="nav-text">mapObject</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#similarity"><span class="nav-number">2.16.</span> <span class="nav-text">similarity</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#union"><span class="nav-number">2.17.</span> <span class="nav-text">union</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#🌐-Browser"><span class="nav-number">3.</span> <span class="nav-text">🌐 Browser</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#detectDeviceType"><span class="nav-number">3.1.</span> <span class="nav-text">detectDeviceType</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#elementContains"><span class="nav-number">3.2.</span> <span class="nav-text">elementContains</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#getScrollPosition"><span class="nav-number">3.3.</span> <span class="nav-text">getScrollPosition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#getStyle"><span class="nav-number">3.4.</span> <span class="nav-text">getStyle</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hasClass"><span class="nav-number">3.5.</span> <span class="nav-text">hasClass</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#⏱️-Date"><span class="nav-number">4.</span> <span class="nav-text">⏱️ Date</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#formatDuration"><span class="nav-number">4.1.</span> <span class="nav-text">formatDuration</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#🎛️-Function"><span class="nav-number">5.</span> <span class="nav-text">🎛️ Function</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#debounce"><span class="nav-number">5.1.</span> <span class="nav-text">debounce</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#throttle"><span class="nav-number">5.2.</span> <span class="nav-text">throttle</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#➗-Math"><span class="nav-number">6.</span> <span class="nav-text">➗ Math</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#distance"><span class="nav-number">6.1.</span> <span class="nav-text">distance</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#factorial"><span class="nav-number">6.2.</span> <span class="nav-text">factorial</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gcd"><span class="nav-number">6.3.</span> <span class="nav-text">gcd</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#randomIntArrayInRange"><span class="nav-number">6.4.</span> <span class="nav-text">randomIntArrayInRange</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sum"><span class="nav-number">6.5.</span> <span class="nav-text">sum</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#🗃️-Object"><span class="nav-number">7.</span> <span class="nav-text">🗃️ Object</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#deepClone"><span class="nav-number">7.1.</span> <span class="nav-text">deepClone</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flattenObject"><span class="nav-number">7.2.</span> <span class="nav-text">flattenObject</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mapKeys"><span class="nav-number">7.3.</span> <span class="nav-text">mapKeys</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mapValues"><span class="nav-number">7.4.</span> <span class="nav-text">mapValues</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#objectFromPairs"><span class="nav-number">7.5.</span> <span class="nav-text">objectFromPairs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#objectToPairs"><span class="nav-number">7.6.</span> <span class="nav-text">objectToPairs</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#📜-String"><span class="nav-number">8.</span> <span class="nav-text">📜 String</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#📃-Type"><span class="nav-number">9.</span> <span class="nav-text">📃 Type</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#🔧-Utility"><span class="nav-number">10.</span> <span class="nav-text">🔧 Utility</span></a></li></ol></div>
             
 
           </div>
@@ -1100,7 +1316,10 @@ formatDuration(<span class="number">34325055574</span>);
     var e_minsold = (e_hrsold - hrsold) * 60;
     var minsold = Math.floor((e_hrsold - hrsold) * 60);
     var seconds = Math.floor((e_minsold - minsold) * 60);
-    var t = daysold + "天" + hrsold + "小时" + minsold + "分" + (seconds + '').padStart(2, '0') + "秒"
+    var t = daysold + "天" 
+    + (hrsold + '').padStart(2, '0') + "小时" 
+    + (minsold + '').padStart(2, '0') + "分" 
+    + (seconds + '').padStart(2, '0') + "秒"
     show.innerHTML = t;
     }, 1000);
 }());

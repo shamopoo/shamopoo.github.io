@@ -590,8 +590,329 @@ formatDuration(34325055574);
 </samp>
 
 ## 🎛️ Function
+
+### debounce
+
+<samp>
+``` JAVASCRIPT
+const debounce = (fn, ms = 0) => {
+  let timeoutId;
+  return function(...args) {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => fn.apply(this, args), ms);
+  };
+};
+``` 
+</samp>
+
+🌰栗子：
+
+<samp>
+``` JAVASCRIPT
+window.addEventListener(
+  'resize',
+  debounce(() => {
+    console.log(window.innerWidth);
+    console.log(window.innerHeight);
+  }, 250)
+); // Will log the window dimensions at most every 250ms
+``` 
+</samp>
+
+### throttle
+
+<samp>
+``` JAVASCRIPT
+const throttle = (fn, wait) => {
+  let inThrottle, lastFn, lastTime;
+  return function() {
+    const context = this,
+      args = arguments;
+    if (!inThrottle) {
+      fn.apply(context, args);
+      lastTime = Date.now();
+      inThrottle = true;
+    } else {
+      clearTimeout(lastFn);
+      lastFn = setTimeout(function() {
+        if (Date.now() - lastTime >= wait) {
+          fn.apply(context, args);
+          lastTime = Date.now();
+        }
+      }, Math.max(wait - (Date.now() - lastTime), 0));
+    }
+  };
+};
+``` 
+</samp>
+
+🌰栗子：
+
+<samp>
+``` JAVASCRIPT
+window.addEventListener(
+  'resize',
+  throttle(function(evt) {
+    console.log(window.innerWidth);
+    console.log(window.innerHeight);
+  }, 250)
+); // Will log the window dimensions at most every 250ms
+``` 
+</samp>
+
 ## ➗ Math
+
+### distance
+
+返回两点之间的距离。
+使用<code>Math.hypot()</code>计算两点之间的欧几里德距离。
+
+<samp>
+``` JAVASCRIPT
+const distance = (x0, y0, x1, y1) => Math.hypot(x1 - x0, y1 - y0);
+``` 
+</samp>
+
+🌰栗子：
+
+<samp>
+``` JAVASCRIPT
+distance(1, 1, 2, 3); // 2.23606797749979
+``` 
+</samp>
+
+### factorial
+
+
+
+使用递归计算数字的阶乘。
+如果<code>n</code>小于或等于1，则返回1。否则，返回<code>n</code>的乘积和<code>n  -  1</code>的阶乘。如果<code>n</code>是负数，则抛出异常。
+
+<samp>
+``` JAVASCRIPT
+const factorial = n =>
+  n < 0
+    ? (() => {
+      throw new TypeError('Negative numbers are not allowed!');
+    })()
+    : n <= 1
+      ? 1
+      : n * factorial(n - 1);
+``` 
+</samp>
+
+🌰栗子：
+
+<samp>
+``` JAVASCRIPT
+factorial(6); // 720
+``` 
+</samp>
+
+### gcd
+
+计算两个或多个数字/数组之间的最大公约数。
+内部<code>_gcd</code>函数使用递归计算返回<code>y</code>的<code>GCD</code>和除法<code>x / y</code>的余数。
+
+<samp>
+``` JAVASCRIPT
+const gcd = (...arr) => {
+  const _gcd = (x, y) => (!y ? x : gcd(y, x % y));
+  return [...arr].reduce((a, b) => _gcd(a, b));
+};
+``` 
+</samp>
+
+🌰栗子：
+
+<samp>
+``` JAVASCRIPT
+gcd(8, 36); // 4
+gcd(...[12, 8, 32]); // 4
+``` 
+</samp>
+
+
+### randomIntArrayInRange
+
+返回指定范围内的n个随机整数的数组。
+使用<code>Array.from()</code>创建一个特定长度的数组，<code>Math.random()</code>生成一个范围内的随机数，使用<code>Math.floor</code>向下取整。
+
+<samp>
+``` JAVASCRIPT
+const randomIntArrayInRange = (min, max, n = 1) =>
+  Array.from({ length: n }, () => 
+  Math.floor(Math.random() * (max - min + 1)) + min);
+``` 
+</samp>
+
+🌰栗子：
+
+<samp>
+``` JAVASCRIPT
+randomIntArrayInRange(12, 35, 10); // [ 34, 14, 27, 17, 30, 27, 20, 26, 21, 14 ]
+``` 
+</samp>
+
+
+### sum
+
+返回数组的总和。
+使用<code>Array.prototype.reduce()</code>将每个值累加，使用值0初始化。
+
+<samp>
+``` JAVASCRIPT
+const sum = (...arr) => [...arr].reduce((acc, val) => acc + val, 0);
+``` 
+</samp>
+
+🌰栗子：
+
+<samp>
+``` JAVASCRIPT
+sum(1, 2, 3, 4); // 10
+sum(...[1, 2, 3, 4]); // 10
+``` 
+</samp>
+
 ## 🗃️ Object
+
+### deepClone
+
+<samp>
+``` JAVASCRIPT
+const deepClone = obj => {
+  let clone = Object.assign({}, obj);
+  Object.keys(clone).forEach(
+    key => (clone[key] = typeof obj[key] === 'object'
+     ? deepClone(obj[key]) 
+     : obj[key])
+  );
+  return Array.isArray(obj) 
+  ? (clone.length = obj.length) && Array.from(clone) 
+  : clone;
+};
+``` 
+</samp>
+
+🌰栗子：
+
+<samp>
+``` JAVASCRIPT
+const a = { foo: 'bar', obj: { a: 1, b: 2 } };
+const b = deepClone(a); // a !== b, a.obj !== b.obj
+``` 
+</samp>
+
+### flattenObject
+
+<samp>
+``` JAVASCRIPT
+const flattenObject = (obj, prefix = '') =>
+  Object.keys(obj).reduce((acc, k) => {
+    const pre = prefix.length ? prefix + '.' : '';
+    if (typeof obj[k] === 'object') {
+    Object.assign(acc, flattenObject(obj[k], pre + k))
+    };
+    else acc[pre + k] = obj[k];
+    return acc;
+  }, {});
+``` 
+</samp>
+
+🌰栗子：
+
+<samp>
+``` JAVASCRIPT
+flattenObject({ a: { b: { c: 1 } }, d: 1 }); // { 'a.b.c': 1, d: 1 }
+``` 
+</samp>
+
+
+### mapKeys
+
+<samp>
+``` JAVASCRIPT
+const mapKeys = (obj, fn) =>
+  Object.keys(obj).reduce((acc, k) => {
+    acc[fn(obj[k], k, obj)] = obj[k];
+    return acc;
+  }, {});
+``` 
+</samp>
+
+🌰栗子：
+
+<samp>
+``` JAVASCRIPT
+mapKeys({ a: 1, b: 2 }, (val, key) => key + val); // { a1: 1, b2: 2 }
+``` 
+</samp>
+
+
+### mapValues
+
+<samp>
+``` JAVASCRIPT
+const mapValues = (obj, fn) =>
+  Object.keys(obj).reduce((acc, k) => {
+    acc[k] = fn(obj[k], k, obj);
+    return acc;
+  }, {});
+``` 
+</samp>
+
+🌰栗子：
+
+<samp>
+``` JAVASCRIPT
+const users = {
+  fred: { user: 'fred', age: 40 },
+  pebbles: { user: 'pebbles', age: 1 }
+};
+mapValues(users, u => u.age); // { fred: 40, pebbles: 1 }
+``` 
+</samp>
+
+### objectFromPairs
+
+根据给定的键值对创建对象。
+使用<code>Array.prototype.reduce()</code>创建对象。
+
+<samp>
+``` JAVASCRIPT
+const objectFromPairs = arr => 
+arr.reduce((a, [key, val]) => ((a[key] = val), a), {});
+``` 
+</samp>
+
+🌰栗子：
+
+<samp>
+``` JAVASCRIPT
+objectFromPairs([['a', 1], ['b', 2]]); // {a: 1, b: 2}
+``` 
+</samp>
+
+### objectToPairs
+
+从对象创建键值对数组的数组。
+使用<code>Object.keys()</code>和<code>Array.prototype.map()</code>迭代对象的键并生成数组。
+
+<samp>
+``` JAVASCRIPT
+const objectToPairs = obj => Object.keys(obj).map(k => [k, obj[k]]);
+``` 
+</samp>
+
+🌰栗子：
+
+<samp>
+``` JAVASCRIPT
+objectToPairs({ a: 1, b: 2 }); // [ ['a', 1], ['b', 2] ]
+``` 
+</samp>
+
 ## 📜 String
 ## 📃 Type
 ## 🔧 Utility
