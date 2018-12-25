@@ -15,7 +15,7 @@ categories:
 
 ### ary
 
-创建一个最多可以接受<code>n</code>个参数的函数，无视任何其他参数。
+创建一个最多可以接受<code>n</code>个参数的函数。
 调用提供的函数，<code>fn</code>，最多n个参数。
 运用<code>Array.prototype.slice(0,n)</code>和展开运算符<code>...</code>
 
@@ -779,6 +779,10 @@ sum(...[1, 2, 3, 4]); // 10
 
 ### deepClone
 
+创建对象的深克隆。
+使用<code>Object.assign()</code>和空对象<code>({})</code>创建原始的浅层克隆。
+使用<code>Object.keys()</code>和<code>Array.prototype.forEach()</code>来确定需要深度克隆的键值对。
+
 <samp>
 ``` JAVASCRIPT
 const deepClone = obj => {
@@ -806,6 +810,9 @@ const b = deepClone(a); // a !== b, a.obj !== b.obj
 
 ### flattenObject
 
+展平对象。
+使用<code>Object.keys(obj)</code>与<code>Array.prototype.reduce()</code>结合将每个叶节点转换为展平路径节点。
+
 <samp>
 ``` JAVASCRIPT
 const flattenObject = (obj, prefix = '') =>
@@ -831,6 +838,11 @@ flattenObject({ a: { b: { c: 1 } }, d: 1 }); // { 'a.b.c': 1, d: 1 }
 
 ### mapKeys
 
+
+创建一个对象，其中包含通过为每个键运行提供的函数生成的键以及与提供的对象相同的值。
+使用<code>Object.keys(obj)</code>迭代对象的键。 
+使用</code>Array.prototype.reduce()</code>使用<code>fn</code>创建具有相同值和映射键的新对象。
+
 <samp>
 ``` JAVASCRIPT
 const mapKeys = (obj, fn) =>
@@ -851,6 +863,11 @@ mapKeys({ a: 1, b: 2 }, (val, key) => key + val); // { a1: 1, b2: 2 }
 
 
 ### mapValues
+
+使用与提供的对象相同的键创建对象，并通过为每个值运行提供的函数生成值。
+使用<code>Object.keys(obj)</code>迭代对象的键。
+使用<code>Array.prototype.reduce()</code>。
+使用<code>fn</code>创建具有相同键和映射值的新对象。
 
 <samp>
 ``` JAVASCRIPT
@@ -914,5 +931,271 @@ objectToPairs({ a: 1, b: 2 }); // [ ['a', 1], ['b', 2] ]
 </samp>
 
 ## 📜 String
-## 📃 Type
+
+### fromCamelCase
+
+转换字符串。
+使用<code>String.prototype.replace()</code>删除下划线，连字符和空格，并将单词转换为<code>camelcase</code>。 省略第二个参数以使用<code>_</code>的默认分隔符。
+
+<samp>
+``` JAVASCRIPT
+const fromCamelCase = (str, separator = '_') =>
+  str
+    .replace(/([a-z\d])([A-Z])/g, '$1' + separator + '$2')
+    .replace(/([A-Z]+)([A-Z][a-z\d]+)/g, '$1' + separator + '$2')
+    .toLowerCase();
+``` 
+</samp>
+
+🌰栗子：
+
+<samp>
+``` JAVASCRIPT
+fromCamelCase('someDatabaseFieldName', ' '); 
+// 'some database field name'
+fromCamelCase('someLabelThatNeedsToBeCamelized', '-'); 
+// 'some-label-that-needs-to-be-camelized'
+fromCamelCase('someJavascriptProperty', '_'); 
+// 'some_javascript_property'
+``` 
+</samp>
+
+
+### isAnagram
+
+检查字符串是否是另一个字符串的字谜。
+使用<code>String.toLowerCase()</code>和<code>String.prototype.replace()</code>删除不必要的字符。
+使用<code>String.prototype.split('')</code>和<code>Array.prototype.sort()</code>和<code>Array.prototype.join('')</code>检查是否相等。
+
+<samp>
+``` JAVASCRIPT
+const isAnagram = (str1, str2) => {
+  const normalize = str =>
+    str
+      .toLowerCase()
+      .replace(/[^a-z0-9]/gi, '')
+      .split('')
+      .sort()
+      .join('');
+  return normalize(str1) === normalize(str2);
+};
+``` 
+</samp>
+
+🌰栗子：
+
+<samp>
+``` JAVASCRIPT
+isAnagram('iceman', 'cinema'); // true
+``` 
+</samp>
+
+
+### mask
+
+使用指定的掩码字符替换除最后一个字符数之外的所有字符。
+使用<code>String.prototype.slice()</code>来获取将保持未屏蔽的字符部分。
+使用<code>String.padStart()</code>以掩码字符填充字符串的开头，直到原始长度。
+
+<samp>
+``` JAVASCRIPT
+const mask = (cc, num = 4, mask = '*') => 
+`${cc}`.slice(-num).padStart(`${cc}`.length, mask);
+};
+``` 
+</samp>
+
+🌰栗子：
+
+<samp>
+``` JAVASCRIPT
+mask(1234567890); // '******7890'
+mask(1234567890, 3); // '*******890'
+mask(1234567890, -4, '$'); // '$$$$567890'
+``` 
+</samp>
+
+### reverseString
+
+反转字符串。
+使用展开运算符<code>(...)</code>和</code>Array.prototype.reverse()</code>来反转字符串中字符的顺序。
+使用<code>String.prototype.join('')</code>转换成字符串。
+
+<samp>
+``` JAVASCRIPT
+const reverseString = str => [...str].reverse().join('');
+};
+``` 
+</samp>
+
+🌰栗子：
+
+<samp>
+``` JAVASCRIPT
+reverseString('foobar'); // 'raboof'
+``` 
+</samp>
+
+
+### stripHTMLTags
+
+从字符串中删除<code>HTML / XML</code>标记。
+使用正则表达式从字符串中删除<code>HTML / XML</code>标记。
+
+<samp>
+``` JAVASCRIPT
+const stripHTMLTags = str => str.replace(/<[^>]*>/g, '');
+};
+``` 
+</samp>
+
+🌰栗子：
+
+<samp>
+``` JAVASCRIPT
+stripHTMLTags('<p><em>lorem</em> <em>ipsum</em></p>'); 
+// 'lorem ipsum'
+``` 
+</samp>
+
+### toKebabCase
+
+字符串转换为烤肉串案例。
+将字符串分解为单词并将它们组合添加<code> - </code>使用正则表达式作为分隔符。
+
+<samp>
+``` JAVASCRIPT
+const toKebabCase = str =>
+  str &&
+  str
+    .match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
+    .map(x => x.toLowerCase())
+    .join('-');
+``` 
+</samp>
+
+🌰栗子：
+
+<samp>
+``` JAVASCRIPT
+toKebabCase('camelCase'); // 'camel-case'
+toKebabCase('some text'); // 'some-text'
+toKebabCase('some-mixed_string With spaces_underscores-and-hyphens'); 
+// 'some-mixed-string-with-spaces-underscores-and-hyphens'
+toKebabCase('AllThe-small Things'); 
+// "all-the-small-things"
+toKebabCase('IAmListeningToFMWhileLoadingDifferentURLOnMyBrowser'); 
+// "i-am-listening-to-fm-while-loading-different-url-on-my-browser"
+``` 
+</samp>
+
+
+### words
+
+将给定的字符串转换为单词数组。
+使用<code>String.prototype.split()</code>与默认为非字母作为正则使用，以转换为字符串数组。 
+使用<code>Array.prototype.filter()</code>删除任何空字符串。 默认的正则为<code>/[^a-zA-Z-]+/</code>。
+
+<samp>
+``` JAVASCRIPT
+const words = (str, pattern = /[^a-zA-Z-]+/) => 
+str.split(pattern).filter(Boolean);
+``` 
+</samp>
+
+🌰栗子：
+
+<samp>
+``` JAVASCRIPT
+words('I love javaScript!!'); // ["I", "love", "javaScript"]
+words('python, javaScript & coffee'); // ["python", "javaScript", "coffee"]
+``` 
+</samp>
+
 ## 🔧 Utility
+
+### RGBToHex
+
+将<code>RGB</code>值转换为颜色代码。
+使用按位左移运算符<code>(<<)</code>和<code>toString(16)</code>。
+使用<code>String.padStart(6，'0')</code>将RGB参数转换为十六进制字符串，以获得6位十六进制值。
+
+<samp>
+``` JAVASCRIPT
+const RGBToHex = (r, g, b) =>
+((r << 16) + (g << 8) + b).toString(16).padStart(6, '0');
+``` 
+</samp>
+
+🌰栗子：
+
+<samp>
+``` JAVASCRIPT
+RGBToHex(255, 165, 1); // 'ffa501'
+``` 
+</samp>
+
+### toDecimalMarkc
+
+使用<code>toLocaleString()</code>将浮点运算转换为Decimal标记形式——使用逗号分隔字符串与数字。
+
+<samp>
+``` JAVASCRIPT
+const toDecimalMark = num => num.toLocaleString('en-US');
+``` 
+</samp>
+
+🌰栗子：
+
+<samp>
+``` JAVASCRIPT
+toDecimalMark(12305030388.9087); // "12,305,030,388.909"
+``` 
+</samp>
+
+
+### validateNumber
+
+如果给定值是数字，则返回true，否则返回false。
+使用<code>!isNaN()</code>与<code>parseFloat()</code>判断参数是否为数字。 
+使用<code>isFinite()</code>判断数字是否有限数字。 
+使用<code>Number()</code>判断类型是否为数字。
+
+<samp>
+``` JAVASCRIPT
+const validateNumber = n => 
+!isNaN(parseFloat(n)) && isFinite(n) && Number(n) == n;
+``` 
+</samp>
+
+🌰栗子：
+
+<samp>
+``` JAVASCRIPT
+validateNumber('10'); // true
+``` 
+</samp>
+
+
+### yesNo
+
+如果字符串是<code>y / yes</code>则返回<code>true</code>，如果字符串是<code>n / no</code>，则返回<code>false</code>。
+使用<code>RegExp.test()</code>检查字符串是否为<code>y / yes</code>或<code>n / no</code>。 <code>def</code>默认为no。
+
+<samp>
+``` JAVASCRIPT
+const yesNo = (val, def = false) =>
+  /^(y|yes)$/i.test(val) ? true : /^(n|no)$/i.test(val) ? false : def;
+``` 
+</samp>
+
+🌰栗子：
+
+<samp>
+``` JAVASCRIPT
+yesNo('Y'); // true
+yesNo('yes'); // true
+yesNo('No'); // false
+yesNo('Foo', true); // true
+``` 
+</samp>

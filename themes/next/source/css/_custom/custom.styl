@@ -979,26 +979,6 @@ a{
    -webkit-box-shadow: 0 0 5px rgba(202, 203, 203, .5);
    -moz-box-shadow: 0 0 5px rgba(202, 203, 204, .5);
   }
-  .post:before{
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom:0;
-    width: 75px;
-    height: 55px;
-    background: url(https://moetu.fastmirror.org/images/2018/05/15/ab64469baceb26bdb.png)no-repeat center center;
-    background-size: contain;
-  }
-  .post:after{
-    content: "";
-    position: absolute;
-    right:-10px;
-    bottom:0;
-    width: 75px;
-    height: 55px;
-    background: url(https://moetu.fastmirror.org/images/2018/05/15/c7085cfb093de0598.png)no-repeat center center;
-    background-size: contain;
-  }
   .post-date {
     background-color: #97dffd;
     box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
@@ -1092,6 +1072,41 @@ a{
     50%{transform:scale(1.2) rotate(-10deg)}
     60%{transform:scale(1.2) rotate(0)}
     80%{transform:scale(1.2) rotate(10deg)}
+  }
+  .menu .menu-item-booklist a:hover i{
+     animation: booklist-wave 1s linear infinite alternate;
+  }
+  @keyframes booklist-wave{
+     from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  10%,
+  20% {
+    -webkit-transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+    transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+  }
+
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+  }
+
+  40%,
+  60%,
+  80% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
   }
   .browsehappy{
    text-align:center;
@@ -1190,9 +1205,17 @@ a{
   margin: 4px;
   display: inline-block;
 }
+.with-love{
+    color: #f00;
+}
 /*一言*/
 .footer-yiyan{
-
+    display: initial;
+    vertical-align: middle;
+    font-weight: bolder;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(to right, #ff6e71, #ffaa73, #3cdc82, #64dcf0, #b4b4ff);
 }
 /*友链*/
 .post .post-body .links ul {
@@ -1310,7 +1333,8 @@ a{
 /*将头部背景变为透明*/
 .header{
   // background-image: url(https://o7y8mvdbc.qnssl.com/tc/uploads/1805/151006333856.jpg);
-  background-image: url(https://cdn.jsdelivr.net/gh/moezx/cdn@3.5.2/cover/gallary/199-bigskin-3.jpg);
+  //background-image: url(https://cdn.jsdelivr.net/gh/moezx/cdn@3.5.2/cover/gallary/199-bigskin-3.jpg);
+  background-image: url(https://moetu.fastmirror.org/images/2018/12/25/main_bgf7e51d12963c3118.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -1341,12 +1365,12 @@ a{
 .notice {
     margin: 60px 0 0 0;
     padding: 20px 0;
+    line-height: 1.2;
     width: 100%;
-    border: 1px dashed #e6e6e6;
-    color: #969696;
+    background-image: linear-gradient(to right, rgba(11, 98, 244, .7), rgba(0, 0, 0, .1), rgba(255, 183, 213, .7));
+    color: #fff;
     display: inline-block;
-    background: #fff;
-    border-radius: 10px;
+    border-radius: 5px;
     overflow:hidden;
     display:flex;
     align-items:center;
@@ -1367,7 +1391,7 @@ a{
 @media (max-width:767px){
     
   .post .post-body .links ul li{width:100%;margin-left:0 !important;margin-right:15%;}
-  .notice{margin-top:10px;padding: 10px 0;}
+  .notice{margin-top:10px;padding: 15px 0;}
   .post-date{display:none;}
   .header{height: 260px;background-attachment:scroll;}
   .meteor{display:none;}
@@ -1404,9 +1428,13 @@ a{
     vertical-align: middle;
     margin-left: 10px;
 }
+.notice-time{
+    text-align: right;
+    flex: 1;
+    font-size: 14px;
+    margin-right 15px;
+}
 .notice-logo{
-    color: #999;
-    float:left;
     font-size: 14px;
     margin-left: 15px;
 }

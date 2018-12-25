@@ -125,7 +125,7 @@
 <meta property="og:site_name" content="九十 | shamopoo&#39;s Blog">
 <meta property="og:description" content="在Gitgub上看见一个好玩的项目 30 seconds of code，js真好玩。">
 <meta property="og:locale" content="shamopoo">
-<meta property="og:updated_time" content="2018-12-24T10:31:29.000Z">
+<meta property="og:updated_time" content="2018-12-25T02:56:03.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="30 seconds of Javascript">
 <meta name="twitter:description" content="在Gitgub上看见一个好玩的项目 30 seconds of code，js真好玩。">
@@ -456,7 +456,7 @@
 
       
         <p>在Gitgub上看见一个好玩的项目 <a href="https://github.com/30-seconds/30-seconds-of-code#-adapter-1" target="_blank" rel="noopener">30 seconds of code</a>，js真好玩。<br><a id="more"></a></p>
-<h2 id="🔌-适配"><a href="#🔌-适配" class="headerlink" title="🔌 适配"></a>🔌 适配</h2><h3 id="ary"><a href="#ary" class="headerlink" title="ary"></a>ary</h3><p>创建一个最多可以接受<code>n</code>个参数的函数，无视任何其他参数。<br>调用提供的函数，<code>fn</code>，最多n个参数。<br>运用<code>Array.prototype.slice(0,n)</code>和展开运算符<code>…</code></p>
+<h2 id="🔌-适配"><a href="#🔌-适配" class="headerlink" title="🔌 适配"></a>🔌 适配</h2><h3 id="ary"><a href="#ary" class="headerlink" title="ary"></a>ary</h3><p>创建一个最多可以接受<code>n</code>个参数的函数。<br>调用提供的函数，<code>fn</code>，最多n个参数。<br>运用<code>Array.prototype.slice(0,n)</code>和展开运算符<code>…</code></p>
 <p><samp></samp></p>
 <pre><code class="JAVASCRIPT"><span class="keyword">const</span> ary = <span class="function">(<span class="params">fn, n</span>) =&gt;</span> (...args) =&gt; fn(...args.slice(<span class="number">0</span>, n));
 </code></pre>
@@ -896,7 +896,8 @@ gcd(...[<span class="number">12</span>, <span class="number">8</span>, <span cla
 sum(...[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]); <span class="comment">// 10</span>
 </code></pre>
 <p></p>
-<h2 id="🗃️-Object"><a href="#🗃️-Object" class="headerlink" title="🗃️ Object"></a>🗃️ Object</h2><h3 id="deepClone"><a href="#deepClone" class="headerlink" title="deepClone"></a>deepClone</h3><p><samp></samp></p>
+<h2 id="🗃️-Object"><a href="#🗃️-Object" class="headerlink" title="🗃️ Object"></a>🗃️ Object</h2><h3 id="deepClone"><a href="#deepClone" class="headerlink" title="deepClone"></a>deepClone</h3><p>创建对象的深克隆。<br>使用<code>Object.assign()</code>和空对象<code>({})</code>创建原始的浅层克隆。<br>使用<code>Object.keys()</code>和<code>Array.prototype.forEach()</code>来确定需要深度克隆的键值对。</p>
+<p><samp></samp></p>
 <pre><code class="JAVASCRIPT"><span class="keyword">const</span> deepClone = <span class="function"><span class="params">obj</span> =&gt;</span> {
   <span class="keyword">let</span> clone = <span class="built_in">Object</span>.assign({}, obj);
   <span class="built_in">Object</span>.keys(clone).forEach(
@@ -916,7 +917,8 @@ sum(...[<span class="number">1</span>, <span class="number">2</span>, <span clas
 <span class="keyword">const</span> b = deepClone(a); <span class="comment">// a !== b, a.obj !== b.obj</span>
 </code></pre>
 <p></p>
-<h3 id="flattenObject"><a href="#flattenObject" class="headerlink" title="flattenObject"></a>flattenObject</h3><p><samp></samp></p>
+<h3 id="flattenObject"><a href="#flattenObject" class="headerlink" title="flattenObject"></a>flattenObject</h3><p>展平对象。<br>使用<code>Object.keys(obj)</code>与<code>Array.prototype.reduce()</code>结合将每个叶节点转换为展平路径节点。</p>
+<p><samp></samp></p>
 <pre><code class="JAVASCRIPT"><span class="keyword">const</span> flattenObject = <span class="function">(<span class="params">obj, prefix = <span class="string">''</span></span>) =&gt;</span>
   <span class="built_in">Object</span>.keys(obj).reduce(<span class="function">(<span class="params">acc, k</span>) =&gt;</span> {
     <span class="keyword">const</span> pre = prefix.length ? prefix + <span class="string">'.'</span> : <span class="string">''</span>;
@@ -933,7 +935,8 @@ sum(...[<span class="number">1</span>, <span class="number">2</span>, <span clas
 <pre><code class="JAVASCRIPT">flattenObject({ <span class="attr">a</span>: { <span class="attr">b</span>: { <span class="attr">c</span>: <span class="number">1</span> } }, <span class="attr">d</span>: <span class="number">1</span> }); <span class="comment">// { 'a.b.c': 1, d: 1 }</span>
 </code></pre>
 <p></p>
-<h3 id="mapKeys"><a href="#mapKeys" class="headerlink" title="mapKeys"></a>mapKeys</h3><p><samp></samp></p>
+<h3 id="mapKeys"><a href="#mapKeys" class="headerlink" title="mapKeys"></a>mapKeys</h3><p>创建一个对象，其中包含通过为每个键运行提供的函数生成的键以及与提供的对象相同的值。<br>使用<code>Object.keys(obj)</code>迭代对象的键。<br>使用Array.prototype.reduce()使用<code>fn</code>创建具有相同值和映射键的新对象。</p>
+<p><samp></samp></p>
 <pre><code class="JAVASCRIPT"><span class="keyword">const</span> mapKeys = <span class="function">(<span class="params">obj, fn</span>) =&gt;</span>
   <span class="built_in">Object</span>.keys(obj).reduce(<span class="function">(<span class="params">acc, k</span>) =&gt;</span> {
     acc[fn(obj[k], k, obj)] = obj[k];
@@ -946,7 +949,8 @@ sum(...[<span class="number">1</span>, <span class="number">2</span>, <span clas
 <pre><code class="JAVASCRIPT">mapKeys({ <span class="attr">a</span>: <span class="number">1</span>, <span class="attr">b</span>: <span class="number">2</span> }, (val, key) =&gt; key + val); <span class="comment">// { a1: 1, b2: 2 }</span>
 </code></pre>
 <p></p>
-<h3 id="mapValues"><a href="#mapValues" class="headerlink" title="mapValues"></a>mapValues</h3><p><samp></samp></p>
+<h3 id="mapValues"><a href="#mapValues" class="headerlink" title="mapValues"></a>mapValues</h3><p>使用与提供的对象相同的键创建对象，并通过为每个值运行提供的函数生成值。<br>使用<code>Object.keys(obj)</code>迭代对象的键。<br>使用<code>Array.prototype.reduce()</code>。<br>使用<code>fn</code>创建具有相同键和映射值的新对象。</p>
+<p><samp></samp></p>
 <pre><code class="JAVASCRIPT"><span class="keyword">const</span> mapValues = <span class="function">(<span class="params">obj, fn</span>) =&gt;</span>
   <span class="built_in">Object</span>.keys(obj).reduce(<span class="function">(<span class="params">acc, k</span>) =&gt;</span> {
     acc[k] = fn(obj[k], k, obj);
@@ -984,7 +988,162 @@ arr.reduce(<span class="function">(<span class="params">a, [key, val]</span>) =&
 <pre><code class="JAVASCRIPT">objectToPairs({ <span class="attr">a</span>: <span class="number">1</span>, <span class="attr">b</span>: <span class="number">2</span> }); <span class="comment">// [ ['a', 1], ['b', 2] ]</span>
 </code></pre>
 <p></p>
-<h2 id="📜-String"><a href="#📜-String" class="headerlink" title="📜 String"></a>📜 String</h2><h2 id="📃-Type"><a href="#📃-Type" class="headerlink" title="📃 Type"></a>📃 Type</h2><h2 id="🔧-Utility"><a href="#🔧-Utility" class="headerlink" title="🔧 Utility"></a>🔧 Utility</h2>
+<h2 id="📜-String"><a href="#📜-String" class="headerlink" title="📜 String"></a>📜 String</h2><h3 id="fromCamelCase"><a href="#fromCamelCase" class="headerlink" title="fromCamelCase"></a>fromCamelCase</h3><p>转换字符串。<br>使用<code>String.prototype.replace()</code>删除下划线，连字符和空格，并将单词转换为<code>camelcase</code>。 省略第二个参数以使用<code>_</code>的默认分隔符。</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT"><span class="keyword">const</span> fromCamelCase = <span class="function">(<span class="params">str, separator = <span class="string">'_'</span></span>) =&gt;</span>
+  str
+    .replace(<span class="regexp">/([a-z\d])([A-Z])/g</span>, <span class="string">'$1'</span> + separator + <span class="string">'$2'</span>)
+    .replace(<span class="regexp">/([A-Z]+)([A-Z][a-z\d]+)/g</span>, <span class="string">'$1'</span> + separator + <span class="string">'$2'</span>)
+    .toLowerCase();
+</code></pre>
+<p></p>
+<p>🌰栗子：</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT">fromCamelCase(<span class="string">'someDatabaseFieldName'</span>, <span class="string">' '</span>); 
+<span class="comment">// 'some database field name'</span>
+fromCamelCase(<span class="string">'someLabelThatNeedsToBeCamelized'</span>, <span class="string">'-'</span>); 
+<span class="comment">// 'some-label-that-needs-to-be-camelized'</span>
+fromCamelCase(<span class="string">'someJavascriptProperty'</span>, <span class="string">'_'</span>); 
+<span class="comment">// 'some_javascript_property'</span>
+</code></pre>
+<p></p>
+<h3 id="isAnagram"><a href="#isAnagram" class="headerlink" title="isAnagram"></a>isAnagram</h3><p>检查字符串是否是另一个字符串的字谜。<br>使用<code>String.toLowerCase()</code>和<code>String.prototype.replace()</code>删除不必要的字符。<br>使用<code>String.prototype.split(‘’)</code>和<code>Array.prototype.sort()</code>和<code>Array.prototype.join(‘’)</code>检查是否相等。</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT"><span class="keyword">const</span> isAnagram = <span class="function">(<span class="params">str1, str2</span>) =&gt;</span> {
+  <span class="keyword">const</span> normalize = <span class="function"><span class="params">str</span> =&gt;</span>
+    str
+      .toLowerCase()
+      .replace(<span class="regexp">/[^a-z0-9]/gi</span>, <span class="string">''</span>)
+      .split(<span class="string">''</span>)
+      .sort()
+      .join(<span class="string">''</span>);
+  <span class="keyword">return</span> normalize(str1) === normalize(str2);
+};
+</code></pre>
+<p></p>
+<p>🌰栗子：</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT">isAnagram(<span class="string">'iceman'</span>, <span class="string">'cinema'</span>); <span class="comment">// true</span>
+</code></pre>
+<p></p>
+<h3 id="mask"><a href="#mask" class="headerlink" title="mask"></a>mask</h3><p>使用指定的掩码字符替换除最后一个字符数之外的所有字符。<br>使用<code>String.prototype.slice()</code>来获取将保持未屏蔽的字符部分。<br>使用<code>String.padStart()</code>以掩码字符填充字符串的开头，直到原始长度。</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT"><span class="keyword">const</span> mask = <span class="function">(<span class="params">cc, num = <span class="number">4</span>, mask = <span class="string">'*'</span></span>) =&gt;</span> 
+<span class="string">`<span class="subst">${cc}</span>`</span>.slice(-num).padStart(<span class="string">`<span class="subst">${cc}</span>`</span>.length, mask);
+};
+</code></pre>
+<p></p>
+<p>🌰栗子：</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT">mask(<span class="number">1234567890</span>); <span class="comment">// '******7890'</span>
+mask(<span class="number">1234567890</span>, <span class="number">3</span>); <span class="comment">// '*******890'</span>
+mask(<span class="number">1234567890</span>, <span class="number">-4</span>, <span class="string">'$'</span>); <span class="comment">// '$$$$567890'</span>
+</code></pre>
+<p></p>
+<h3 id="reverseString"><a href="#reverseString" class="headerlink" title="reverseString"></a>reverseString</h3><p>反转字符串。<br>使用展开运算符<code>(…)</code>和Array.prototype.reverse()来反转字符串中字符的顺序。<br>使用<code>String.prototype.join(‘’)</code>转换成字符串。</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT"><span class="keyword">const</span> reverseString = <span class="function"><span class="params">str</span> =&gt;</span> [...str].reverse().join(<span class="string">''</span>);
+};
+</code></pre>
+<p></p>
+<p>🌰栗子：</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT">reverseString(<span class="string">'foobar'</span>); <span class="comment">// 'raboof'</span>
+</code></pre>
+<p></p>
+<h3 id="stripHTMLTags"><a href="#stripHTMLTags" class="headerlink" title="stripHTMLTags"></a>stripHTMLTags</h3><p>从字符串中删除<code>HTML / XML</code>标记。<br>使用正则表达式从字符串中删除<code>HTML / XML</code>标记。</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT"><span class="keyword">const</span> stripHTMLTags = <span class="function"><span class="params">str</span> =&gt;</span> str.replace(<span class="regexp">/&lt;[^&gt;]*&gt;/g</span>, <span class="string">''</span>);
+};
+</code></pre>
+<p></p>
+<p>🌰栗子：</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT">stripHTMLTags(<span class="string">'&lt;p&gt;&lt;em&gt;lorem&lt;/em&gt; &lt;em&gt;ipsum&lt;/em&gt;&lt;/p&gt;'</span>); 
+<span class="comment">// 'lorem ipsum'</span>
+</code></pre>
+<p></p>
+<h3 id="toKebabCase"><a href="#toKebabCase" class="headerlink" title="toKebabCase"></a>toKebabCase</h3><p>字符串转换为烤肉串案例。<br>将字符串分解为单词并将它们组合添加<code> - </code>使用正则表达式作为分隔符。</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT"><span class="keyword">const</span> toKebabCase = <span class="function"><span class="params">str</span> =&gt;</span>
+  str &amp;&amp;
+  str
+    .match(<span class="regexp">/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g</span>)
+    .map(<span class="function"><span class="params">x</span> =&gt;</span> x.toLowerCase())
+    .join(<span class="string">'-'</span>);
+</code></pre>
+<p></p>
+<p>🌰栗子：</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT">toKebabCase(<span class="string">'camelCase'</span>); <span class="comment">// 'camel-case'</span>
+toKebabCase(<span class="string">'some text'</span>); <span class="comment">// 'some-text'</span>
+toKebabCase(<span class="string">'some-mixed_string With spaces_underscores-and-hyphens'</span>); 
+<span class="comment">// 'some-mixed-string-with-spaces-underscores-and-hyphens'</span>
+toKebabCase(<span class="string">'AllThe-small Things'</span>); 
+<span class="comment">// "all-the-small-things"</span>
+toKebabCase(<span class="string">'IAmListeningToFMWhileLoadingDifferentURLOnMyBrowser'</span>); 
+<span class="comment">// "i-am-listening-to-fm-while-loading-different-url-on-my-browser"</span>
+</code></pre>
+<p></p>
+<h3 id="words"><a href="#words" class="headerlink" title="words"></a>words</h3><p>将给定的字符串转换为单词数组。<br>使用<code>String.prototype.split()</code>与默认为非字母作为正则使用，以转换为字符串数组。<br>使用<code>Array.prototype.filter()</code>删除任何空字符串。 默认的正则为<code>/[^a-zA-Z-]+/</code>。</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT"><span class="keyword">const</span> words = <span class="function">(<span class="params">str, pattern = <span class="regexp">/[^a-zA-Z-]+/</span></span>) =&gt;</span> 
+str.split(pattern).filter(<span class="built_in">Boolean</span>);
+</code></pre>
+<p></p>
+<p>🌰栗子：</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT">words(<span class="string">'I love javaScript!!'</span>); <span class="comment">// ["I", "love", "javaScript"]</span>
+words(<span class="string">'python, javaScript &amp; coffee'</span>); <span class="comment">// ["python", "javaScript", "coffee"]</span>
+</code></pre>
+<p></p>
+<h2 id="🔧-Utility"><a href="#🔧-Utility" class="headerlink" title="🔧 Utility"></a>🔧 Utility</h2><h3 id="RGBToHex"><a href="#RGBToHex" class="headerlink" title="RGBToHex"></a>RGBToHex</h3><p>将<code>RGB</code>值转换为颜色代码。<br>使用按位左移运算符<code>(&lt;&lt;)</code>和<code>toString(16)</code>。<br>使用<code>String.padStart(6，’0’)</code>将RGB参数转换为十六进制字符串，以获得6位十六进制值。</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT"><span class="keyword">const</span> RGBToHex = <span class="function">(<span class="params">r, g, b</span>) =&gt;</span>
+((r &lt;&lt; <span class="number">16</span>) + (g &lt;&lt; <span class="number">8</span>) + b).toString(<span class="number">16</span>).padStart(<span class="number">6</span>, <span class="string">'0'</span>);
+</code></pre>
+<p></p>
+<p>🌰栗子：</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT">RGBToHex(<span class="number">255</span>, <span class="number">165</span>, <span class="number">1</span>); <span class="comment">// 'ffa501'</span>
+</code></pre>
+<p></p>
+<h3 id="toDecimalMarkc"><a href="#toDecimalMarkc" class="headerlink" title="toDecimalMarkc"></a>toDecimalMarkc</h3><p>使用<code>toLocaleString()</code>将浮点运算转换为Decimal标记形式——使用逗号分隔字符串与数字。</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT"><span class="keyword">const</span> toDecimalMark = <span class="function"><span class="params">num</span> =&gt;</span> num.toLocaleString(<span class="string">'en-US'</span>);
+</code></pre>
+<p></p>
+<p>🌰栗子：</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT">toDecimalMark(<span class="number">12305030388.9087</span>); <span class="comment">// "12,305,030,388.909"</span>
+</code></pre>
+<p></p>
+<h3 id="validateNumber"><a href="#validateNumber" class="headerlink" title="validateNumber"></a>validateNumber</h3><p>如果给定值是数字，则返回true，否则返回false。<br>使用<code>!isNaN()</code>与<code>parseFloat()</code>判断参数是否为数字。<br>使用<code>isFinite()</code>判断数字是否有限数字。<br>使用<code>Number()</code>判断类型是否为数字。</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT"><span class="keyword">const</span> validateNumber = <span class="function"><span class="params">n</span> =&gt;</span> 
+!<span class="built_in">isNaN</span>(<span class="built_in">parseFloat</span>(n)) &amp;&amp; <span class="built_in">isFinite</span>(n) &amp;&amp; <span class="built_in">Number</span>(n) == n;
+</code></pre>
+<p></p>
+<p>🌰栗子：</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT">validateNumber(<span class="string">'10'</span>); <span class="comment">// true</span>
+</code></pre>
+<p></p>
+<h3 id="yesNo"><a href="#yesNo" class="headerlink" title="yesNo"></a>yesNo</h3><p>如果字符串是<code>y / yes</code>则返回<code>true</code>，如果字符串是<code>n / no</code>，则返回<code>false</code>。<br>使用<code>RegExp.test()</code>检查字符串是否为<code>y / yes</code>或<code>n / no</code>。 <code>def</code>默认为no。</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT"><span class="keyword">const</span> yesNo = <span class="function">(<span class="params">val, def = <span class="literal">false</span></span>) =&gt;</span>
+  /^(y|yes)$/i.test(val) ? <span class="literal">true</span> : <span class="regexp">/^(n|no)$/i</span>.test(val) ? <span class="literal">false</span> : def;
+</code></pre>
+<p></p>
+<p>🌰栗子：</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT">yesNo(<span class="string">'Y'</span>); <span class="comment">// true</span>
+yesNo(<span class="string">'yes'</span>); <span class="comment">// true</span>
+yesNo(<span class="string">'No'</span>); <span class="comment">// false</span>
+yesNo(<span class="string">'Foo'</span>, <span class="literal">true</span>); <span class="comment">// true</span>
+</code></pre>
+<p></p>
+
       
     </div>
     
@@ -1261,7 +1420,7 @@ arr.reduce(<span class="function">(<span class="params">a, [key, val]</span>) =&
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#🔌-适配"><span class="nav-number">1.</span> <span class="nav-text">🔌 适配</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ary"><span class="nav-number">1.1.</span> <span class="nav-text">ary</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#over"><span class="nav-number">1.2.</span> <span class="nav-text">over</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#unary"><span class="nav-number">1.3.</span> <span class="nav-text">unary</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#📚-Array"><span class="nav-number">2.</span> <span class="nav-text">📚 Array</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#all"><span class="nav-number">2.1.</span> <span class="nav-text">all</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#allEqual"><span class="nav-number">2.2.</span> <span class="nav-text">allEqual</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#some"><span class="nav-number">2.3.</span> <span class="nav-text">some</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bifurcate"><span class="nav-number">2.4.</span> <span class="nav-text">bifurcate</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#chunk"><span class="nav-number">2.5.</span> <span class="nav-text">chunk</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#compact"><span class="nav-number">2.6.</span> <span class="nav-text">compact</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#countBy"><span class="nav-number">2.7.</span> <span class="nav-text">countBy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#countOccurrences"><span class="nav-number">2.8.</span> <span class="nav-text">countOccurrences</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#deepFlatten"><span class="nav-number">2.9.</span> <span class="nav-text">deepFlatten</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#filterNonUnique"><span class="nav-number">2.10.</span> <span class="nav-text">filterNonUnique</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#forEachRight"><span class="nav-number">2.11.</span> <span class="nav-text">forEachRight</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#indexOfAll"><span class="nav-number">2.12.</span> <span class="nav-text">indexOfAll</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#initialize2DArray"><span class="nav-number">2.13.</span> <span class="nav-text">initialize2DArray</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#initializeArrayWithValues"><span class="nav-number">2.14.</span> <span class="nav-text">initializeArrayWithValues</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mapObject"><span class="nav-number">2.15.</span> <span class="nav-text">mapObject</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#similarity"><span class="nav-number">2.16.</span> <span class="nav-text">similarity</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#union"><span class="nav-number">2.17.</span> <span class="nav-text">union</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#🌐-Browser"><span class="nav-number">3.</span> <span class="nav-text">🌐 Browser</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#detectDeviceType"><span class="nav-number">3.1.</span> <span class="nav-text">detectDeviceType</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#elementContains"><span class="nav-number">3.2.</span> <span class="nav-text">elementContains</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#getScrollPosition"><span class="nav-number">3.3.</span> <span class="nav-text">getScrollPosition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#getStyle"><span class="nav-number">3.4.</span> <span class="nav-text">getStyle</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hasClass"><span class="nav-number">3.5.</span> <span class="nav-text">hasClass</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#⏱️-Date"><span class="nav-number">4.</span> <span class="nav-text">⏱️ Date</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#formatDuration"><span class="nav-number">4.1.</span> <span class="nav-text">formatDuration</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#🎛️-Function"><span class="nav-number">5.</span> <span class="nav-text">🎛️ Function</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#debounce"><span class="nav-number">5.1.</span> <span class="nav-text">debounce</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#throttle"><span class="nav-number">5.2.</span> <span class="nav-text">throttle</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#➗-Math"><span class="nav-number">6.</span> <span class="nav-text">➗ Math</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#distance"><span class="nav-number">6.1.</span> <span class="nav-text">distance</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#factorial"><span class="nav-number">6.2.</span> <span class="nav-text">factorial</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gcd"><span class="nav-number">6.3.</span> <span class="nav-text">gcd</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#randomIntArrayInRange"><span class="nav-number">6.4.</span> <span class="nav-text">randomIntArrayInRange</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sum"><span class="nav-number">6.5.</span> <span class="nav-text">sum</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#🗃️-Object"><span class="nav-number">7.</span> <span class="nav-text">🗃️ Object</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#deepClone"><span class="nav-number">7.1.</span> <span class="nav-text">deepClone</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flattenObject"><span class="nav-number">7.2.</span> <span class="nav-text">flattenObject</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mapKeys"><span class="nav-number">7.3.</span> <span class="nav-text">mapKeys</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mapValues"><span class="nav-number">7.4.</span> <span class="nav-text">mapValues</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#objectFromPairs"><span class="nav-number">7.5.</span> <span class="nav-text">objectFromPairs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#objectToPairs"><span class="nav-number">7.6.</span> <span class="nav-text">objectToPairs</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#📜-String"><span class="nav-number">8.</span> <span class="nav-text">📜 String</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#📃-Type"><span class="nav-number">9.</span> <span class="nav-text">📃 Type</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#🔧-Utility"><span class="nav-number">10.</span> <span class="nav-text">🔧 Utility</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#🔌-适配"><span class="nav-number">1.</span> <span class="nav-text">🔌 适配</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ary"><span class="nav-number">1.1.</span> <span class="nav-text">ary</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#over"><span class="nav-number">1.2.</span> <span class="nav-text">over</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#unary"><span class="nav-number">1.3.</span> <span class="nav-text">unary</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#📚-Array"><span class="nav-number">2.</span> <span class="nav-text">📚 Array</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#all"><span class="nav-number">2.1.</span> <span class="nav-text">all</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#allEqual"><span class="nav-number">2.2.</span> <span class="nav-text">allEqual</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#some"><span class="nav-number">2.3.</span> <span class="nav-text">some</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bifurcate"><span class="nav-number">2.4.</span> <span class="nav-text">bifurcate</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#chunk"><span class="nav-number">2.5.</span> <span class="nav-text">chunk</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#compact"><span class="nav-number">2.6.</span> <span class="nav-text">compact</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#countBy"><span class="nav-number">2.7.</span> <span class="nav-text">countBy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#countOccurrences"><span class="nav-number">2.8.</span> <span class="nav-text">countOccurrences</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#deepFlatten"><span class="nav-number">2.9.</span> <span class="nav-text">deepFlatten</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#filterNonUnique"><span class="nav-number">2.10.</span> <span class="nav-text">filterNonUnique</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#forEachRight"><span class="nav-number">2.11.</span> <span class="nav-text">forEachRight</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#indexOfAll"><span class="nav-number">2.12.</span> <span class="nav-text">indexOfAll</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#initialize2DArray"><span class="nav-number">2.13.</span> <span class="nav-text">initialize2DArray</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#initializeArrayWithValues"><span class="nav-number">2.14.</span> <span class="nav-text">initializeArrayWithValues</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mapObject"><span class="nav-number">2.15.</span> <span class="nav-text">mapObject</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#similarity"><span class="nav-number">2.16.</span> <span class="nav-text">similarity</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#union"><span class="nav-number">2.17.</span> <span class="nav-text">union</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#🌐-Browser"><span class="nav-number">3.</span> <span class="nav-text">🌐 Browser</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#detectDeviceType"><span class="nav-number">3.1.</span> <span class="nav-text">detectDeviceType</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#elementContains"><span class="nav-number">3.2.</span> <span class="nav-text">elementContains</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#getScrollPosition"><span class="nav-number">3.3.</span> <span class="nav-text">getScrollPosition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#getStyle"><span class="nav-number">3.4.</span> <span class="nav-text">getStyle</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hasClass"><span class="nav-number">3.5.</span> <span class="nav-text">hasClass</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#⏱️-Date"><span class="nav-number">4.</span> <span class="nav-text">⏱️ Date</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#formatDuration"><span class="nav-number">4.1.</span> <span class="nav-text">formatDuration</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#🎛️-Function"><span class="nav-number">5.</span> <span class="nav-text">🎛️ Function</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#debounce"><span class="nav-number">5.1.</span> <span class="nav-text">debounce</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#throttle"><span class="nav-number">5.2.</span> <span class="nav-text">throttle</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#➗-Math"><span class="nav-number">6.</span> <span class="nav-text">➗ Math</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#distance"><span class="nav-number">6.1.</span> <span class="nav-text">distance</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#factorial"><span class="nav-number">6.2.</span> <span class="nav-text">factorial</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gcd"><span class="nav-number">6.3.</span> <span class="nav-text">gcd</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#randomIntArrayInRange"><span class="nav-number">6.4.</span> <span class="nav-text">randomIntArrayInRange</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sum"><span class="nav-number">6.5.</span> <span class="nav-text">sum</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#🗃️-Object"><span class="nav-number">7.</span> <span class="nav-text">🗃️ Object</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#deepClone"><span class="nav-number">7.1.</span> <span class="nav-text">deepClone</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flattenObject"><span class="nav-number">7.2.</span> <span class="nav-text">flattenObject</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mapKeys"><span class="nav-number">7.3.</span> <span class="nav-text">mapKeys</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mapValues"><span class="nav-number">7.4.</span> <span class="nav-text">mapValues</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#objectFromPairs"><span class="nav-number">7.5.</span> <span class="nav-text">objectFromPairs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#objectToPairs"><span class="nav-number">7.6.</span> <span class="nav-text">objectToPairs</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#📜-String"><span class="nav-number">8.</span> <span class="nav-text">📜 String</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#fromCamelCase"><span class="nav-number">8.1.</span> <span class="nav-text">fromCamelCase</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#isAnagram"><span class="nav-number">8.2.</span> <span class="nav-text">isAnagram</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mask"><span class="nav-number">8.3.</span> <span class="nav-text">mask</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#reverseString"><span class="nav-number">8.4.</span> <span class="nav-text">reverseString</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#stripHTMLTags"><span class="nav-number">8.5.</span> <span class="nav-text">stripHTMLTags</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#toKebabCase"><span class="nav-number">8.6.</span> <span class="nav-text">toKebabCase</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#words"><span class="nav-number">8.7.</span> <span class="nav-text">words</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#🔧-Utility"><span class="nav-number">9.</span> <span class="nav-text">🔧 Utility</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#RGBToHex"><span class="nav-number">9.1.</span> <span class="nav-text">RGBToHex</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#toDecimalMarkc"><span class="nav-number">9.2.</span> <span class="nav-text">toDecimalMarkc</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#validateNumber"><span class="nav-number">9.3.</span> <span class="nav-text">validateNumber</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#yesNo"><span class="nav-number">9.4.</span> <span class="nav-text">yesNo</span></a></li></ol></li></ol></div>
             
 
           </div>

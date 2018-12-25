@@ -10,9 +10,12 @@
 
 {% block content %}
   <section id="posts" class="posts-expand">
-    <div class="notice"><i class="fa notice-logo fa-volume-up"></i><div class="notice-content">
-    「念念不忘 必有回响」
-    </div>
+    <div class="notice">
+      <i class="fa notice-logo fa-bell-o"></i>
+      <div class="notice-content">
+      「念念不忘 必有回响」
+      </div>
+      <i class="notice-time">-- Dec 25th, 21:20 PM</i>
     </div>
     {% for post in page.posts %}
       {{ post_template.render(post, true) }}
