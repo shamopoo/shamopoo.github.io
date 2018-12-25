@@ -1367,13 +1367,14 @@ a{
     padding: 20px 0;
     line-height: 1.2;
     width: 100%;
-    background-image: linear-gradient(to right, rgba(11, 98, 244, .7), rgba(0, 0, 0, .1), rgba(255, 183, 213, .7));
+    background-image: linear-gradient(to right, rgba(11, 98, 244, .7), rgba(0, 0, 0, .3), rgba(255, 183, 213, .7));
     color: #fff;
     display: inline-block;
     border-radius: 5px;
     overflow:hidden;
     display:flex;
     align-items:center;
+    justify-content: space-between;
 }
 .graduate-time{
     text-align: start;
@@ -1391,7 +1392,7 @@ a{
 @media (max-width:767px){
     
   .post .post-body .links ul li{width:100%;margin-left:0 !important;margin-right:15%;}
-  .notice{margin-top:10px;padding: 15px 0;}
+  .notice{margin-top:10px;padding: 10px 0;}
   .post-date{display:none;}
   .header{height: 260px;background-attachment:scroll;}
   .meteor{display:none;}
@@ -1424,125 +1425,11 @@ a{
   }
 }
 .notice-content {
-    display: initial;
-    vertical-align: middle;
-    margin-left: 10px;
+    margin-left: 25px;
 }
 .notice-time{
-    text-align: right;
-    flex: 1;
-    font-size: 14px;
-    margin-right 15px;
+    margin-right 25px;
 }
-.notice-logo{
-    font-size: 14px;
-    margin-left: 15px;
-}
-.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}
-@keyframes octocat-wave{
-  0%,100%{transform:rotate(0)}
-  20%,60%{transform:rotate(-25deg)}
-  40%,80%{transform:rotate(10deg)}
-}
-@media (max-width:500px){
-.github-corner:hover .octo-arm{animation:none}
-.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}
-}
-@keyframes poi-face{
-  2%, 24%, 80% {
-    -webkit-transform: translate(0,1.5px) rotate(1.5deg);
-    transform: translate(0,1.5px) rotate(1.5deg);
-}
-4%, 68%, 98% {
-    -webkit-transform: translate(0,-1.5px) rotate(-.5deg);
-    transform: translate(0,-1.5px) rotate(-.5deg);
-}
-38%, 6% {
-    -webkit-transform: translate(0,1.5px) rotate(-1.5deg);
-    transform: translate(0,1.5px) rotate(-1.5deg);
-}
-8%, 86% {
-    -webkit-transform: translate(0,-1.5px) rotate(-1.5deg);
-    transform: translate(0,-1.5px) rotate(-1.5deg);
-}
-10%, 72% {
-    -webkit-transform: translate(0,2.5px) rotate(1.5deg);
-    transform: translate(0,2.5px) rotate(1.5deg);
-}
-12%, 64%, 78%, 96% {
-    -webkit-transform: translate(0,-.5px) rotate(1.5deg);
-    transform: translate(0,-.5px) rotate(1.5deg);
-}
-14%, 54% {
-    -webkit-transform: translate(0,-1.5px) rotate(1.5deg);
-    transform: translate(0,-1.5px) rotate(1.5deg);
-}
-16% {
-    -webkit-transform: translate(0,-.5px) rotate(-1.5deg);
-    transform: translate(0,-.5px) rotate(-1.5deg);
-}
-18%, 22% {
-    -webkit-transform: translate(0,.5px) rotate(-1.5deg);
-    transform: translate(0,.5px) rotate(-1.5deg);
-}
-20%, 36%, 46% {
-    -webkit-transform: translate(0,-1.5px) rotate(2.5deg);
-    transform: translate(0,-1.5px) rotate(2.5deg);
-}
-26%, 50% {
-    -webkit-transform: translate(0,.5px) rotate(.5deg);
-    transform: translate(0,.5px) rotate(.5deg);
-}
-28% {
-    -webkit-transform: translate(0,.5px) rotate(1.5deg);
-    transform: translate(0,.5px) rotate(1.5deg);
-}
-30%, 40%, 62%, 76%, 88% {
-    -webkit-transform: translate(0,-.5px) rotate(2.5deg);
-    transform: translate(0,-.5px) rotate(2.5deg);
-}
-32%, 34%, 66% {
-    -webkit-transform: translate(0,1.5px) rotate(-.5deg);
-    transform: translate(0,1.5px) rotate(-.5deg);
-}
-42% {
-    -webkit-transform: translate(0,2.5px) rotate(-1.5deg);
-    transform: translate(0,2.5px) rotate(-1.5deg);
-}
-44%, 70% {
-    -webkit-transform: translate(0,1.5px) rotate(.5deg);
-    transform: translate(0,1.5px) rotate(.5deg);
-}
-48%, 74%, 82% {
-    -webkit-transform: translate(0,-.5px) rotate(.5deg);
-    transform: translate(0,-.5px) rotate(.5deg);
-}
-52%, 56%, 60% {
-    -webkit-transform: translate(0,2.5px) rotate(2.5deg);
-    transform: translate(0,2.5px) rotate(2.5deg);
-}
-58% {
-    -webkit-transform: translate(0,.5px) rotate(2.5deg);
-    transform: translate(0,.5px) rotate(2.5deg);
-}
-84% {
-    -webkit-transform: translate(0,1.5px) rotate(2.5deg);
-    transform: translate(0,1.5px) rotate(2.5deg);
-}
-90% {
-    -webkit-transform: translate(0,2.5px) rotate(-.5deg);
-    transform: translate(0,2.5px) rotate(-.5deg);
-}
-92% {
-    -webkit-transform: translate(0,.5px) rotate(-.5deg);
-    transform: translate(0,.5px) rotate(-.5deg);
-}
-94% {
-    -webkit-transform: translate(0,2.5px) rotate(.5deg);
-    transform: translate(0,2.5px) rotate(.5deg);
-}
-0%, 100% {
-    -webkit-transform: translate(0,0) rotate(0);
-    transform: translate(0,0) rotate(0);
-}
+.notice-logo:hover{
+    cursor: pointer;    
 }

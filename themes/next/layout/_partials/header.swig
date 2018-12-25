@@ -31,9 +31,7 @@
       <div class="banner-border-top"></div>
       <a href="{{ config.root }}"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">
-          hi,shamopoo
-        </span>
+        <span class="site-title">hi, shamopoo</span>
         <div class="site-sub-title">Keep Learning Heart</div>
         <span class="logo-line-after"><i></i></span>
       </a>
