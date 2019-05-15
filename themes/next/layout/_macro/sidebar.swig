@@ -131,11 +131,9 @@
         </div>
         <div class="sidebar-div-like">
           <div class="sidebar-box">
-            <img src="https://o7y8mvdbc.qnssl.com/tc/uploads/1805/160138036367.jpg">
             <a>九十</a>
             <i class="fa fa-heart fa-i-like"></i>
-            <a>遇安</a>
-            <img src="https://o7y8mvdbc.qnssl.com/tc/uploads/1805/160138254135.jpg">
+            <a>是甜的呀</a>
           </div>
           <span id="like_time"></span>
         </div>
