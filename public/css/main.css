@@ -2266,7 +2266,7 @@ pre .javascript .function {
   border: none;
 }
 .footer-image {
-  background: url("https://o7y8mvdbc.qnssl.com/tc/uploads/1804/270258596528.png") no-repeat 50%;
+  background: url("https://moetu.fastmirror.org/images/2019/05/15/footerc463a7cdb5609089.png") no-repeat 50%;
   height: 368px;
   z-index: -1;
   position: absolute;
@@ -3004,7 +3004,6 @@ a:hover {
 body {
   background: rgba(239,239,239,0.9);
   background-attachment: fixed;
-  cursor: url("../uploads/normal.cur"), auto;
   margin: 0;
   padding: 0;
 }
@@ -3692,20 +3691,6 @@ tspan {
   -o-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
-#aplayer-fixed {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: 0;
-  z-index: 9999;
-  overflow: visible;
-  max-width: 400px;
-  box-shadow: none;
-}
-#aplayer-fixed .aplayer-lrc-current {
-  color: #fe9600 !important;
-}
 .time_div {
   white-space: nowrap;
 }
@@ -4142,9 +4127,6 @@ a {
 }
 .notice-time {
   margin-right: 25px;
-}
-.notice-logo:hover {
-  cursor: pointer;
 }
 @-moz-keyframes heart-jump {
   0, 100%, 70% {
