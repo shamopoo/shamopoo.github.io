@@ -1,0 +1,1840 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="shamopoo">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.css.network/css?family=Lato:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|Iosevka:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+  
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/uploads/cat.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/uploads/cat.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/uploads/cat.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/uploads/cat.ico?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="React,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="九十 | shamopoo's Blog" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="最近，在入坑react，从React.js 小书开始入门。">
+<meta name="keywords" content="React">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React.js 小书">
+<meta property="og:url" content="http://shamopoo.top/React-js-book/index.html">
+<meta property="og:site_name" content="九十 | shamopoo&#39;s Blog">
+<meta property="og:description" content="最近，在入坑react，从React.js 小书开始入门。">
+<meta property="og:locale" content="shamopoo">
+<meta property="og:updated_time" content="2019-05-28T12:26:23.232Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="React.js 小书">
+<meta name="twitter:description" content="最近，在入坑react，从React.js 小书开始入门。">
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://shamopoo.top/React-js-book/">
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+
+  <title>React.js 小书 | 九十 | shamopoo's Blog</title>
+  
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="shamopoo">
+  <!--[if lt IE 8]>
+    <div class="browsehappy" role="dialog">当前网页 <strong>不支持</strong> 你正在使用的浏览器. 为了正常的访问, 请 <a href="http://browsehappy.com/">升级你的浏览器</a>.</div>
+  <![endif]-->
+  
+  
+    
+  
+  <canvas id="evanyou"></canvas>
+  <div class="container sidebar-position-left page-post-detail">
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="filter-dot"></div>
+        <div class="header-inner"><div class="site-brand-wrapper">
+  <nav class="site-nav">
+    
+
+    
+      <ul id="menu" class="menu">
+        
+          
+          <li class="menu-item menu-item-home">
+            <a href="/" rel="section">
+              
+                <i class="menu-item-icon fa fa-fw fa-home"></i>
+              
+              首页
+            </a>
+          </li>
+        
+          
+          <li class="menu-item menu-item-archives">
+            <a href="/archives/" rel="section">
+              
+                <i class="menu-item-icon fa fa-fw fa-archive"></i>
+              
+              归档
+            </a>
+          </li>
+        
+          
+          <li class="menu-item menu-item-lab">
+            <a href="/lab/" rel="section">
+              
+                <i class="menu-item-icon fa fa-fw fa-flask"></i>
+              
+              实验室
+            </a>
+          </li>
+        
+          
+          <li class="menu-item menu-item-booklist">
+            <a href="/booklist/" rel="section">
+              
+                <i class="menu-item-icon fa fa-fw fa-book"></i>
+              
+              书单
+            </a>
+          </li>
+        
+          
+          <li class="menu-item menu-item-message">
+            <a href="/message/" rel="section">
+              
+                <i class="menu-item-icon fa fa-fw fa-pencil"></i>
+              
+              留言板
+            </a>
+          </li>
+        
+          
+          <li class="menu-item menu-item-friends">
+            <a href="/friends/" rel="section">
+              
+                <i class="menu-item-icon fa fa-fw fa-link"></i>
+              
+              友人帐
+            </a>
+          </li>
+        
+          
+          <li class="menu-item menu-item-about">
+            <a href="/about/" rel="section">
+              
+                <i class="menu-item-icon fa fa-fw fa-heart"></i>
+              
+              关于
+            </a>
+          </li>
+        
+      </ul>
+    
+  </nav>
+  <div class="site-meta ">
+    
+    <div class="custom-logo-site-title">
+      <div class="banner-border-top"></div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">hi, shamopoo</span>
+        <div class="site-sub-title">Keep Learning Heart</div>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+      <div class="banner-border-bottom"></div>
+    </div>
+  </div>
+  <div class="site-nav-toggle">
+    <div class="nav-content">
+      <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+      </button>
+      <p class="mov-title declara">
+        <a href="https://blog.shamopoo.top">hi,shamopoo</a>
+      </p>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+        </div>
+        <div class="meteor">
+          <div class="red" style="left:600px;"></div>
+          <div class="orange" style="left:700px;"></div>
+          <div class="yellow" style="left:900px;">
+          </div><div class="green" style="left:1100px;">
+          </div><div class="cyan" style="left:1260px;"></div>
+          <div class="blue" style="left:1400px;"></div>
+          <div class="purple" style="left:1500px;"></div>
+          <div class="red" style="left:0px;"></div>
+          <div class="orange" style="left:100px;"></div>
+          <div class="yellow" style="left:300px;"></div>
+          <div class="green" style="left:500px;"></div>
+          <div class="cyan" style="left:660px;"></div>
+          <div class="blue" style="left:800px;"></div>
+          <div class="purple" style="left:900px;"></div>
+          <div class="red" style="left:1200px;"></div>
+          <div class="orange" style="left:1300px;"></div>
+          <div class="yellow" style="left:1500px;"></div>
+          <div class="green" style="left:1700px;"></div>
+          <div class="cyan" style="left:1860px;"></div>
+          <div class="blue" style="left:2000px;"></div>
+          <div class="purple" style="left:2100px;"></div>
+        </div>
+    </header>
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-date">
+      <div class="post-month"> 12月</div>
+      <div class="post-day">20</div>
+  </div>
+  <div class="post-block">
+    <div class="set-top"><div>置顶</div></div>
+    <link itemprop="mainEntityOfPage" href="http://shamopoo.top/React-js-book/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="shamopoo">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://moetu.fastmirror.org/images/2019/05/15/avatorc8f6bbe92554aebd.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="九十 | shamopoo's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+          React.js 小书</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time" style="color:#00a7e0;">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-20T10:20:48+08:00">
+                2018-12-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" style="color:#000;border:none;">
+            
+              <span class="post-meta-divider">•</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技能簿/" itemprop="url" rel="index" style="color:#000;border:none;">
+                    <span itemprop="name">技能簿</span>
+                  </a>
+                </span>
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/React-js-book/" class="leancloud_visitors" data-flag-title="React.js 小书" style="color:#ff3f1a">
+               <span class="post-meta-divider">•</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+      
+      
+
+      
+        <p>  最近，在入坑react，从<a href="http://huziketang.mangojuice.top/books/react/" target="_blank" rel="noopener">React.js 小书</a>开始入门。</p>
+<a id="more"></a>
+<h2 id="预览"><a href="#预览" class="headerlink" title="预览"></a>预览</h2><p><a href="http://jiushi38.coding.me/react-book/" target="_blank" rel="noopener">预览</a><br><a href="https://github.com/shamopoo/Notes/tree/master/react-book" target="_blank" rel="noopener">源码</a></p>
+<h2 id="JSX"><a href="#JSX" class="headerlink" title="JSX"></a>JSX</h2><p><samp></samp></p>
+<pre><code class="JAVASCRIPT"><span class="keyword">const</span> element = <span class="xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello, world!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;
+</code></pre>
+<p></p>
+<p>这种写法是不是很奇怪？包含着HTML和JavaScript。</p>
+<p>它被称为JSX，一种 JavaScript 的语法扩展，是React 的核心组成部分。</p>
+<p>在React 中，JSX会被编译成普通的 JavaScript 对象。举个栗子：</p>
+<p><samp></samp></p>
+<pre><code class="HTML"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">'list'</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">'item'</span>&gt;</span>Item 1<span class="tag">&lt;/<span class="name">li</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">'item'</span>&gt;</span>Item 2<span class="tag">&lt;/<span class="name">li</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">'item'</span>&gt;</span>Item 3<span class="tag">&lt;/<span class="name">li</span>&gt;</span>
+<span class="tag">&lt;/<span class="name">ul</span>&gt;</span>
+</code></pre>
+<p></p>
+<p>每个 DOM 元素的结构都可以用 JavaScript 的对象来表示。你会发现一个 DOM 元素包含的信息其实只有三个：标签名，属性，子元素。</p>
+<p>所以其实上面这个 HTML 所有的信息我们都可以用合法的 JavaScript 对象来表示：</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT">{
+  tag: <span class="string">'ul'</span>,
+  attrs: { <span class="attr">className</span>: <span class="literal">null</span>, <span class="attr">id</span>: <span class="string">'list'</span>},
+  children: [
+    {
+      tag: <span class="string">'li'</span>,
+      arrts: { <span class="attr">className</span>: <span class="string">'item'</span> }
+    },
+     {
+      tag: <span class="string">'li'</span>,
+      arrts: { <span class="attr">className</span>: <span class="string">'item'</span> }
+    },
+     {
+      tag: <span class="string">'li'</span>,
+      arrts: { <span class="attr">className</span>: <span class="string">'item'</span> }
+    }
+  ]
+}
+</code></pre>
+<p></p>
+<p>React利用render将JavaScript对象转化成DOM。主要代码如下：</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT">Element.prototype.render = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{
+    <span class="keyword">var</span> el = <span class="built_in">document</span>.createElement(<span class="keyword">this</span>.tagName) <span class="comment">// 根据tagName构建</span>
+  <span class="keyword">var</span> props = <span class="keyword">this</span>.props
+
+  <span class="keyword">for</span> (<span class="keyword">var</span> propName <span class="keyword">in</span> props) { <span class="comment">// 设置节点的DOM属性</span>
+    <span class="keyword">var</span> propValue = props[propName]
+    el.setAttribute(propName, propValue)
+  }
+
+  <span class="keyword">var</span> children = <span class="keyword">this</span>.children || []
+
+  children.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">child</span>) </span>{
+    <span class="keyword">var</span> childEl = (child <span class="keyword">instanceof</span> Element)
+      ? child.render() <span class="comment">// 如果子节点也是虚拟DOM，递归构建DOM节点</span>
+      : <span class="built_in">document</span>.createTextNode(child) <span class="comment">// 如果字符串，只构建文本节点</span>
+    el.appendChild(childEl)
+  })
+
+  <span class="keyword">return</span> el
+}
+</code></pre>
+<p></p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT"><span class="comment">// JSX编译过程 =&gt; [过程] =&gt;</span>
+JSX =&gt; Babel 编译 React.js =&gt;  
+JavaScript对象结构 =&gt; ReactDom.render =&gt; 
+DOM元素 =&gt; 
+插入页面
+</code></pre>
+<p></p>
+<h2 id="setState"><a href="#setState" class="headerlink" title="setState"></a>setState</h2><p>React.js 的 state 就是用来存储这种可变化的状态的。如果要想改变某个状态呢？那就<br>需要setState。</p>
+<p>setState 方法由父类 Component 所提供。setState 接受<code>对象参数 </code>和  <code>函数参数</code>。<code>当我们调用这个函数的时候，React.js 会更新组件的状态 state ，并且重新调用 render 方法，然后再把 render 方法所渲染的最新的内容显示到页面上。</code></p>
+<blockquote class="pullquote warning"><p>注意：<br>当你调用 setState 的时候，React.js 并不会马上修改 state。</p>
+</blockquote>
+<p>调用 setState 的时候，是把这个对象放到一个更新队列里面，稍后才会从队列当中把新的状态提取出来合并到 state 当中，然后再触发组件更新。举个栗子：</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT"><span class="class"><span class="keyword">class</span> <span class="title">Index</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>{
+    <span class="keyword">constructor</span> () {
+        <span class="keyword">super</span>()
+        <span class="keyword">this</span>.state = { <span class="attr">isLiked</span>: <span class="literal">false</span> }
+    }
+    handleClickOnLikeButton () {
+        <span class="built_in">console</span>.log(<span class="keyword">this</span>.state.isLiked) <span class="comment">// false</span>
+        <span class="keyword">this</span>.setState({
+            isLiked: !<span class="keyword">this</span>.state.isLiked
+        })
+        <span class="built_in">console</span>.log(<span class="keyword">this</span>.state.isLiked) <span class="comment">// false</span>
+    }
+    render() {
+        <span class="keyword">return</span>(
+            &lt;button onClick={<span class="keyword">this</span>.handleClickOnLikeButton.bind(<span class="keyword">this</span>)&gt;
+                  {<span class="keyword">this</span>.state.isLiked ? <span class="string">'取消'</span> : <span class="string">'点赞'</span>} 
+            &lt;<span class="regexp">/botton&gt;</span>
+<span class="regexp">        )</span>
+<span class="regexp">    }</span>
+<span class="regexp">}</span>
+</code></pre>
+<p></p>
+<blockquote class="pullquote tip"><p>Tip:<br>在使用 React.js 的时候，并不需要担心多次进行 setState 会带来性能问题。//  ✅ </p>
+</blockquote>
+<h2 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h2><p> React.js 内部对待每个组件都有一个过程，也就是初始化组件 -&gt; 挂载到页面上的过程。</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT">-&gt; <span class="keyword">constructor</span>()
+-&gt; componentWillMount()
+-&gt; render()
+// 然后构造 DOM 元素插入页面
+-&gt; componentDidMount()
+</code></pre>
+<p></p>
+<p>那么挂载的时候，执行顺序是怎样的呢？请看下面这个栗子：</p>
+<p><samp></samp></p>
+<pre><code class="JAVASCRIPT"><span class="class"><span class="keyword">class</span> <span class="title">Header</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>{
+  <span class="keyword">constructor</span> () {
+    <span class="keyword">super</span>()
+    <span class="built_in">console</span>.log(<span class="string">'construct'</span>)
+  }
+
+  componentWillMount () {
+    <span class="built_in">console</span>.log(<span class="string">'component will mount'</span>)
+  }
+
+  componentDidMount () {
+    <span class="built_in">console</span>.log(<span class="string">'component did mount'</span>)
+  }
+
+  render () {
+    <span class="built_in">console</span>.log(<span class="string">'render'</span>)
+    <span class="keyword">return</span> (
+      &lt;div&gt;
+        &lt;h1 className=<span class="string">'title'</span>&gt;React 小书&lt;<span class="regexp">/h1&gt;</span>
+<span class="regexp">      &lt;/</span>div&gt;
+    )
+  }
+}
+</code></pre>
+<p></p>
+<p>在控制台可以看到依次输出：<br><samp></samp></p>
+<pre><code class="JAVASCRIPT">construct
+component will mount
+render
+component did mount
+</code></pre>
+<p></p>
+<blockquote class="pullquote tip"><h3 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h3><p>componentWillMount：组件挂载开始之前，也就是在组件调用 render 方法之前调用。<br>componentDidMount：组件挂载完成以后，也就是 DOM 元素已经插入页面后调用。<br>componentWillUnmount：组件对应的 DOM 元素从页面中删除之前调用。<br>componentWillUnmount：组件对应的 DOM 元素从页面中删除之前调用。<br>componentWillUnmount: 组件销毁调用。</p>
+<h3 id="更新阶段"><a href="#更新阶段" class="headerlink" title="更新阶段"></a>更新阶段</h3><p>shouldComponentUpdate(nextProps, nextState)：你可以通过这个方法控制组件是否重新渲染。如果返回 false 组件就不会重新渲染。这个生命周期在 React.js 性能优化上非常有用。<br>componentWillReceiveProps(nextProps)：组件从父组件接收到新的 props 之前调用。<br>componentWillUpdate()：组件开始重新渲染之前调用。<br>componentDidUpdate()：组件重新渲染并且把更改变更到真实的 DOM 以后调用。</p>
+</blockquote>
+<h2 id="Redux"><a href="#Redux" class="headerlink" title="Redux"></a>Redux</h2><p>To be continued…</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <img class="post-kanban nofancybox" id="post_end_1" src="https://phower.me/wp-content/themes/akina/images/post_end_1.png">
+  <img class="post-kanban nofancybox" id="post_end_2" src="https://phower.me/wp-content/themes/akina/images/post_end_2.png" style="display: none;">
+  <div id="QR" style="display: none;">
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="https://moetu.fastmirror.org/images/2018/05/15/wx_pay5cf8263aa0e429ea.jpg" alt="shamopoo 微信扫一扫，向我赞赏">
+        <p>微信扫一扫，向我赞赏</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="https://moetu.fastmirror.org/images/2018/05/15/zfb_payb0fe3fd2fe5b8440.jpg" alt="shamopoo 支付宝扫一扫，向我赞赏">
+        <p>支付宝扫一扫，向我赞赏</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    shamopoo
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://shamopoo.top/React-js-book/" title="React.js 小书">http://shamopoo.top/React-js-book/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/React/" rel="tag">React</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/summary-of-2018/" rel="next" title="我的2018总结">
+                <i class="fa fa-chevron-left"></i> 我的2018总结
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/30-seconds-of-js/" rel="prev" title="30 seconds of Javascript">
+                30 seconds of Javascript <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+  <div class="post-spread">
+      
+        
+  <div class="post-share social-share">
+    <a class="social-share-icon icon-weibo fa-weibo fa fa-fw" data-cmd="tsina" target="_blank" title="开发中.."></a>
+    <a class="social-share-icon icon-qq fa-qq fa fa-fw" data-cmd="sqq" target="_blank" title="开发中.."></a>
+    <a class="social-share-icon icon-wechat fa-wechat fa fa-fw" data-cmd="weixin" target="_blank" title="开发中.."></a>
+    <a class="social-share-icon icon-qzone fa-envelope fa fa-fw" data-cmd="qzone" target="_blank" title="开发中.."></a>
+    <a class="social-share-icon icon-twitter fa-twitter fa fa-fw" data-cmd="twi" target="_blank" title="开发中.."></a>
+    <a class="social-share-icon icon-facebook fa-facebook fa fa-fw" data-cmd="fbook" target="_blank" title="开发中.."></a>
+  </div>
+
+
+      
+  </div>
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <img id="cd-top-img" alt="海贼王に オレはなる" title="海贼王に オレはなる" src="https://view.phower.me/images/2018/03/25/OP-Luffy.png">
+  </div>
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://moetu.fastmirror.org/images/2019/05/15/avatorc8f6bbe92554aebd.jpg" alt="shamopoo">
+            
+              <p class="site-author-name" itemprop="name">shamopoo</p>
+              <p class="site-description motion-element" itemprop="description">Keep Learning Heart</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+          
+
+          
+          
+            <div class="cc-license motion-element" itemprop="license">
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+                <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons">
+              </a>
+            </div>
+          
+
+          
+          
+          
+
+        </div>
+        <div class="sidebar-div-like">
+          <div class="sidebar-box">
+            <a>九十</a>
+            <i class="fa fa-heart fa-i-like"></i>
+            <a>是甜的呀</a>
+          </div>
+          <span id="like_time"></span>
+        </div>
+        <script>
+        function heart()  {
+            var show = document.getElementById("like_time");
+            setInterval(function() {
+              var BirthDay = new Date('2017-01-14');
+              var today = new Date();
+              var timeold = (today.getTime() - BirthDay.getTime());
+              var msPerDay = 24 * 60 * 60 * 1000 * 365;
+              var e_yearsold = timeold / msPerDay;
+              var yearsold = Math.floor(e_yearsold);
+              var e_monthsold = (e_yearsold - yearsold) * 365 / 30;
+              var monthsold = Math.floor(e_monthsold);
+              var e_daysold = (e_monthsold - monthsold) * 30;
+              var daysold = Math.floor(e_daysold);
+              var e_hrsold = (e_daysold - daysold) * 24;
+              var hrsold = Math.floor(e_hrsold);
+              var e_minsold = (e_hrsold - hrsold) * 60;
+              var minsold = Math.floor((e_hrsold - hrsold) * 60);
+              var seconds = Math.floor((e_minsold - minsold) * 60);
+              var t =  yearsold + "年"
+              + (monthsold + '').padStart(2, '0')  +  "月"
+              + (daysold + '').padStart(2, '0')  + "天" 
+              + (hrsold + '').padStart(2, '0') + "时" 
+              + (minsold + '').padStart(2, '0')  + "分" 
+              + (seconds + '').padStart(2, '0')  + "秒"
+              show.innerHTML = t;
+            }, 1000)
+        }
+        heart()
+        </script>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#预览"><span class="nav-number">1.</span> <span class="nav-text">预览</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JSX"><span class="nav-number">2.</span> <span class="nav-text">JSX</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#setState"><span class="nav-number">3.</span> <span class="nav-text">setState</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生命周期"><span class="nav-number">4.</span> <span class="nav-text">生命周期</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#生命周期"><span class="nav-number">4.1.</span> <span class="nav-text">生命周期</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更新阶段"><span class="nav-number">4.2.</span> <span class="nav-text">更新阶段</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Redux"><span class="nav-number">5.</span> <span class="nav-text">Redux</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+    <!-- aplayer -->
+    <!-- <div id="aplayer-fixed"></div> -->
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="footer-image"></div>
+<div class="copyright">
+  
+  &copy;
+  
+    <span itemprop="copyrightYear">2019</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">shamopoo</span>
+
+    
+</div>
+
+
+<div class="footer-yiyan">念念不忘, 必有回响。</div>
+
+
+<div class="copyright time_div">
+博客已萌萌哒运行<span id="show"></span><span class="my-face_x">(●'◡'●)ﾉ<i class="fa fa-heart"></i></span>
+<script>
+(function() {
+    var show = document.getElementById("show");
+    setInterval(function() {
+    var BirthDay = new Date('2018-03-05');
+    var today = new Date();
+    var timeold = (today.getTime() - BirthDay.getTime());
+    var msPerDay = 24 * 60 * 60 * 1000;
+    var e_daysold = timeold / msPerDay;
+    var daysold = Math.floor(e_daysold);
+    var e_hrsold = (e_daysold - daysold) * 24;
+    var hrsold = Math.floor(e_hrsold);
+    var e_minsold = (e_hrsold - hrsold) * 60;
+    var minsold = Math.floor((e_hrsold - hrsold) * 60);
+    var seconds = Math.floor((e_minsold - minsold) * 60);
+    var t = daysold + "天" 
+    + (hrsold + '').padStart(2, '0') + "小时" 
+    + (minsold + '').padStart(2, '0') + "分" 
+    + (seconds + '').padStart(2, '0') + "秒"
+    show.innerHTML = t;
+    }, 1000);
+}());
+</script>
+</div>
+
+
+
+<script>
+'use strict';var aplayers=[],loadMeting=function(){function a(a,b){var c={container:a,audio:b,mini:!1,autoplay:!1,mutex:!0,lrc:3,preload:'auto',theme:'#2980b9',loop:'all',order:'list',volume:0.7,listFolded:!1,listMaxHeight:'340px'};for(var d in c)c.hasOwnProperty(d)&&a.dataset.hasOwnProperty(d)&&(c[d]=a.dataset[d]);b.length&&('true'===c.mini&&(c.mini=!0,c.lrc=0,c.listFolded=!0),aplayers.push(new APlayer(c)))}var b='https://api.i-meto.com/meting/api?server=:server&type=:type&id=:id&r=:r';'undefined'!=typeof meting_api&&(b=meting_api);for(var f=0;f<aplayers.length;f++)try{aplayers[f].destroy()}catch(a){console.log(a)}aplayers=[];for(var c=document.querySelectorAll('.aplayer'),d=function(d){var e=c[d],f=e.dataset.id;if(f){var g=e.dataset.api||b;g=g.replace(':server',e.dataset.server),g=g.replace(':type',e.dataset.type),g=g.replace(':id',e.dataset.id),g=g.replace(':auth',e.dataset.auth),g=g.replace(':r',Math.random());var h=new XMLHttpRequest;h.onreadystatechange=function(){if(4===h.readyState&&(200<=h.status&&300>h.status||304===h.status)){var b=JSON.parse(h.responseText);a(e,b)}},h.open('get',g,!0),h.send(null)}else if(e.dataset.url){var i=[{name:e.dataset.name||e.dataset.title,artist:e.dataset.artist||e.dataset.author,url:e.dataset.url,cover:e.dataset.cover||e.dataset.pic,lrc:e.dataset.lrc}];a(e,i)}},e=0;e<c.length;e++)d(e)};document.addEventListener('DOMContentLoaded',loadMeting,!1);
+</script>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+      </div>
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="//cdn.bootcss.com/jquery/2.1.3/jquery.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.bootcss.com/jquery_lazyload/1.9.7/jquery.lazyload.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.bootcss.com/velocity/1.3.1/velocity.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.bootcss.com/velocity/1.3.1/velocity.ui.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("Y3amfFI4oMirVF836IE5Oxhl-gzGzoHsz", "fshUfqySAQa8O5PtJaoYRtR5");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            $visitors.find(COUNT_CONTAINER_REF).text(0+"°C");
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+            $(element).find(COUNT_CONTAINER_REF).text(time+"°C");
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+              countSpan.text(0+"°C");
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+                $element.find('.leancloud-visitors-count').text(counter.get('time')+"°C");
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time')+"°C");
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/exturl.js?v=5.1.4"></script>
+
+
+  
+  
+<script>
+ // document.addEventListener('touchmove', function(e) {
+ //    e.preventDefault()
+ //  })
+  var c = document.getElementsByTagName('canvas')[0],
+    x = c.getContext('2d'),
+    pr = window.devicePixelRatio || 1,
+    w = window.innerWidth - 10,
+    h = window.innerHeight,
+    f = 90,
+    q,
+    r = 0,
+    u = Math.PI * 2,
+    v = Math.cos,
+    z = Math.random
+  c.width = w * pr
+  c.height = h * pr
+  x.scale(pr, pr)
+  x.globalAlpha = 0.6
+  function i() {
+    x.clearRect(0, 0, w, h)
+    q = [{ x: 0, y: h * .7 + f }, { x: 0, y: h * .7 - f }]
+    while (q[1].x < w + f) d(q[0], q[1])
+  }
+  function d(i, j) {
+    x.beginPath()
+    x.moveTo(i.x, i.y)
+    x.lineTo(j.x, j.y)
+    var k = j.x + (z() * 2 - 0.25) * f,
+      n = y(j.y)
+    x.lineTo(k, n)
+    x.closePath()
+    r -= u / -50
+    x.fillStyle = '#' + (v(r) * 127 + 128 << 16 | v(r + u / 3) * 127 + 128 << 8 | v(r + u / 3 * 2) * 127 + 128).toString(16)
+    x.fill()
+    q[0] = q[1]
+    q[1] = { x: k, y: n }
+  }
+  function y(p) {
+    var t = p + (z() * 2 - 1.1) * f
+    return (t > h || t < 0) ? y(p) : t
+  }
+  document.onclick = i
+  document.ontouchstart = i
+  i()
+
+  // console.log
+
+  // console.log("\n %c shamopoo  %c http://shamopoo.top/ \n\n","color: #ffc0cb; background: #c0cbff; padding:5px 0;","background: #ffc0cb; padding:5px 0;color:#fff;")
+  // "use strict";
+  //window.onload = function() {var now = new Date().getTime();var page_load_time = now - performance.timing.navigationStart;console.log('%c页面加载完毕消耗了'+Math.round(performance.now()*100)/100+'ms','color: #333;');};
+  // 赞赏
+
+  $('#post_end_1').click(function () {
+      $('#post_end_1').css('display', 'none')
+      $('#post_end_2').css('display', 'block')
+      $('#QR').slideToggle(300)
+  })
+  $('#post_end_2').click(function () {
+      $('#post_end_2').css('display', 'none')
+      $('#post_end_1').css('display', 'block')
+      $('#QR').slideToggle(300)
+  })
+
+   // title
+
+
+   let isPageOne = window.location.pathname.indexOf('page') > -1
+   isPageOne &&  $('.set-top').css('display', 'none')
+
+   // console.img
+
+   // aplayer
+  //  	$.ajax({
+  //  	    url: "https://api.i-meto.com/meting/api?server=netease&type=playlist&id=106590235",
+  //  	    success: function(e) {
+  //  	        var aplayerList = new APlayer({
+  //  	        container: document.getElementById('aplayer-fixed'),
+  //            fixed: true,
+  //            lrcType: 3,
+  //            order: 'random',
+  //  	        listmaxheight: '240px',
+  //  	        audio:JSON.parse(e)
+  //  	        });
+  //  	    }
+  //  	})
+
+
+   // lab - none - svg
+   var i = 0,
+     j = 0,
+     p = 0,
+     time = 0,
+     $path = $('path, text'),
+     lastNow = null,
+     color = [73, 73, 80,1],
+     fromColor = [50,70,100,0],
+     // toColor = [0,220,255,1],
+     toColor = [122,122,133,1],
+     dashOffset = 0,
+     dashArray = [0,100];
+
+   function loop(now) {
+
+   if (lastNow === null)
+     lastNow = now;
+
+   $path.each(function(index, list){
+
+     time = now + index * 1000;
+     i = (Math.sin(time * 0.00075) + 1) * 50;
+
+     p = i / 100;
+     for (j = 0; j < color.length; j++) {
+       if (j != 3) {
+         color[j] = fromColor[j] + Math.round((toColor[j] - fromColor[j]) * p);
+       } else {
+         color[j] = fromColor[j] + ((toColor[j] - fromColor[j]) * p);
+       }
+     }
+
+     dashArray[0] = i;
+     dashArray[1] = (100 - i);
+     dashOffset = i * 2;
+
+     if (this.localName === 'path') {
+       $(this)
+         .attr('stroke', 'rgba(' + color.join(',') + ')')
+         .attr('stroke-dasharray', dashArray.join(','))
+         .attr('stroke-dashoffset', dashOffset);
+     } else {
+       $(this)
+         .attr('stroke', 'rgba(255,255,255,' + color[3] + ')')
+         .attr('stroke-dasharray', dashArray.join(','))
+         .attr('stroke-dashoffset', dashOffset);
+     }
+
+   });
+
+   requestAnimationFrame(loop);
+
+   }
+
+   loop();
+
+   // 侧边栏开关
+     $(window).scroll(function () {
+        ($(this).scrollTop() > 150) ? $('.sidebar-toggle').addClass('cd-is-toggle') : $('.sidebar-toggle').removeClass('cd-is-toggle');
+     })
+   // 友人帐
+   $(".front-btn").click(function() {
+     $(".flipper").css("transform", "rotateY(180deg)")
+   })
+   $(".back-btn").click(function() {
+     $(".flipper").css("transform", "rotateY(360deg)")
+   })
+   // 浏览器上下滑
+    
+   // title
+   $(".banner-border-top").animate({'margin-left': '0px'},900)
+   $(".banner-border-bottom").animate({'margin-left': '0px'},900)
+
+   // moblie header
+  $('.site-nav-toggle button').on('click', function () {
+      var  sideDom = $('.site-nav')[0]
+        if (!parseInt(sideDom.style.height))  {
+            sideDom.style.height = '380px'
+        } else {
+            sideDom.style.height = '0px'
+        }
+   });
+
+  
+</script>
+
+<script>
+
+class Circle {
+  constructor({ origin, speed, color, angle, context }) {
+    this.origin = origin
+    this.position = { ...this.origin }
+    this.color = color
+    this.speed = speed
+    this.angle = angle
+    this.context = context
+    this.renderCount = 0
+  }
+
+  draw() {
+    this.context.fillStyle = this.color
+    this.context.beginPath()
+    this.context.arc(this.position.x, this.position.y, 2, 0, Math.PI * 2)
+    this.context.fill()
+  }
+
+  move() {
+    this.position.x = (Math.sin(this.angle) * this.speed) + this.position.x
+    this.position.y = (Math.cos(this.angle) * this.speed) + this.position.y + (this.renderCount * 0.3)
+    this.renderCount++
+  }
+}
+
+class Boom {
+  constructor ({ origin, context, circleCount = 10, area }) {
+    this.origin = origin
+    this.context = context
+    this.circleCount = circleCount
+    this.area = area
+    this.stop = false
+    this.circles = []
+  }
+
+  randomArray(range) {
+    const length = range.length
+    const randomIndex = Math.floor(length * Math.random())
+    return range[randomIndex]
+  }
+
+  randomColor() {
+    const range = ['8', '9', 'A', 'B', 'C', 'D', 'E', 'F']
+    return '#' + this.randomArray(range) + this.randomArray(range) + this.randomArray(range) + this.randomArray(range) + this.randomArray(range) + this.randomArray(range)
+  }
+
+  randomRange(start, end) {
+    return (end - start) * Math.random() + start
+  }
+
+  init() {
+    for(let i = 0; i < this.circleCount; i++) {
+      const circle = new Circle({
+        context: this.context,
+        origin: this.origin,
+        color: this.randomColor(),
+        angle: this.randomRange(Math.PI - 1, Math.PI + 1),
+        speed: this.randomRange(1, 6)
+      })
+      this.circles.push(circle)
+    }
+  }
+
+  move() {
+    this.circles.forEach((circle, index) => {
+      if (circle.position.x > this.area.width || circle.position.y > this.area.height) {
+        return this.circles.splice(index, 1)
+      }
+      circle.move()
+    })
+    if (this.circles.length == 0) {
+      this.stop = true
+    }
+  }
+
+  draw() {
+    this.circles.forEach(circle => circle.draw())
+  }
+}
+
+class CursorSpecialEffects {
+  constructor() {
+    this.computerCanvas = document.createElement('canvas')
+    this.renderCanvas = document.createElement('canvas')
+
+    this.computerContext = this.computerCanvas.getContext('2d')
+    this.renderContext = this.renderCanvas.getContext('2d')
+
+    this.globalWidth = window.innerWidth
+    this.globalHeight = window.innerHeight
+
+    this.booms = []
+    this.running = false
+  }
+
+  handleMouseDown(e) {
+    const boom = new Boom({
+      origin: { x: e.clientX, y: e.clientY },
+      context: this.computerContext,
+      area: {
+        width: this.globalWidth,
+        height: this.globalHeight
+      }
+    })
+    boom.init()
+    this.booms.push(boom)
+    this.running || this.run()
+  }
+
+  handlePageHide() {
+    this.booms = []
+    this.running = false
+  }
+
+  init() {
+    const style = this.renderCanvas.style
+    style.position = 'fixed'
+    style.top = style.left = 0
+    style.zIndex = '999999999999999999999999999999999999999999'
+    style.pointerEvents = 'none'
+
+    style.width = this.renderCanvas.width = this.computerCanvas.width = this.globalWidth
+    style.height = this.renderCanvas.height = this.computerCanvas.height = this.globalHeight
+
+    document.body.append(this.renderCanvas)
+
+    window.addEventListener('mousedown', this.handleMouseDown.bind(this))
+    window.addEventListener('pagehide', this.handlePageHide.bind(this))
+  }
+
+  run() {
+    this.running = true
+    if (this.booms.length == 0) {
+      return this.running = false
+    }
+
+    requestAnimationFrame(this.run.bind(this))
+
+    this.computerContext.clearRect(0, 0, this.globalWidth, this.globalHeight)
+    this.renderContext.clearRect(0, 0, this.globalWidth, this.globalHeight)
+
+    this.booms.forEach((boom, index) => {
+      if (boom.stop) {
+        return this.booms.splice(index, 1)
+      }
+      boom.move()
+      boom.draw()
+    })
+    this.renderContext.drawImage(this.computerCanvas, 0, 0, this.globalWidth, this.globalHeight)
+  }
+}
+
+const cursorSpecialEffects = new CursorSpecialEffects()
+cursorSpecialEffects.init()
+</script>
+
+</body>
+</html>
