@@ -10,7 +10,7 @@
 
 {% block content %}
   <section id="posts" class="posts-expand">
-    <div class="notice">
+    <div class="notice" style='display: none;'>
       <div class="notice-content">「念念不忘</div>
        <i class="fa notice-logo fa-bell-o"></i>
       <div class="notice-time">必有回响」</div>
