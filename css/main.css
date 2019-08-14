@@ -1213,7 +1213,7 @@ pre .javascript .function {
   }
 }
 .back-to-top.back-to-top-on {
-  top: -333px;
+  top: -190px;
 }
 .header {
   background: #fff;
@@ -3006,6 +3006,7 @@ body {
   background-attachment: fixed;
   margin: 0;
   padding: 0;
+  cursor: url("../../uploads/sword.cur"), auto;
 }
 article:not(:first-of-type) .post-block .set-top div {
   display: none;
@@ -3745,6 +3746,9 @@ a {
   color: #fff;
   text-align: center;
   line-height: 1.1;
+}
+.post-body #encrypt-message {
+  display: none;
 }
 .post-date .post-day {
   font-size: 30px;
