@@ -32,7 +32,7 @@
       <a href="{{ config.root }}"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">hi, shamopoo</span>
-        <div class="site-sub-title">Keep Learning Heart</div>
+        <div class="site-sub-title">出生真好，真的很好，和你遇见真的很好。<br> 我是风，正包围在你的身边。</div>
         <span class="logo-line-after"><i></i></span>
       </a>
       <div class="banner-border-bottom"></div>
